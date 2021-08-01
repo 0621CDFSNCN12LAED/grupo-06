@@ -19,15 +19,15 @@ Productos: Analisis clínicos y análisis de covid
 Nuestros servicios: Extraccion y obtención de muestras a domicilio. Con formas de pagos digitales (tarjetas de crédito, débito. Billeteras virtuales, Mercado Pago, sin necesidad de una orden médica. 
 
 
-- Descripción de los integrantes del equipo.
+### Descripción de los integrantes del equipo.
 
-Gaston Isla Casares: Vive en BsAs, tiene 36 años, trabaja en Sistemas.
+- Gaston Isla Casares: Vive en Bs. As., tiene 36 años, trabaja en Sistemas.
 
-Lara Primosich: Vive en Buenos Aires, tiene 27 años, trabaja en soporte técnico de it.
+- Lara Primosich: Vive en Buenos Aires, tiene 27 años, trabaja en soporte técnico de it.
 
-Lourdes Fernandez: Vive en BsAs, tiene 23 años, es estudiante y trabaja en un laboratorio.
+- Lourdes Fernandez: Vive en BsAs, tiene 23 años, es estudiante y trabaja en un laboratorio.
 
-Fabricio Medina: Tiene 30 años, y vive en la zona oeste de GBA. Actualmente trabaja en el sector administrativo de Correo Andreani, y el resto de su tiempo lo distribuye entre deportes y música.
+- Fabricio Medina: Tiene 30 años, y vive en la zona oeste de GBA. Actualmente trabaja en el sector administrativo de Correo Andreani, y el resto de su tiempo lo distribuye entre deportes y música.
 
 
 ## 3. Inspiración en referentes del mercado
