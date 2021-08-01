@@ -31,6 +31,7 @@ Nuestros servicios: Extraccion y obtención de muestras a domicilio. Con formas 
 
 
 ## 3. Inspiración en referentes del mercado
+Escogimos estos seis sitios por la trayectoria que poseen en el rubro de salud. Lo vemos como una fuente de inspiración para nuestro futuro servicio que ofreceremos.
 
 - https://www.laboratoriohidalgo.com
 - https://www.diagnosticomaipu.com
