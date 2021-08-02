@@ -17,6 +17,18 @@
 
     DigitalLab será una plataforma de laboratorio virtual de fácil acceso para todo público, para la solicitud de prácticas de laboratorio, con extracción y obtención de muestras a domicilio. El objetivo es que mediante un click, con formas de pago digitales (tarjetas de crédito, débito, billeteras virtuales, Mercado Pago), el consumidor no tenga que trasladarse a un lugar físico, ya sea por comodidad o falta de tiempo. 
 
+    **Servicios:**   
+
+    - Bioquímica clínica
+    - Hematología
+    - Endocrinología y metabolismo
+    - Bacteriología
+    - Virología
+    - Parasitología
+    - Enzimología
+    - Serología
+    - Inmunología
+
 
 ### Descripción de los integrantes del equipo.
 
