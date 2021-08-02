@@ -8,15 +8,14 @@
     - Lara Primosich.
     - Lourdes Fernandez.
     - Fabricio Medina.
+    
+    <br/>
 
 ## 2. Temática del MarketPlace
 
-### Descripción de oferta de productos/servicios. Descripción del público al que se apunta.
+- Descripción de oferta de productos/servicios. Descripción del público al que se apunta: 
 
-DigitalLab será una plataforma de laboratorio virtual diseñada para ayudar a los pacientes a entender sus análisis clínicos. Con el avance de la ciencia y el surgimiento de una pandemia mundial, fuimos tomando más conciencia sobre el cuidado de nuestra salud.
-Objetivo: Que el paciente no abandone la comidad de su hogar para cuidar su salud.
-Productos: Analisis clínicos y análisis de covid
-Nuestros servicios: Extraccion y obtención de muestras a domicilio. Con formas de pagos digitales (tarjetas de crédito, débito. Billeteras virtuales, Mercado Pago, sin necesidad de una orden médica. 
+    DigitalLab será una plataforma de laboratorio virtual de fácil acceso para todo público, para la solicitud de prácticas de laboratorio, con extracción y obtención de muestras a domicilio. El objetivo es que mediante un click, con formas de pago digitales (tarjetas de crédito, débito, billeteras virtuales, Mercado Pago), el consumidor no tenga que trasladarse a un lugar físico, ya sea por comodidad o falta de tiempo. 
 
 
 ### Descripción de los integrantes del equipo.
@@ -31,7 +30,7 @@ Nuestros servicios: Extraccion y obtención de muestras a domicilio. Con formas 
 
 
 ## 3. Inspiración en referentes del mercado
-Escogimos estos seis sitios por la trayectoria que poseen en el rubro de salud. Lo vemos como una fuente de inspiración para nuestro futuro servicio que ofreceremos.
+Escogimos estos seis sitios por la trayectoria que poseen en el rubro de salud, su funcionalidad y la estética que poseen. Lo vemos como una fuente de inspiración para el servicio que ofreceremos.
 
 - https://www.laboratoriohidalgo.com
 - https://www.diagnosticomaipu.com
