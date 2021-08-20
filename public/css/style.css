@@ -93,6 +93,11 @@ background-color: blueviolet;
 background-color: burlywood;
 }
 
+.detalle-carrito
+{
+    display: flex;
+}
+
 /*CSS Correspondiente a Detalle de Productos*/
 
 .producto-detalle-parte-superior,
