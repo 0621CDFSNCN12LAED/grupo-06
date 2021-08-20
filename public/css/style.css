@@ -85,6 +85,18 @@ footer {
     text-align: justify;
 }
 
+.sedes {
+    display: flex;
+}
+
+.sede {
+    background-color: snow;
+    flex-direction: row;
+    margin: 5px;
+    box-sizing: content-box;
+    width: 20%;
+}
+
 
 /************** Detalle del Carrito *************/
 
@@ -122,6 +134,7 @@ footer {
 .detalle-costo-total {
     background-color: burlywood;
 }
+
 
 /*CSS Correspondiente a Detalle de Productos*/
 
