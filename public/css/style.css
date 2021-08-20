@@ -85,6 +85,13 @@ footer {
     text-align: justify;
 }
 
+/*Carrito*/
+.detalle-carrito{
+background-color: blueviolet;
+}
+.detalle-costo-total{
+background-color: burlywood;
+}
 
 /*CSS Correspondiente a Detalle de Productos*/
 
