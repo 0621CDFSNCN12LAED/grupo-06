@@ -88,23 +88,34 @@ footer {
 
 /*CSS Correspondiente a Detalle de Productos*/
 
-.precio-test {
-    color: green;
-    font-weight: bold;
-    font-size: 1.25rem;
-}
-
 .producto-detalle-parte-superior,
 .producto-detalle-parte-inferior {
     display: flex;
     margin: 1%;
-}
-
-.producto-detalle-primer-cuadrante {
-    width: 50%;
-    margin: 1%;
+    width: 100%;
 }
 
 .cuarto-cuadrante-parte-inferior {
     display: flex;
+    margin: 10%;
+}
+
+.test-detalle-primer-cuadrante,
+.test-detalle-segund-cuadrante,
+.test-detalle-tercer-cuadrante,
+.test-detalle-cuarto-cuadrante {
+    width: 50%;
+    margin: 2%;
+}
+
+.precio-test {
+    color: green;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: 5px;
+    width: 25%;
+}
+
+.boton-orden-test {
+    background-color: green;
 }
