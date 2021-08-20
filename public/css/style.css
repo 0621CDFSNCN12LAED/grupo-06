@@ -98,6 +98,11 @@ background-color: burlywood;
     display: flex;
 }
 
+.detalle-test
+{
+    flex-direction: row;
+}
+
 /*CSS Correspondiente a Detalle de Productos*/
 
 .producto-detalle-parte-superior,
