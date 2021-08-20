@@ -92,9 +92,17 @@ footer {
 .sede {
     background-color: snow;
     flex-direction: row;
-    margin: 5px;
+    margin: 15px;
     box-sizing: content-box;
     width: 20%;
+}
+
+.productos {
+    display: flex;
+}
+
+.producto {
+    margin: 10px;
 }
 
 
