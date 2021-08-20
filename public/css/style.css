@@ -86,22 +86,23 @@ footer {
 }
 
 /*Carrito*/
+.main-detalle-carrito
+{
+    display: flex;
+}
+
+
 .detalle-carrito{
 background-color: blueviolet;
+flex-direction: row;
+
 }
 .detalle-costo-total{
 background-color: burlywood;
 }
 
-.detalle-carrito
-{
-    display: flex;
-}
 
-.detalle-test
-{
-    flex-direction: row;
-}
+
 
 /*CSS Correspondiente a Detalle de Productos*/
 
