@@ -85,23 +85,32 @@ footer {
     text-align: justify;
 }
 
-/************** Carrito *************/
-.main-detalle-carrito
-{
+
+/************** Detalle del Carrito *************/
+
+.main-detalle-carrito {
     display: flex;
+    background-color: whitesmoke;
+    margin: 1%;
+    width: 75%;
 }
 
-
-.detalle-carrito{
-background-color: blueviolet;
-flex-direction: row;
-
-}
-.detalle-costo-total{
-background-color: burlywood;
+.detalle-carrito {
+    flex-direction: row;
+    width: 100%;
 }
 
+.detalle-test {
+    flex-direction: column;
+    display: columns;
+    border-bottom: solid;
+    border-color: gray;
+    width: 100%;
+}
 
+.detalle-costo-total {
+    background-color: burlywood;
+}
 
 
 /*CSS Correspondiente a Detalle de Productos*/
