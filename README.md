@@ -2,6 +2,7 @@
 
 ## 1. Repositorio del proyecto y colaboradores
 - URL del repositorio: https://github.com/0621CDFSNCN12LAED/grupo-06.git
+- URL de tablero de trabajo: https://trello.com/b/FsA9dNTm/sprint-1
 
 - Integrantes:
     - Gastón Isla Casares.
