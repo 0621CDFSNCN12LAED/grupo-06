@@ -1,0 +1,42 @@
+footer {
+  font-family: "Inter", sans-serif;
+  background-color: #73a7bd;
+}
+
+#fFooter {
+  margin: 5%;
+}
+
+.titlesSection {
+  text-align: center;
+  color: #004765;
+}
+
+.titlesSection ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.titlesSection a {
+  text-decoration: none;
+  color: black;
+}
+
+.titlesSection nav {
+  display: none;
+}
+
+#nuestrosEstudios {
+  display: none;
+}
+
+#regist p {
+  margin-top: 2px;
+  font-size: 12px;
+  text-align: justify;
+}
+
+#regist h5 {
+  margin-bottom: 2px;
+  color: #004765;
+}

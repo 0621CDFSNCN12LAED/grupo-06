@@ -1,0 +1,60 @@
+.bkHeader {
+  background-color: #004765;
+}
+
+.hIcon {
+  font-size: 18px;
+  color: white;
+}
+
+.header1 {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search {
+  display: none;
+}
+
+.header3 {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.headerMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #9bcade;
+}
+.burger-menu {
+  font-size: 18px;
+  height: 20px;
+  width: 20px;
+  padding: 8px;
+  border-radius: 25px;
+  color: white;
+  background-color: #004765;
+  text-align: center;
+}
+
+.hideMenu {
+  display: none;
+}
+
+.logo1 {
+  display: none;
+}
+
+.logo2 {
+  height: 70px;
+}

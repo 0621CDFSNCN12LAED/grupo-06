@@ -6,3 +6,87 @@
 .form div {
   width: 50%;
 }
+
+/*Header*/
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.search {
+  display: initial;
+  height: 2rem;
+  width: 30%;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.header1 {
+  width: 20%;
+  padding-top: 0;
+  margin: 0;
+}
+
+.header3 {
+  width: 20%;
+  margin: 0;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.hideMenu {
+  display: initial;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.hideMenu a {
+  color: #004765;
+  font-weight: 800;
+}
+
+.logo1 {
+  display: initial;
+  height: 5rem;
+  padding: 5px 0;
+}
+
+.logo2 {
+  display: none;
+}
+
+/* Footer*/
+.titlesSection nav {
+  display: initial;
+}
+
+#nuestrosEstudios {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: -1rem auto 0 auto;
+}
+
+.titlesSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titles20 {
+  width: 20%;
+}
+
+.titles40 {
+  width: 40%;
+}

@@ -1,0 +1,43 @@
+/* Header */
+.hideMenu li {
+  border-left: 2px solid #257598;
+  border-right: 2px solid #257598;
+  padding: 0 15px;
+}
+
+.hideMenu a:hover {
+  color: aliceblue;
+}
+
+.hIcon:hover {
+  font-size: 28px;
+}
+
+/* Footer */
+
+.fSection {
+  height: 100%;
+  padding: 20px 0;
+}
+#fFooter {
+  width: 60vw;
+  margin: auto;
+  padding: 10px 15px;
+  border-left: 2px solid #257598;
+  border-right: 2px solid #257598;
+}
+
+.titlesSection h3 {
+  font-size: 20px;
+  color: #004765;
+}
+
+.titlesSection h3:hover {
+  color: aliceblue;
+  font-size: 24px;
+}
+
+.titlesSection a:hover {
+  color: aliceblue;
+  font-size: 20px;
+}

@@ -26,3 +26,27 @@ app.get("/producto-detalle", (req, res) => {
 app.get("/carrito", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/productCart.html"));
 });
+
+app.get("/footer", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/footer.html"));
+});
+
+app.get("/header", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/header.html"));
+});
+
+app.get("/estudios", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/estudios.html"));
+});
+
+app.get("/nosotros", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/nosotros.html"));
+});
+
+app.get("/sedes", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/sedes.html"));
+});
+
+app.get("/contacto", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/contacto.html"));
+});

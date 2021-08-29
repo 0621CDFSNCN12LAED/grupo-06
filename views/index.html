@@ -10,42 +10,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/carrousel.css" />
-    <link rel="stylesheet" href="/js/carrousel.js" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link
+      rel="stylesheet"
+      href="/css/style-media-tablet.css"
+      media="(min-width:480px)"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/css/style-media-desktop.css"
+      media="(min-width:1024px)"
+    />
     <title>DigitalLab</title>
 </head>
 
 <body>
     <header>
-        <div class="head2">
-            <div class="head1">
-                <a href=https://www.facebook.com/ target="_blank"> <i class="fab fa-facebook"></i> </a>
-                <a href=https://twitter.com/ target="_blank"><i class="fab fa-twitter"></i> </a>
-                <a href=https://www.youtube.com/ target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href=https://www.linkedin.com/feed/ target="_blank"> <i class="fab fa-linkedin-in"></i> </a>
+        <section class="bkHeader topHeader">
+            <div class="header1" >
+                <a href=https://www.facebook.com/ target="_blank"> <i class="fab fa-facebook hIcon"></i> </a>
+                <a href=https://twitter.com/ target="_blank"><i class="fab fa-twitter hIcon"></i> </a>
+                <a href=https://www.youtube.com/ target="_blank"><i class="fab fa-youtube hIcon"></i></a>
+                <a href=https://www.linkedin.com/feed/ target="_blank"> <i class="fab fa-linkedin-in hIcon"></i> </a>
             </div>
 
-            <input type="text" placeholder="Buscar Estudios" />
+            <input class= "search" type="text" placeholder="Buscar Estudios" />
 
-            <div class="head1">
+            <div class="header3">
                 <h5>4587-9652</h5>
-                <a href="/login"><i class="fas fa-user-circle"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/login"><i class="fas fa-user-circle hIcon"></i></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart hIcon"></i></a>
             </div>
-        </div>
+        </section>
 
-        <div class="box2">
-            <img id="logo1" src="/img/Logo.png" alt="DigitalLab" />
+        <section class="headerMenu">
+            <a href="/"><img class="logo1" src="/img/Digital Lab.svg" alt="DigitalLab" /></a>
+            <img class="logo2" src="/img/isologo.svg" alt="DigitalLab" />
 
-            <ul class="head3">
-                <li><a href="">Home</a></li>
-                <li><a href="">Estudios</a></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Sedes</a></li>
-                <li><a href="">Contacto</a></li>
+            <ul class="hideMenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/estudios">Estudios</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/sedes">Sedes</a></li>
+                <li><a href="/contacto">Contacto</a></li>
 
             </ul>
-        </div>
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </section>
     </header>
     <main>
 
@@ -118,11 +133,13 @@
         </section>
     </main>
     <footer>
-        <div class="footer1">
-            <div>
-                <h3>Nuestros Estudios</h3>
-                <nav id="footer3">
-                    <ul>
+        <section class="fSection">
+            <div id="fFooter">
+                <section class="titlesSection">
+                    <div class="titles40">
+                        <a href="/estudios" target="_blank"><h3>Nuestros Estudios</h3></a>
+                    <nav id="nuestrosEstudios">
+                        <ul>
                         <li>
                             <a href="#" target="_blank">Estudio 1</a>
                         </li>
@@ -138,8 +155,8 @@
                         <li>
                             <a href="#" target="_blank">Estudio 5</a>
                         </li>
-                    </ul>
-                    <ul>
+                        </ul>
+                        <ul>
                         <li>
                             <a href="#" target="_blank">Estudio 6</a>
                         </li>
@@ -155,13 +172,13 @@
                         <li>
                             <a href="#" target="_blank">Estudio 10</a>
                         </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <h3>Nosotros</h3>
-                <nav class="footer2">
-                    <ul>
+                        </ul>
+                    </nav>
+                    </div>
+                    <div class="titles20">
+                        <a href="/nosotros" target="_blank"><h3>Nosotros</h3></a>
+                    <nav class="footer2">
+                        <ul>
                         <li>
                             <a href="#" target="_blank">Enlace 1</a>
                         </li>
@@ -171,26 +188,26 @@
                         <li>
                             <a href="#" target="_blank">Enlace 3</a>
                         </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <h3>Contacto</h3>
-                <nav>
-                    <ul class="footer2">
+                        </ul>
+                    </nav>
+                    </div>
+                    <div class="titles20">
+                        <a href="/contacto" target="_blank"><h3>Contacto</h3></a>
+                    <nav>
+                        <ul class="footer2">
                         <li>
                             <a href="#" target="_blank">Contacto 1</a>
                         </li>
                         <li>
                             <a href="#" target="_blank">Contacto 2</a>
                         </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <h3>Nuestras Sedes</h3>
-                <nav>
-                    <ul class="footer2">
+                        </ul>
+                    </nav>
+                    </div>
+                    <div class="titles20">
+                        <a href="sedes" target="_blank"><h3>Nuestras Sedes</h3></a>
+                    <nav>
+                        <ul class="footer2">
                         <li>
                             <a href="#" target="_blank">Sede 1</a>
                         </li>
@@ -206,19 +223,24 @@
                         <li>
                             <a href="#" target="_blank">Sede 5</a>
                         </li>
-                    </ul>
-                </nav>
+                        </ul>
+                    </nav>
+                    </div>
+                </section>
+                <section id="regist">
+                    <h5>2021 DigitalLab derechos reservados</h5>
+                    <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+                    corrupti unde minima! Consectetur minima veritatis possimus, repellat
+                    velit, similique minus quis placeat ipsum, alias expedita saepe
+                    assumenda perferendis quaerat veniam! Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur
+                    minima veritatis possimus, repellat velit, similique minus quis
+                    </p>
+                </section>
             </div>
-        </div>
-        <div id="regist">
-            <i class="far fa-registered"></i>
-            <p>2021 DigitalLab derechos reservados</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur minima veritatis possimus, repellat velit, similique minus quis placeat ipsum, alias expedita saepe assumenda perferendis quaerat veniam! Lorem
-                ipsum, dolor sit amet consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur minima veritatis possimus, repellat velit, similique minus quis placeat ipsum, alias expedita saepe assumenda perferendis quaerat veniam! Lorem
-                ipsum, dolor sit amet consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur minima veritatis possimus, repellat velit, similique minus quis placeat ipsum, alias expedita saepe assumenda perferendis quaerat veniam!
-            </p>
-        </div>
-    </footer>
-</body>
-
-</html>
+          </section>
+        </footer>
+      </body>
+    </html>
+    

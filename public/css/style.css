@@ -1,179 +1,140 @@
 ul {
-    list-style: none;
-    padding: 0%;
+  list-style: none;
+  padding: 0%;
 }
 
 a:link,
 a:visited,
 a:active {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f1f1f1b7;
-}
-
-header {
-    background-color: #9ba4c2;
-}
-
-img {
-    display: block;
-    margin: auto;
-}
-
-.head1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 10vw;
-}
-
-.head2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 30px;
-}
-
-.head3 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 60vw;
-}
-
-#logo1 {
-    display: flex;
-    flex-direction: row;
-    float: left;
+  font-family: "Inter", sans-serif;
+  background-color: #f1f1f1b7;
 }
 
 .box2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 footer {
-    background-color: #abb5d6;
+  background-color: #abb5d6;
 }
 
 .footer1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .footer2 {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #footer3 {
-    width: 20vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #regist {
-    padding: 5px;
-    width: 100%;
-    text-align: justify;
+  padding: 5px;
+  text-align: justify;
 }
 
 .sedes {
-    display: flex;
+  display: flex;
 }
 
 .sede {
-    background-color: snow;
-    flex-direction: row;
-    margin: 15px;
-    box-sizing: content-box;
-    width: 20%;
+  background-color: snow;
+  flex-direction: row;
+  margin: 15px;
+  box-sizing: content-box;
+  width: 20%;
 }
 
 .productos {
-    display: flex;
+  display: flex;
 }
 
 .producto {
-    margin: 10px;
+  margin: 10px;
 }
-
 
 /************** Detalle del Carrito *************/
 
 .main-detalle-carrito {
-    display: flex;
-    background-color: whitesmoke;
-    margin: 1%;
-    width: 75%;
+  display: flex;
+  background-color: whitesmoke;
+  margin: 1%;
+  width: 75%;
 }
 
 .detalle-carrito {
-    width: 100%;
-    justify-content: space-between;
+  width: 100%;
+  justify-content: space-between;
 }
 
 #titulo-detalle-carrito {
-    border-bottom: solid;
-    border-color: grey;
-    font-size: 1.5rem;
+  border-bottom: solid;
+  border-color: grey;
+  font-size: 1.5rem;
 }
 
 .detalle-test {
-    border-bottom: solid;
-    border-color: gray;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
+  border-bottom: solid;
+  border-color: gray;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .item-test {
-    flex-direction: column;
-    margin: 20px;
+  flex-direction: column;
+  margin: 20px;
 }
 
 .detalle-costo-total {
-    background-color: burlywood;
+  background-color: burlywood;
 }
-
 
 /*CSS Correspondiente a Detalle de Productos*/
 
 .producto-detalle-parte-superior,
 .producto-detalle-parte-inferior {
-    display: flex;
-    margin: 1%;
-    width: 100%;
+  display: flex;
+  margin: 1%;
+  width: 100%;
 }
 
 .cuarto-cuadrante-parte-inferior {
-    display: flex;
-    margin: 10%;
+  display: flex;
+  margin: 10%;
 }
 
 .test-detalle-primer-cuadrante,
 .test-detalle-segund-cuadrante,
 .test-detalle-tercer-cuadrante,
 .test-detalle-cuarto-cuadrante {
-    width: 50%;
-    margin: 2%;
+  width: 50%;
+  margin: 2%;
 }
 
 .precio-test {
-    color: green;
-    font-weight: bold;
-    font-size: 1.25rem;
-    border: 5px;
-    width: 25%;
+  color: green;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 5px;
+  width: 25%;
 }
 
 .boton-orden-test {
-    background-color: green;
+  background-color: green;
 }
