@@ -13,7 +13,7 @@ router.get("/registro", mainController.registro);
 router.get("/perfil-usuario", mainController.perfilUsuario);
 router.get("/producto-detalle", mainController.productoDetalle);
 router.get("/carrito", mainController.carrito);
-router.get("/estudios", mainController.listadoProductos);
+router.get("/listado-estudios", mainController.listadoProductos);
 router.get("/crear-producto", mainController.crearProducto);
 router.get("/modificar-producto", mainController.modificarProducto);
 
