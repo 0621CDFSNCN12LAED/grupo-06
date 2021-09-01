@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <section class="producto-detalle-parte-superior">
+        <!--Primer Cuadrante-->
+        <div class="test-detalle-primer-cuadrante">
+          <h3>Titulo del Test</h3>
+          <img
+            src="/img/producto-wireframe.png"
+            alt="Producto"
+            id="producto-detalle"
+            width="75%"
+          />
+        </div>
+
+        <div class="test-detalle-segund-cuadrante">
+          <!--Segundo Cuadrante-->
+          <h3>Detalle del Test</h3>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+          corrupti unde minima! Consectetur minima veritatis possimus, repellat
+          velit, similique minus quis placeat ipsum, alias expedita saepe
+          assumenda perferendis quaerat veniam! Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur
+          minima veritatis possimus, repellat velit, similique minus quis
+          placeat ipsum, alias expedita saepe assumenda perferendis quaerat
+          veniam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
+          corrupti unde minima! Consectetur minima veritatis possimus
+        </div>
+      </section>
+      <section class="producto-detalle-parte-inferior">
+        <div class="test-detalle-tercer-cuadrante">
+          <!--Tercer Cuadrante-->
+          <h3>Antes del Test</h3>
+          <ul>
+            <li>Recomendación 1</li>
+            <li>Recomendación 2</li>
+            <li>Recomendación 3</li>
+            <li>Recomendación 4</li>
+            <li>Recomendación 5</li>
+          </ul>
+        </div>
+        <div class="test-detalle-cuarto-cuadrante">
+          <!--Cuarto Cuadrante-->
+
+          <div class="cuarto-cuadrante-parte-superior">
+            <h3>Opciones del Test</h3>
+            <label for="opciones-del-test">Opciontes del Test</label>
+            <input
+              type="checkbox"
+              name="opciones-del-test"
+              value="Opcion 1"
+            />Opcion 1
+            <input
+              type="checkbox"
+              name="opciones-del-test"
+              value="Opcion 2"
+            />Opcion 2
+            <input
+              type="checkbox"
+              name="opciones-del-test"
+              value="Opcion 3"
+            />Opcion 3
+            <input
+              type="checkbox"
+              name="opciones-del-test"
+              value="Opcion 4"
+            />Opcion 4
+            <input
+              type="checkbox"
+              name="opciones-del-test"
+              value="Opcion 5"
+            />Opcion 5
+          </div>
+
+          <div class="cuarto-cuadrante-parte-inferior">
+            <div class="precio-test">Precio: $$$.-</div>
+            <div class="boton-orden-test">
+              <form action="" method="#">
+                <button type="submit">Botón Orden de Test</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

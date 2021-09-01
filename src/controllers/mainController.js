@@ -1,35 +1,42 @@
-const path = require('path');
+const path = require("path");
 
 const controller = {
-    home: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/index.html'));
-    },
-    register: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/users/register.html'));
-    },
-    login: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/users/login.html'));
-    },
-    productoDetalle: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
-    },
-    carrito: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
-    },
-    crearProducto: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/products/crearProducto.html'));
-    },
-    modificarProducto: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/products/modificarProducto.html'));
-    },
-    listadoProductos: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/products/listadoProductos.html'));
-    },
-    perfilUsuario: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/users/perfil.html'));
-    },
-    /*agregar contacto, nosotros y sedes*/
-
+  home: (req, res) => {
+    res.render("index");
+  },
+  contacto: (req, res) => {
+    res.render("contacto");
+  },
+  nosotros: (req, res) => {
+    res.render("nosotros");
+  },
+  sedes: (req, res) => {
+    res.render("sedes");
+  },
+  ingresar: (req, res) => {
+    res.render("./users/ingresar");
+  },
+  registro: (req, res) => {
+    res.render("./users/registro");
+  },
+  perfilUsuario: (req, res) => {
+    res.render("./users/perfil");
+  },
+  productoDetalle: (req, res) => {
+    res.render("./products/productoDetalle");
+  },
+  carrito: (req, res) => {
+    res.render("./products/carrito");
+  },
+  crearProducto: (req, res) => {
+    res.render("./products/crearProducto");
+  },
+  modificarProducto: (req, res) => {
+    res.render("./products/modificarProducto");
+  },
+  listadoProductos: (req, res) => {
+    res.render("./products/listadoProductos");
+  },
 };
 
 module.exports = controller;

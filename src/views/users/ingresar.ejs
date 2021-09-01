@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input type="text" placeholder="usuario" />
+            <input type="password" placeholder="contraseña" />
+            <button>Ingresar</button>
+            <p class="message">
+              No registrado? <a href="/registro">Crear una cuenta</a>
+            </p>
+            <p class="message">
+              No recuerda la contraseña? <a href="#">Recuperar contraseña</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>
