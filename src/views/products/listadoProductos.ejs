@@ -4,7 +4,11 @@
 
   <body>
     <%- include("../partials/header.ejs") %>
-    <main></main>
+    <main>
+      <% for (const estudio of estudios) { %>
+      <h3><%= estudio.title %></h3>
+      <%}%>
+    </main>
     <%- include("../partials/footer.ejs") %>
   </body>
 </html>

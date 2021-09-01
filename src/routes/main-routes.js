@@ -11,7 +11,7 @@ router.get("/sedes", mainController.sedes);
 router.get("/ingresar", mainController.ingresar);
 router.get("/registro", mainController.registro);
 router.get("/perfil-usuario", mainController.perfilUsuario);
-router.get("/producto-detalle", mainController.productoDetalle);
+router.get("/producto-detalle/:id", mainController.productoDetalle);
 router.get("/carrito", mainController.carrito);
 router.get("/listado-estudios", mainController.listadoProductos);
 router.get("/crear-producto", mainController.crearProducto);
