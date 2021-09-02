@@ -1,20 +1,25 @@
 const express = require("express");
-
 const router = express.Router();
 
+//Importo los modulos necesarios
 const mainController = require("../controllers/mainController");
+const estudiosRoutes = require('./estudios-routes');
+const usersRoutes = require('./users-routes');
+const carritoRoutes = require('./carrito-routes');
 
+//Ruteador para main
 router.get("/", mainController.home);
 router.get("/contacto", mainController.contacto);
 router.get("/nosotros", mainController.nosotros);
 router.get("/sedes", mainController.sedes);
-router.get("/ingresar", mainController.ingresar);
-router.get("/registro", mainController.registro);
-router.get("/perfil-usuario", mainController.perfilUsuario);
-router.get("/producto-detalle/:id", mainController.productoDetalle);
-router.get("/carrito", mainController.carrito);
-router.get("/listado-estudios", mainController.listadoProductos);
-router.get("/crear-producto", mainController.crearProducto);
-router.get("/modificar-producto", mainController.modificarProducto);
+
+//Ruteador para estudios
+router.use('/estudios', estudiosRoutes);
+
+//Ruteador para usuarios
+router.use('/users', usersRoutes);
+
+//Ruteador para carrito
+router.use('/carrito', carritoRoutes);
 
 module.exports = router;
