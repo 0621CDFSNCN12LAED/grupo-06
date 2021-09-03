@@ -8,10 +8,10 @@
       <section class="producto-detalle-parte-superior">
         <!--Primer Cuadrante-->
         <div class="test-detalle-primer-cuadrante">
-          <h3>retr</h3>
+          <h3><%= detEst.title %></h3>
           <img
-            src="/img/producto-wireframe.png"
-            alt="Producto"
+            src="<%=detEst.img%>"
+            alt="<%= detEst.title %>"
             id="producto-detalle"
             width="75%"
           />
@@ -20,15 +20,7 @@
         <div class="test-detalle-segund-cuadrante">
           <!--Segundo Cuadrante-->
           <h3>Detalle del Test</h3>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
-          corrupti unde minima! Consectetur minima veritatis possimus, repellat
-          velit, similique minus quis placeat ipsum, alias expedita saepe
-          assumenda perferendis quaerat veniam! Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Fuga corrupti unde minima! Consectetur
-          minima veritatis possimus, repellat velit, similique minus quis
-          placeat ipsum, alias expedita saepe assumenda perferendis quaerat
-          veniam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
-          corrupti unde minima! Consectetur minima veritatis possimus
+          <p><%= detEst.desc%></p>
         </div>
       </section>
       <section class="producto-detalle-parte-inferior">
@@ -36,55 +28,28 @@
           <!--Tercer Cuadrante-->
           <h3>Antes del Test</h3>
           <ul>
-            <li>Recomendación 1</li>
-            <li>Recomendación 2</li>
-            <li>Recomendación 3</li>
-            <li>Recomendación 4</li>
-            <li>Recomendación 5</li>
+            <li><%= detEst.antes %></li>
           </ul>
         </div>
         <div class="test-detalle-cuarto-cuadrante">
           <!--Cuarto Cuadrante-->
-
           <div class="cuarto-cuadrante-parte-superior">
-            <h3>Opciones del Test</h3>
-            <label for="opciones-del-test">Opciontes del Test</label>
-            <input
-              type="checkbox"
-              name="opciones-del-test"
-              value="Opcion 1"
-            />Opcion 1
-            <input
-              type="checkbox"
-              name="opciones-del-test"
-              value="Opcion 2"
-            />Opcion 2
-            <input
-              type="checkbox"
-              name="opciones-del-test"
-              value="Opcion 3"
-            />Opcion 3
-            <input
-              type="checkbox"
-              name="opciones-del-test"
-              value="Opcion 4"
-            />Opcion 4
-            <input
-              type="checkbox"
-              name="opciones-del-test"
-              value="Opcion 5"
-            />Opcion 5
-          </div>
+            <div>
+              <h3>Opciones del Test</h3>
+              <label for="opciones-del-test">Opciones del Test</label>
 
-          <div class="cuarto-cuadrante-parte-inferior">
-            <div class="precio-test">Precio: $$$.-</div>
-            <div class="boton-orden-test">
-              <form action="" method="#">
-                <button type="submit">Botón Orden de Test</button>
-              </form>
+              <input type="radio" name="opciones-del-test" id="<% detEst.option %>" value="<% detEst.option %>" />
+              <label for="<% detEst.option %>"><%= detEst.option %></label>
+            
+            </div>
+            <div class = "precio-boton">
+              <h3 class="precio-test">Precio: <%= detEst.price %></h3>
+                <form action="" method="#">
+                  <button class="boton-orden-test" type="submit">Agregar al Carrito</button>
+                </form>
+            </div>
             </div>
           </div>
-        </div>
       </section>
     </main>
     <%- include("../partials/footer.ejs") %>

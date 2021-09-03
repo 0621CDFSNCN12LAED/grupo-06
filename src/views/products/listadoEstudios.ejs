@@ -5,9 +5,26 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
+
+      <h2 class="lista-prod">Listado de Estudios</h2>
+
       <% for (const estudio of estudios) { %>
-      <h3><%= estudio.title %></h3>
+      <section class="estudio-comp">
+        <img
+              src="<%=estudio.img%>"
+              alt="<%= estudio.title %>"
+              id="producto-detalle"
+              class="img-prod"
+        
+        />
+        <div class="titulo-descr">
+          <a href="#" target="_blank"><h3><%= estudio.title %></h3></a>
+          <h4><%= estudio.desc %></h4>
+        </div>
+      </section>
       <%}%>
+
+
     </main>
     <%- include("../partials/footer.ejs") %>
   </body>

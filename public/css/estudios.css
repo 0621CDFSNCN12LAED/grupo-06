@@ -1,0 +1,22 @@
+
+
+
+.estudio-comp {
+    margin: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    border-top: 2px solid #004765;
+}
+
+.img-prod {
+    padding: 1rem;
+    width:20%;
+    display: none;
+
+}
+
+.titulo-descr h3 {
+    color:#004765;
+    font-weight: bold;
+}

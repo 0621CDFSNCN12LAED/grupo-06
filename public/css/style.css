@@ -100,14 +100,34 @@ body {
   margin: 2%;
 }
 
+.precio-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+
+}
+
 .precio-test {
-  color: green;
+  color: #004765;
   font-weight: bold;
   font-size: 1.25rem;
   border: 5px;
-  width: 25%;
 }
 
 .boton-orden-test {
-  background-color: green;
+  border-radius: 10px;
+  background-color: #004765;
+  color: white;
+  border: none;
+  height: 30px;
+  font-size: 16px;
+}
+
+.boton-orden-test:hover {
+
+  color: #004765;
+  background-color: white;
+  font-size: 20px;
+
 }
