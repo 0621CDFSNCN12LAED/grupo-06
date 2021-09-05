@@ -58,3 +58,5 @@ Escogimos estos seis sitios por la trayectoria que poseen en el rubro de salud, 
 Se utilizó la herramienta wireframe.cc
 
 URL: https://wireframe.cc//
+
+Link a Trello: https://trello.com/b/6QbaZ5Uh/proyecto-integrador
