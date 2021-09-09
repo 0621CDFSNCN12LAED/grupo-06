@@ -9,19 +9,21 @@
                 <h2 class="lista-prod">Listado de Estudios</h2>
 
                 <% for (const estudio of estudios) { %>
-                    <section class="estudio-comp">
-                        <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" class="img-prod" />
-                        <div class="titulo-descr">
-                            <a href="/estudios/estudio-detalle/<%=estudio.id%> " target="_blank">
+                    <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
+                        <section class="estudio-comp">
+                            <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" class="img-prod" />
+                            <div class="titulo-descr">
                                 <h3>
                                     <%= estudio.title %>
                                 </h3>
-                            </a>
-                            <h4>
-                                <%= estudio.desc %>
-                            </h4>
-                        </div>
-                    </section>
+
+                                <h4>
+                                    <%= estudio.desc %>
+                                </h4>
+                            </div>
+                            <!--</a>-->
+                        </section>
+                    </a>
                     <%}%>
 
 
