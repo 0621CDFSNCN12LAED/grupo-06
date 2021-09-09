@@ -31,8 +31,8 @@ const controller = {
             "desc": req.body.desc,
             "antes": req.body.antes,
             "option": req.body.option,
-            "price": number(req.body.price),
-            "img": req.file.filename
+            "price": req.body.price,
+            "img": req.file ? req.file.filename : "no-image.png"
         };
 
         //Agrego el nuevo estudio al array en memoria de estudios
