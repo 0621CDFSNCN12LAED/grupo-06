@@ -8,6 +8,7 @@ router.get("/", estudiosController.listadoEstudios);
 router.get("/listado-estudios", estudiosController.listadoEstudios); //Este link se accede desde '/', ver si dejamos solo /estudios o tambien /estudios/listado-estudios
 router.get("/estudio-detalle/:id", estudiosController.estudioDetalle);
 router.get("/crear-estudio", estudiosController.crearEstudio);
+router.post("/crear-estudio", estudiosController.crearEstudio);
 router.get("/modificar-estudio", estudiosController.modificarEstudio);
 
 
