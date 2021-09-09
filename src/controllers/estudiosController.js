@@ -39,7 +39,7 @@ const controller = {
         estudios.push(estudio_nuevo);
 
         //transformo el array de estudios a JSON
-        estudiosJSON = JSON.stringify(estudios);
+        estudiosJSON = JSON.stringify(estudios, null, 4);
 
         //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
         fs.writeFileSync(estudiosFilePath, estudiosJSON);
