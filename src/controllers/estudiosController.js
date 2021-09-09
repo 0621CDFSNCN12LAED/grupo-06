@@ -31,7 +31,7 @@ const controller = {
             "desc": req.body.desc,
             "antes": req.body.antes,
             "option": req.body.option,
-            "price": req.body.price,
+            "price": number(req.body.price),
             "img": req.file.filename
         };
 
