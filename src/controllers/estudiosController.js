@@ -1,9 +1,9 @@
 const path = require("path");
-const fs = require('fs');
+const fs = require("fs");
 
 //Importo el JSON de estudios
-const estudiosFilePath = path.join(__dirname, '../data/estudiosDataBase.json');
-const estudios = JSON.parse(fs.readFileSync(estudiosFilePath, 'utf-8'));
+const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
+const estudios = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
 
 //Creacion del controlador
 const controller = {
@@ -20,19 +20,22 @@ const controller = {
 
     guardarEstudio: (req, res) => {
         //Obtengo el maximo id de estudios
-        let estudioMaximoId = Math.max.apply(Math, estudios.map(function(o) {
-            return o.id;
-        }));
+        let estudioMaximoId = Math.max.apply(
+            Math,
+            estudios.map(function(o) {
+                return o.id;
+            })
+        );
 
         //creo el objeto estudio a agregar
         const estudio_nuevo = {
-            "id": estudioMaximoId + 1,
-            "title": req.body.title,
-            "desc": req.body.desc,
-            "antes": req.body.antes,
-            "option": req.body.option,
-            "price": req.body.price,
-            "img": req.file ? req.file.filename : "no-image.png"
+            id: estudioMaximoId + 1,
+            title: req.body.title,
+            desc: req.body.desc,
+            antes: req.body.antes,
+            option: req.body.option,
+            price: req.body.price,
+            img: req.file ? req.file.filename : "no-image.png",
         };
 
         //Agrego el nuevo estudio al array en memoria de estudios
@@ -45,15 +48,20 @@ const controller = {
         fs.writeFileSync(estudiosFilePath, estudiosJSON);
 
         //Redirecciono a listado de estudios
-        res.redirect('/estudios');
-
+        res.redirect("/estudios");
     },
 
     modificarEstudio: (req, res) => {
-        res.render("./products/modificarEstudio");
+        const estudio = estudios.find((estu) => {
+            return (estu.id = req.params.id);
+        });
+        res.render("products/modificarEstudio", { estudio });
+    },
+    actualizarEstudio: (req, res) => {
+        res.send("actualizar estudio");
     },
     listadoEstudios: (req, res) => {
-        res.render("./products/listadoEstudios", { estudios: estudios });
+        res.render("/poducts/listadoEstudios", { estudios: estudios });
     },
 };
 

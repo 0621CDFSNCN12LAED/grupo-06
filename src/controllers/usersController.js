@@ -36,7 +36,7 @@ const controller = {
             nroDocumento: req.body.nroDocumento,
             password: req.body.password,
         };
-
+        console.log(paciente);
         //Agrego el nuevo paciente al array de pacientes
         pacientes.push(paciente);
 
