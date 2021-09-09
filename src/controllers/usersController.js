@@ -19,8 +19,7 @@ const controller = {
         res.render("./users/registro");
     },
     crearUsuario: (req, res) => {
-        console.log(req.body);
-        /*const paciente = {
+        const paciente = {
             "id": pacienteMaximoId + 1,
             "nombre": req.body.firstname,
             "apellido": req.body.lastname,
@@ -31,18 +30,18 @@ const controller = {
             "nroDocumento": req.body.nroDocumento,
             "password": req.body.password
         };
-        */
-        //console.log(req.body);
 
 
         //Agrego el nuevo paciente al array de pacientes
-        //pacientes.push(paciente);
+        pacientes.push(paciente);
 
         //transformo el array de pacientes a JSON
-        //pacientesJSON = JSON.stringify(pacientes);
+        pacientesJSON = JSON.stringify(pacientes);
 
         //Guardar el nuevo paciente escribiendo el archivo de pacientes con el array JSON
-        //fs.writeFileSync(pacientesFilePath, pacientesJSON);
+        fs.writeFileSync(pacientesFilePath, pacientesJSON);
+
+        res.redirect('/');
     },
     perfilUsuario: (req, res) => {
         res.render(".");
