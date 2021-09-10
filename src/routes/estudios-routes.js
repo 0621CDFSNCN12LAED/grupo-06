@@ -33,6 +33,10 @@ router.post(
 
 //Editar Estudio
 router.get("/modificar/:id", estudiosController.modificarEstudio);
-router.put("/actualizar/:id", estudiosController.actualizarEstudio);
+router.put(
+    "/actualizar/:id",
+    upload.single("imagenEstudio"),
+    estudiosController.actualizarEstudio
+);
 
 module.exports = router;

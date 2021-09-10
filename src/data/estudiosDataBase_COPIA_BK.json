@@ -1,4 +1,12 @@
-[
+[{
+        "id": 1,
+        "title": "Test Rapido Anticuerpos SarsCovid",
+        "desc": "Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.",
+        "antes": "",
+        "option": "Punción en domicilio",
+        "price": "$3.800",
+        "img": "1631156310154_estudio.jpg"
+    },
     {
         "id": 2,
         "title": "Test Rapido Anticuerpos SarsCovid",
@@ -61,14 +69,5 @@
         "option": "",
         "price": "9500",
         "img": "1631157173518_estudio.png"
-    },
-    {
-        "id": "1",
-        "title": "Test Rapido Anticuerpos SarsCovid",
-        "desc": "Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.",
-        "antes": "",
-        "option": "Punción en domicilio",
-        "price": "$3.900",
-        "img": "no-image.png"
     }
 ]
