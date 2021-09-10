@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 
-  <body>
-    <%- include("../partials/header.ejs") %>
-    <main>
-      <section class="producto-detalle-parte-superior">
-        <!--Primer Cuadrante-->
-        <div class="test-detalle-primer-cuadrante">
-          <h3><%= detEst.title %></h3>
-          <img
-            src="<%=detEst.img%>"
-            alt="<%= detEst.title %>"
-            id="producto-detalle"
-            width="75%"
-          />
-        </div>
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <section class="producto-detalle-parte-superior">
+                    <!--Primer Cuadrante-->
+                    <div class="test-detalle-primer-cuadrante">
+                        <h3>
+                            <%= detEst.title %>
+                        </h3>
+                        <img src="/img/estudios_imagenes/<%=detEst.img%>" alt="<%= detEst.title %>" id="producto-detalle" width="75%" />
+                    </div>
 
-        <div class="test-detalle-segund-cuadrante">
-          <!--Segundo Cuadrante-->
-          <h3>Detalle del Test</h3>
-          <p><%= detEst.desc%></p>
-        </div>
-      </section>
-      <section class="producto-detalle-parte-inferior">
-        <div class="test-detalle-tercer-cuadrante">
-          <!--Tercer Cuadrante-->
-          <h3>Antes del Test</h3>
-          <ul>
-            <li><%= detEst.antes %></li>
-          </ul>
-        </div>
-        <div class="test-detalle-cuarto-cuadrante">
-          <!--Cuarto Cuadrante-->
-          <div class="cuarto-cuadrante-parte-superior">
-            <div>
-              <h3>Opciones del Test</h3>
-              <label for="opciones-del-test">Opciones del Test</label>
+                    <div class="test-detalle-segund-cuadrante">
+                        <!--Segundo Cuadrante-->
+                        <h3>Detalle del Test</h3>
+                        <p>
+                            <%= detEst.desc%>
+                        </p>
+                    </div>
+                </section>
+                <section class="producto-detalle-parte-inferior">
+                    <div class="test-detalle-tercer-cuadrante">
+                        <!--Tercer Cuadrante-->
+                        <h3>Antes del Test</h3>
+                        <ul>
+                            <li>
+                                <%= detEst.antes %>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="test-detalle-cuarto-cuadrante">
+                        <!--Cuarto Cuadrante-->
+                        <div class="cuarto-cuadrante-parte-superior">
+                            <div>
+                                <h3>Opciones del Test</h3>
+                                <label for="opciones-del-test">Opciones del Test</label>
 
-              <input type="radio" name="opciones-del-test" id="<% detEst.option %>" value="<% detEst.option %>" />
-              <label for="<% detEst.option %>"><%= detEst.option %></label>
-              
-            
-            </div>
-            <div class = "precio-boton">
-              <h3 class="precio-test">Precio: <%= detEst.price %></h3>
-                <form action="" method="#">
-                  <button class="boton-orden-test" type="submit">Agregar al Carrito</button>
-                </form>
-            </div>
-            </div>
-          </div>
-      </section>
-    </main>
-    <%- include("../partials/footer.ejs") %>
-  </body>
+                                <input type="radio" name="opciones-del-test" id="<% detEst.option %>" value="<% detEst.option %>" />
+                                <label for="<% detEst.option %>"><%= detEst.option %></label>
+
+
+                            </div>
+                            <div class="precio-boton">
+                                <h3 class="precio-test">Precio:
+                                    <%= detEst.price %>
+                                </h3>
+                                <form action="" method="#">
+                                    <button class="boton-orden-test" type="submit">Agregar al Carrito</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
 </html>

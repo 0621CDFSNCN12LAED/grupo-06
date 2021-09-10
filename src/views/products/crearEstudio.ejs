@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("../partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 
-  <body>
-    <%- include("../partials/header.ejs") %>
+    <body>
+        <%- include("../partials/header.ejs") %>
 
-    <main></main>
-    <%- include("../partials/footer.ejs") %>
-  </body>
+            <main>
+                <div class="crear-estudio">
+                    <div class="form">
+                        <form method="POST" action="/estudios/crear-estudio" enctype="multipart/form-data">
+                            <!--Para que envie archivos-->
+                            <label for="title">Título de Estudio</label>
+                            <input type="text" name="title" id="title">
+                            </br>
+                            <label for="desc">Descripción</label>
+                            <textarea name="desc" id="desc"></textarea>
+                            </br>
+                            <label for="antes">Antes</label>
+                            <textarea name="antes" id="antes"></textarea>
+                            </br>
+                            <label for="option">Opción</label>
+                            <input type="text" name="option" id="option">
+                            </br>
+                            <label for="price">Precio</label>
+                            <input type="number" name="price" id="price">
+                            </br>
+                            <label for="imagenEstudio">Imagen del Producto</label>
+                            <input type="file" name="imagenEstudio" id="imagenEstudio">
+                            </br>
+                            <button type="submit">Crear Estudio</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
 </html>

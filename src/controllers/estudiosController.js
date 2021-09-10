@@ -1,71 +1,17 @@
 const path = require("path");
+const fs = require("fs");
+const { send } = require("process");
 
-const estudios = [{
-        id: 1,
-        title: "Test Rapido Anticuerpos SarsCovid",
-        desc: "Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVID-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.",
-        antes: "",
-        option: "Punción en domicilio",
-        price: "$3.800",
-        img: "/img/Test-covid-anticuerpos.jpg",
-    },
-    {
-        id: 2,
-        title: "Test Rapido Anticuerpos SarsCovid",
-        desc: "Se trata de un hisopado nasofaríngeo para detectar en forma directa la presencia de material genético del virus en personas infectadas. Es el método con más alta especificidad. El resultado será positivo mientras dure la presencia viral en el organismo.",
-        antes: "Se recomienda en casos de pacientes sintomáticos de hasta 7 días de evolución desde la fecha del inicio de los síntomas",
-        option: "Hisopado en domicilio",
-        price: "$4.500",
-        img: "/img/Test-covid-PCR.jpg",
-    },
-    {
-        id: 3,
-        title: "Test Serólogico SarsCovid",
-        desc: "Este estudio ayuda a determinar si las personas pueden haberse expuesto a este virus y contagiado con él, y si han desarrollado una respuesta inmune específica de anticuerpos IgG contra el coronavirus SARS-CoV-2. Es una prueba automatizada de alta sensibilidad y especificidad para la detección de anticuerpos de tipo inmunoglobulina M (IgM) dirigidos contra el coronavirus SARS-CoV-2 que se encuentran en suero o plasma humano.",
-        antes: "",
-        option: "Extracción en domicilio",
-        price: "$7.600",
-        img: "/img/Test-covid-serologico.jpg",
-    },
-    {
-        id: 4,
-        title: "Perfil lipídico",
-        desc: "El perfil lipídico mide la concentración de algunas de estas sustancias en la sangre para establecer el riesgo de desarrollar una enfermedad cardiovascular, para el seguimiento del tratamiento de las concentraciones inadecuadas de lípidos.",
-        antes: "Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua",
-        option: "Extracción en domicilio",
-        price: "$2.000",
-        img: "/img/Perfil-lipidico.jpg",
-    },
-    {
-        id: 5,
-        title: "Preocupacional",
-        desc: "Estudio requerido por el empleador que incluye: análisis de sangre básico, análisis de orina, ...",
-        antes: "Debe hacer ayudn de 8hs",
-        option: "Extracción en Sede",
-        price: "$1.800 c/u, $1.000 a partir de 5",
-        img: "/img/examen-preocupacional.jpg",
-    },
-    {
-        id: 6,
-        title: "Test de Embarazo",
-        desc: "Una prueba de gonadotropina coriónica humana (GCH) mide el nivel específico de la GCH en la sangre. Esta es una hormona producida en el cuerpo durante el embarazo. Se necesita una muestra de sangre. Esta casi siempre se toma de una vena. El procedimiento se llama venopunción.",
-        antes: "No se necesita ayuno",
-        option: "Extracción en domicilio",
-        price: "$1.850",
-        img: "/img/test-embarazo.jpg",
-    },
-    {
-        id: 7,
-        title: "Test de Paternidad",
-        desc: "Es un método preciso para resolver cuestiones de parentesco por razones médicas, legales o personales. Las pruebas consisten en determinar el perfil genético de los miembros sometidos a estudio, a partir de una muestra de hisopado o de sangre.",
-        antes: "",
-        option: "Extracción en Sede",
-        price: "$1.600",
-        img: "/img/Estudio-Paternidad.jpg",
-    },
-];
+//Importo el JSON de estudios
+const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
+const estudios = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
 
+//Creacion del controlador
 const controller = {
+    listadoEstudios: (req, res) => {
+        res.render("./products/listadoEstudios", { estudios: estudios });
+    },
+
     estudioDetalle: (req, res) => {
         //res.render("./products/productoDetalle");
         const detEst = estudios.find((detEst) => {
@@ -76,11 +22,89 @@ const controller = {
     crearEstudio: (req, res) => {
         res.render("./products/crearEstudio");
     },
-    modificarEstudio: (req, res) => {
-        res.render("./products/modificarEstudio");
+
+    guardarEstudio: (req, res) => {
+        //Obtengo el maximo id de estudios
+        let estudioMaximoId = Math.max.apply(
+            Math,
+            estudios.map(function(o) {
+                return o.id;
+            })
+        );
+
+        //creo el objeto estudio a agregar
+        const estudio_nuevo = {
+            id: estudioMaximoId + 1,
+            title: req.body.title,
+            desc: req.body.desc,
+            antes: req.body.antes,
+            option: req.body.option,
+            price: req.body.price,
+            img: req.file ? req.file.filename : "no-image.png",
+        };
+
+        //Agrego el nuevo estudio al array en memoria de estudios
+        estudios.push(estudio_nuevo);
+
+        //transformo el array de estudios a JSON
+        estudiosJSON = JSON.stringify(estudios, null, 4);
+
+        //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
+        fs.writeFileSync(estudiosFilePath, estudiosJSON);
+
+        //Redirecciono a listado de estudios
+        res.redirect("/estudios");
     },
-    listadoEstudios: (req, res) => {
-        res.render("./products/listadoEstudios", { estudios: estudios });
+
+    modificarEstudio: (req, res) => {
+        const estudio = estudios.find((estu) => {
+            if (estu.id == req.params.id) {
+                return estu;
+            }
+        });
+
+        res.render("products/modificarEstudio", { estudio });
+    },
+
+    actualizarEstudio: (req, res) => {
+        //busco el estudio para obtener su nombre de imagen guardada
+        const estudioImagen = estudios.find((estu) => {
+            if (estu.id == req.params.id) {
+                return estu.img;
+            }
+            return null;
+        });
+
+        const estudio_actualizado = {
+            id: req.params.id,
+            title: req.body.title,
+            desc: req.body.desc,
+            antes: req.body.antes,
+            option: req.body.option,
+            price: req.body.price,
+            img: req.file ? req.file.filename : estudioImagen,
+        };
+
+        //Quito el objeto del array para luego insertarlo modificado
+        const estudios_sin_estudio_modificado = estudios.filter(function(
+            elemento
+        ) {
+            return elemento.id != req.params.id;
+        });
+
+        //Agrego el nuevo estudio al array en memoria de estudios
+        estudios_sin_estudio_modificado.push(estudio_actualizado);
+
+        //Transformo el array de estudios a JSON
+        estudiosJSON = JSON.stringify(estudios_sin_estudio_modificado, null, 4);
+
+        //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
+        fs.writeFileSync(estudiosFilePath, estudiosJSON);
+
+        //Redirecciono a listado de estudios
+        res.redirect("/estudios/estudio-detalle/" + req.params.id);
+
+        //res.render("./products/listadoEstudios", { estudios: estudios });
     },
 };
 
