@@ -54,13 +54,13 @@
         "img": "1631156310148_estudio.jpg"
     },
     {
-        "id": 8,
-        "title": "Test Rápido HIV",
+        "id": "8",
+        "title": "Test Rápido HIV2",
         "desc": "Tomamos una gota de sangre. Nuestro personal especializado realiza una leve punción en la yema de uno de tus dedos. La depositamos en la tira reactiva. El resultado demora aproximadamente 20 minutos.",
         "antes": "-",
         "option": "",
         "price": "9500",
-        "img": "1631157173518_estudio.png"
+        "img": "1631297453181_estudio.png"
     },
     {
         "id": "1",
@@ -69,6 +69,6 @@
         "antes": "",
         "option": "Punción en domicilio",
         "price": "$3.900",
-        "img": "no-image.png"
+        "img": "1631297563041_estudio.jpg"
     }
 ]

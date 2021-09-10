@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { send } = require("process");
 
 //Importo el JSON de estudios
 const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
@@ -81,7 +82,7 @@ const controller = {
             antes: req.body.antes,
             option: req.body.option,
             price: req.body.price,
-            img: req.file ? estudioImagen : "no-image.png",
+            img: req.file ? req.file.filename : estudioImagen,
         };
 
         //Quito el objeto del array para luego insertarlo modificado
@@ -101,7 +102,7 @@ const controller = {
         fs.writeFileSync(estudiosFilePath, estudiosJSON);
 
         //Redirecciono a listado de estudios
-        res.redirect("/estudios");
+        res.redirect("/estudios/estudio-detalle/" + req.params.id);
 
         //res.render("./products/listadoEstudios", { estudios: estudios });
     },
