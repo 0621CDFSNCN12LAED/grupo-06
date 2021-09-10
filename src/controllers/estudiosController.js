@@ -52,17 +52,17 @@ const controller = {
     },
 
     modificarEstudio: (req, res) => {
-        let estudioBuscado = estudios.find((estu) => {
+        const estudio = estudios.find((estu) => {
             if (estu.id == req.params.id) {
                 return estu;
             }
         });
 
-        res.render("products/modificarEstudio", { estudio: estudioBuscado });
+        res.render("products/modificarEstudio", { estudio });
     },
 
     actualizarEstudio: (req, res) => {
-        console.log(req.body.id);
+        console.log(req.params.id + req.body.title);
     },
     listadoEstudios: (req, res) => {
         res.render("./products/listadoEstudios", { estudios: estudios });
