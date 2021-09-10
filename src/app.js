@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+//Configuración para métodos override HTTP de PUT y DELETE
+const methodOverride = require("method-override");
 
+//Se levanta webserver
 app.listen(3030, () => {
     console.log("Se prendió!");
 });
@@ -19,6 +22,10 @@ app.set("view engine", "ejs");
 //Configuración de la carpeta donde se alojan las views
 app.set("views", "./src/views");
 
+//Configuración para métodos override HTTP de PUT y DELETE
+app.use(methodOverride("_method"));
+
+//Ruteadores
 const mainRouter = require("./routes/main-routes");
 
 //Seteos de endpoints

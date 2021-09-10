@@ -58,10 +58,11 @@ const controller = {
         res.render("products/modificarEstudio", { estudio });
     },
     actualizarEstudio: (req, res) => {
-        res.send("actualizar estudio");
+        //console.log(req.params.id);
+        console.log(req.body.id);
     },
     listadoEstudios: (req, res) => {
-        res.render("/poducts/listadoEstudios", { estudios: estudios });
+        res.render("./products/listadoEstudios", { estudios: estudios });
     },
 };
 

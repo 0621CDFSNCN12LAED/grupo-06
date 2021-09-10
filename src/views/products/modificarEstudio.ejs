@@ -8,10 +8,10 @@
             <main>
                 <div class="crear-estudio">
                     <div class="form">
-                        <form method="POST" action="/estudios/actualizar/ID" enctype="multipart/form-data">
+                        <form action="/estudios/actualizar/<%= estudio.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <!--Para que envie archivos-->
                             <h2>Modificando el estudio con id #
-                                <%=estudio.id %>
+                                <%=estudio.id%>
                             </h2>
                             <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" width="50%" />
                             </br>
@@ -19,16 +19,16 @@
                             <input type="text" name="title" id="title" value="<%=estudio.title%>">
                             </br>
                             <label for="desc">Descripción</label>
-                            <textarea name="desc" id="desc" value="<%=estudio.desc%>"></textarea>
+                            <textarea name="desc" id="desc"><%=estudio.desc%></textarea>
                             </br>
                             <label for="antes">Antes</label>
-                            <textarea name="antes" id="antes" value="<%=estudio.antes%>"></textarea>
+                            <textarea name="antes" id="antes"><%=estudio.antes%></textarea>
                             </br>
                             <label for="option">Opción</label>
-                            <input type="text" name="option" id="option">
+                            <input type="text" name="option" id="option" value="<%=estudio.option%>">
                             </br>
                             <label for="price">Precio</label>
-                            <input type="number" name="price" id="price" value="<%=estudio.price%>">
+                            <input type="text" name="price" id="price" value="<%=estudio.price%>">
                             </br>
                             <label for="imagenEstudio">Imagen del Producto</label>
                             <input type="file" name="imagenEstudio" id="imagenEstudio">
