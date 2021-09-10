@@ -5,10 +5,10 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-
                 <h2 class="lista-prod">Listado de Estudios</h2>
 
                 <% for (const estudio of estudios) { %>
+
                     <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
                         <section class="estudio-comp">
                             <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" class="img-prod" />
@@ -21,12 +21,11 @@
                                     <%= estudio.desc %>
                                 </h4>
                             </div>
-                            <!--</a>-->
                         </section>
                     </a>
+                    <a href="/estudios/modificar/<%= estudio.id %>">Editar Estudio</a>
+
                     <%}%>
-
-
             </main>
             <%- include("../partials/footer.ejs") %>
     </body>
