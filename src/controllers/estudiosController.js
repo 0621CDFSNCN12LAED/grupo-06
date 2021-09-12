@@ -4,7 +4,7 @@ const { send } = require("process");
 
 //Importo el JSON de estudios
 const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
-const estudios = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
+let estudios = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
 
 //Creacion del controlador
 const controller = {
@@ -82,21 +82,21 @@ const controller = {
             antes: req.body.antes,
             option: req.body.option,
             price: req.body.price,
-            img: req.file ? req.file.filename : estudioImagen,
+            img: req.file ? req.file.filename : estudioImagen.img,
         };
 
         //Quito el objeto del array para luego insertarlo modificado
-        const estudios_sin_estudio_modificado = estudios.filter(function(
+        estudios = estudios.filter(function(
             elemento
         ) {
             return elemento.id != req.params.id;
         });
 
         //Agrego el nuevo estudio al array en memoria de estudios
-        estudios_sin_estudio_modificado.push(estudio_actualizado);
+        estudios.push(estudio_actualizado);
 
         //Transformo el array de estudios a JSON
-        estudiosJSON = JSON.stringify(estudios_sin_estudio_modificado, null, 4);
+        estudiosJSON = JSON.stringify(estudios, null, 4);
 
         //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
         fs.writeFileSync(estudiosFilePath, estudiosJSON);
