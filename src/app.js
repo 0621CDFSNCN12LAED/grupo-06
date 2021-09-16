@@ -30,3 +30,9 @@ const mainRouter = require("./routes/main-routes");
 
 //Seteos de endpoints
 app.use("/", mainRouter);
+
+//Configuración captura error 404
+app.use((req, res, next) => {
+    res.status(404).render("404-not-found");
+    next();
+});

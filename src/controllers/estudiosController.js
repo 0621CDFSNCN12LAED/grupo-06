@@ -4,7 +4,12 @@ const { send } = require("process");
 
 //Importo el JSON de estudios
 const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
-let estudios = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
+const estudios_todos = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
+
+//Solo cargo los estudios activos, los que tienen borrado logíco (active = false), no los cargo en el array
+const estudios = estudios_todos.filter(function(elemento) {
+    return elemento.active == true;
+});
 
 //Creacion del controlador
 const controller = {
@@ -41,6 +46,7 @@ const controller = {
             option: req.body.option,
             price: req.body.price,
             img: req.file ? req.file.filename : "no-image.png",
+            active: true,
         };
 
         //Agrego el nuevo estudio al array en memoria de estudios
@@ -86,9 +92,7 @@ const controller = {
         };
 
         //Quito el objeto del array para luego insertarlo modificado
-        estudios = estudios.filter(function(
-            elemento
-        ) {
+        estudios = estudios.filter(function(elemento) {
             return elemento.id != req.params.id;
         });
 
@@ -105,6 +109,14 @@ const controller = {
         res.redirect("/estudios/estudio-detalle/" + req.params.id);
 
         //res.render("./products/listadoEstudios", { estudios: estudios });
+    },
+    delete: (req, res) => {
+        const estudioaEliminar = estudios.find((estu) => {
+            if (estu.id == req.params.id) {
+                return estu;
+            }
+            return null;
+        }); 
     },
 };
 
