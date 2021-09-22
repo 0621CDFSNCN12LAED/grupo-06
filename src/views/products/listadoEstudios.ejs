@@ -9,7 +9,7 @@
 
                 <% for (const estudio of estudios) { %>
                     <section class="estudio-comp">
-                    <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
+                        <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
                             <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" class="img-prod" />
                             <div class="titulo-descr">
                                 <h3>
@@ -21,7 +21,12 @@
                                 </h4>
                             </div>
                     </a>
-                    <a href="/estudios/modificar/<%= estudio.id %>">Editar Estudio</a>
+                        <a href="/estudios/modificar/<%= estudio.id %>">Editar Estudio</a>
+                        <a href="/estudios/eliminar/<%= estudio.id %>">Eliminar Estudio</a>
+                        </form>
+                        <!--<form action="/estudios/eliminar/<%= estudio.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar Estudio</button>
+                        </form>-->
                     </section>
                     <%}%>
             </main>

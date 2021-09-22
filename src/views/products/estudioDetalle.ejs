@@ -41,19 +41,16 @@
 
                                 <input type="radio" name="opciones-del-test" id="<% detEst.option %>" value="<% detEst.option %>" />
                                 <label for="<% detEst.option %>"><%= detEst.option %></label>
-
-
                             </div>
                             <div class="precio-boton">
                                 <h3 class="precio-test">Precio:
                                     <%= detEst.price %>
                                 </h3>
                                 <form action="" method="#">
-                                    <button class="boton-orden-test" type="submit">Agregar al Carrito</button>
-                                </form>
-                                <form action="/estudios/eliminar/<%= detEst.id %>?_method=delete" method="POST" style:"display: inline-flex">
-                                    <button type="submit">Eliminar Estudio</button>
-                                </form>
+                                    <button class="boton-orden-test" type="submit">
+                  Agregar al Carrito
+                </button>
+
                             </div>
                         </div>
                     </div>

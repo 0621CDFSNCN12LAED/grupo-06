@@ -1,33 +1,4 @@
-[{
-        "id": 3,
-        "title": "Test Serólogico SarsCovid",
-        "desc": "Este estudio ayuda a determinar si las personas pueden haberse expuesto a este virus y contagiado con él, y si han desarrollado una respuesta inmune específica de anticuerpos IgG contra el coronavirus SARS-CoV-2. Es una prueba automatizada de alta sensibilidad y especificidad para la detección de anticuerpos de tipo inmunoglobulina M (IgM) dirigidos contra el coronavirus SARS-CoV-2 que se encuentran en suero o plasma humano.",
-        "antes": "",
-        "option": "Extracción en domicilio",
-        "price": "$7.600",
-        "img": "1631156310152_estudio.jpg",
-        "active": true
-    },
-    {
-        "id": 6,
-        "title": "Test de Embarazo",
-        "desc": "Una prueba de gonadotropina coriónica humana (GCH) mide el nivel específico de la GCH en la sangre. Esta es una hormona producida en el cuerpo durante el embarazo. Se necesita una muestra de sangre. Esta casi siempre se toma de una vena. El procedimiento se llama venopunción.",
-        "antes": "No se necesita ayuno",
-        "option": "Extracción en domicilio",
-        "price": "$1.850",
-        "img": "1631156310149_estudio.jpg",
-        "active": true
-    },
-    {
-        "id": "8",
-        "title": "Test Rápido HIV2",
-        "desc": "Tomamos una gota de sangre. Nuestro personal especializado realiza una leve punción en la yema de uno de tus dedos. La depositamos en la tira reactiva. El resultado demora aproximadamente 20 minutos.",
-        "antes": "-",
-        "option": "",
-        "price": "9500",
-        "img": "1631297453181_estudio.png",
-        "active": true
-    },
+[
     {
         "id": "1",
         "title": "Test Rapido Anticuerpos SarsCovid",
@@ -36,16 +7,6 @@
         "option": "Punción en domicilio",
         "price": "$3.900",
         "img": "1631297563041_estudio.jpg",
-        "active": true
-    },
-    {
-        "id": 9,
-        "title": "",
-        "desc": "",
-        "antes": "",
-        "option": "",
-        "price": "",
-        "img": "no-image.png",
         "active": true
     },
     {
@@ -89,16 +50,6 @@
         "active": true
     },
     {
-        "id": 11,
-        "title": "hnftgjfgj",
-        "desc": "jjjjjjj",
-        "antes": "ggggg",
-        "option": "Extracción en Sede",
-        "price": "3000",
-        "img": "1631470620326_estudio.jpg",
-        "active": false
-    },
-    {
         "id": "7",
         "title": "Test de Paternidad",
         "desc": "Es un método preciso para resolver cuestiones de parentesco por razones médicas, legales o personales. Las pruebas consisten en determinar el perfil genético de los miembros sometidos a estudio, a partir de una muestra de hisopado o de sangre.",
@@ -107,5 +58,15 @@
         "price": "$2.600",
         "img": "1631156310148_estudio.jpg",
         "active": true
+    },
+    {
+        "id": 9,
+        "title": "",
+        "desc": "",
+        "antes": "",
+        "option": "",
+        "price": "",
+        "img": "no-image.png",
+        "active": false
     }
 ]
