@@ -17,6 +17,10 @@ const controller = {
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
+    listadoUltimos4Estudios: (req, res) => {
+        res.render("./products/listadoEstudios", { estudios: estudios });
+    },
+
     estudioDetalle: (req, res) => {
         //res.render("./products/productoDetalle");
         const detEst = estudios.find((detEst) => {
