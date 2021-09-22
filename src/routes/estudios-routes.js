@@ -40,3 +40,6 @@ router.put(
 );
 
 module.exports = router;
+
+//eliminar un estudio
+router.get('/eliminar/:id', estudiosController.delete);
