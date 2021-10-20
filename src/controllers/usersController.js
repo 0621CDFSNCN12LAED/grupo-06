@@ -62,6 +62,7 @@ const controller = {
             tipoDocumento: req.body.doc_type,
             nroDocumento: req.body.nroDocumento,
             password: bcrypt.hashSync(req.body.password, 12),
+            img: req.file ? req.file.filename : "",
         };
         console.log(paciente);
         //Agrego el nuevo paciente al array de pacientes
