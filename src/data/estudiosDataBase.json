@@ -1,25 +1,5 @@
 [
     {
-        "id": "1",
-        "title": "Test Rapido Anticuerpos SarsCovid",
-        "desc": "Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.",
-        "antes": "",
-        "option": "Punción en domicilio",
-        "price": "$3.900",
-        "img": "1631297563041_estudio.jpg",
-        "active": true
-    },
-    {
-        "id": 10,
-        "title": "Prueba de carga de estudio",
-        "desc": "Esto es una prueba",
-        "antes": "Prueba prueba",
-        "option": "Extracción a domicilio",
-        "price": "3200",
-        "img": "1631313478503_estudio.jpg",
-        "active": true
-    },
-    {
         "id": "4",
         "title": "Perfil lipídico",
         "desc": "El perfil lipídico mide la concentración de algunas de estas sustancias en la sangre para establecer el riesgo de desarrollar una enfermedad cardiovascular, para el seguimiento del tratamiento de las concentraciones inadecuadas de lípidos.",
@@ -60,13 +40,13 @@
         "active": true
     },
     {
-        "id": 9,
-        "title": "",
-        "desc": "",
+        "id": "1",
+        "title": "Test Rapido Anticuerpos SarsCovid",
+        "desc": "Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.",
         "antes": "",
-        "option": "",
-        "price": "",
-        "img": "no-image.png",
+        "option": "Punción en domicilio",
+        "price": "$3.900",
+        "img": "1631297563041_estudio.jpg",
         "active": false
     }
 ]

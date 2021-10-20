@@ -1,5 +1,8 @@
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
+const pacienteService = require("../services/paciente-service");
+//const pacienteService = require("../services/paciente-service");
 
 //Importo el JSON de usuarios
 const pacientesFilePath = path.join(
@@ -18,12 +21,36 @@ const pacienteMaximoId = Math.max.apply(
 
 //filtro el array de personas para quedarme solo con usuarios
 const controller = {
-    ingresar: (req, res) => {
+    showLogin: (req, res) => {
         res.render("./users/ingresar");
     },
+    login: (req, res) => {
+        const paciente = pacienteService.getByEmail(req.body.email);
+        console.log("paciente encontrado", paciente);
+        //Si el paciente no fue encontrado por email:
+        if (!paciente) {
+            //corto ejecución
+            res.redirect("back");
+            return;
+        }
+
+        //Si encontré el paciente por email, debo verificar la contraseña ingresada:
+        if (!bcrypt.compareSync(req.body.password, paciente.password)) {
+            res.redirect("back");
+            return;
+        }
+
+        //Si la pass dio true es porque coinciden, creo la session
+        req.session.loggerPacienteId = paciente.id;
+        console.log("ver esto", req.session.loggerPacienteId);
+        //to do: mostrar mensaje de logueado exitosamente
+        res.redirect("/");
+    },
+
     registro: (req, res) => {
         res.render("./users/registro");
     },
+
     crearUsuario: (req, res) => {
         const paciente = {
             id: pacienteMaximoId + 1,
@@ -34,7 +61,7 @@ const controller = {
             birth_date: req.body.birth_date,
             tipoDocumento: req.body.doc_type,
             nroDocumento: req.body.nroDocumento,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 12),
         };
         console.log(paciente);
         //Agrego el nuevo paciente al array de pacientes

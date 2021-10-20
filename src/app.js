@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 //Configuración para métodos override HTTP de PUT y DELETE
 const methodOverride = require("method-override");
+const expressSession = require("express-session");
 
 //Se levanta webserver
 app.listen(3030, () => {
@@ -21,6 +22,15 @@ app.set("view engine", "ejs");
 
 //Configuración de la carpeta donde se alojan las views
 app.set("views", "./src/views");
+
+//Configuración de express session
+app.use(
+    expressSession({
+        secret: "hay que hacerse estudios",
+        saveUninitialized: true,
+        resave: true,
+    })
+);
 
 //Configuración para métodos override HTTP de PUT y DELETE
 app.use(methodOverride("_method"));

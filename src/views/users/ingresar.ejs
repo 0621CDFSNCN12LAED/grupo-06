@@ -7,10 +7,14 @@
             <main>
                 <div class="login-page">
                     <div class="form">
-                        <form class="login-form">
-                            <input type="text" placeholder="usuario" />
-                            <input type="password" placeholder="contraseña" />
-                            <button>Ingresar</button>
+                        <form class="login-form" action="/users/login" method="POST">
+                            <div>
+                                <input id="email" name="email" type="email" placeholder="email" />
+                            </div>
+                            <div>
+                                <input type="password" name="password" type="password" placeholder="contraseña" />
+                            </div>
+                            <button type="submit">Ingresar</button>
                             <p class="message">
                                 No registrado? <a href="/users/registro">Crear una cuenta</a>
                             </p>

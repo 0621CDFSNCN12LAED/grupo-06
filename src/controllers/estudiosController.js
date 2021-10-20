@@ -18,6 +18,7 @@ const controller = {
     },
 
     listadoUltimos4Estudios: (req, res) => {
+        const ultimos4Estudios = estudios.sort();
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
