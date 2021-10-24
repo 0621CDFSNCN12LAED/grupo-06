@@ -41,3 +41,13 @@
   color: aliceblue;
   font-size: 20px;
 }
+
+/*Home*/
+
+.producto{
+  width: 24%;
+}
+
+.producto p{
+  display: block;
+}

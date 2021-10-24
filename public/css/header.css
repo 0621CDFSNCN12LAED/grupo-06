@@ -1,3 +1,4 @@
+
 .bkHeader {
   background-color: #004765;
 }
@@ -26,6 +27,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: white;
+}
+
+.header3 a{
   color: white;
 }
 

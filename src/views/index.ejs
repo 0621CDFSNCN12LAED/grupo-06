@@ -6,6 +6,26 @@
     <%- include("./partials/header.ejs") %>
 
     <main>
+      <section id="container-slider">	
+        <a href="javascript: fntExecuteSlide('prev');" class="arrowPrev"><i class="fas fa-chevron-circle-left"></i></a>
+        <a href="javascript: fntExecuteSlide('next');" class="arrowNext"><i class="fas fa-chevron-circle-right"></i></a>
+        <ul class="listslider">
+          <li><a itlist="itList_0" href="#" class="item-select-slid"></a></li>
+          <li><a itlist="itList_1" href="#"></a></li>
+          <li><a itlist="itList_2" href="#"></a></li>
+        </ul>
+        <ul id="slider">
+         <li style="z-index:0; opacity:1;">
+          <a href=""><img src="img/Vacuna_Covid.jpg" height="100%" width="100%"/></a>
+           </li>
+           <li>
+          <a href=""><img src="img/Vacuna-gripe-2021.jpg" height="100%" width="100%"/></a>
+          </li>
+          <li>
+            <a href=""><img src="img/Preocupacional.jpg" height="100%" width="100%"/></a>
+          </li>
+       </ul>
+     </section>
       <section class="productos">
         <article class="producto">
           <a href=""><img src="img/test-imagen.jpeg" width="100%" /></a>
@@ -52,32 +72,36 @@
       <!--Seccion Sedes-->
       <section class="sedes">
         <article class="sede">
-          <h3>Sede 1</h3>
-          <a href="#"><img src="img/sede-imagen.jpg" width="100%" /></a>
+          <h3 class="texto-sede">Belgrano</h3>
+          <a href="https://goo.gl/maps/pcw6ZHxDqqkuaeeWA" target="_blank"><img src="img/belgrano.jpg" width="100%" /></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1642.8648738270201!2d-58.46325476981457!3d-34.56039738923618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb42ac634e225%3A0xf0c5dd5cac1ab0f5!2sLaboratorio%20Plan%20De%20Salud%20Del%20Hospital%20Italiano!5e0!3m2!1ses!2sar!4v1635024689451!5m2!1ses!2sar" width="100%" height="210" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </article>
         <article class="sede">
-          <h3>Sede 2</h3>
-          <a href="#"><img src="img/sede-imagen.jpg" width="100%" /></a>
+          <h3 class="texto-sede">Parque Centenario</h3>
+          <a href="https://goo.gl/maps/PiPJ7oCcLM9LvT5C8" target="_blank"><img src="img/parque-centenario.jpg" width="100%" /></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.297530374529!2d-58.43441384035239!3d-34.6054082887051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb9546974ead%3A0xea950a5934b04f8c!2sCl%C3%ADnica%20Ciudad%20SUTERH%20OSPERYH!5e0!3m2!1ses!2sar!4v1635024769334!5m2!1ses!2sar" width="100%" height="210" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </article>
         <article class="sede">
-          <h3>Sede 3</h3>
-          <a href="#"><img src="img/sede-imagen.jpg" width="100%" /></a>
+          <h3 class="texto-sede">San Isidro</h3>
+          <a href="https://goo.gl/maps/UkydJaaWHzFAoEJz9" target="_blank"><img src="img/san-isidro.jpg" width="100%" /></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9576.315610108246!2d-58.52944038976943!3d-34.46855651764871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb03978c8d41b%3A0xaffaf065515a1474!2sHospital%20Municipal%20Materno%20Infantil%20de%20San%20Isidro!5e0!3m2!1ses!2sar!4v1635024819298!5m2!1ses!2sar" width="100%" height="210" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </article>
         <article class="sede">
-          <h3>Sede 4</h3>
-          <a href="#"><img src="img/sede-imagen.jpg" width="100%" /></a>
+          <h3 class="texto-sede">Ramos Mejía</h3>
+          <a href="https://g.page/PoliclinicoRegionalEvaPeron?share" target="_blank"><img src="img/ramos-mejia.jpg" width="100%" /></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9555.232181575537!2d-58.557116482379314!3d-34.65188569158768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7dd7d207a53%3A0xa806497bc8d48de9!2sPREP%20Policl%C3%ADnico%20Regional%20Eva%20Per%C3%B3n%20UOM%20Matanza!5e0!3m2!1ses!2sar!4v1635024881713!5m2!1ses!2sar" width="100%" height="210" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </article>
         <article class="sede">
-          <h3>Sede 5</h3>
-          <a href="#"><img src="img/sede-imagen.jpg" width="100%" /></a>
+          <h3 class="texto-sede">Avellaneda</h3>
+          <a href="https://goo.gl/maps/Y3L4gKyBDp5LdJPz6" target="_blank"><img src="img/avellaneda.jpg" width="100%" /></a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27022.54083868234!2d-58.37389104283577!3d-34.66334620134203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3332518b5f7f5%3A0x49b488842f224012!2sHospital%20Presidente%20Per%C3%B3n!5e0!3m2!1ses!2sar!4v1635024923777!5m2!1ses!2sar" width="100%" height="210" style="border:0" allowfullscreen="" loading="lazy"></iframe>
         </article>
       </section>
 
       <!--Sección Noticias-->
-      <section>
-        <h3>Noticias</h3>
-        <a href=""
-          ><img src="img/Nota.jpg" width="25%" alt="ultimas noticias"
+      <section >
+        <a href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19" target="_blank"
+          ><img src="img/2021-covid.jpg" width="100%" alt="ultimas noticias"
         /></a>
       </section>
     </main>

@@ -10,7 +10,7 @@
                     <div class="form">
                         <form class="login-form" method="POST" action="/users/registro">
                             <h3>Datos Personales</h2>
-                                <section class="flex">
+                                <section class="registro-flex">
                                     <div>
                                         <label for="firstname">Nombre</label>
                                         <input type="text" id="firstname" name="firstname" placeholder="Juan" />
@@ -21,18 +21,22 @@
                                     </div>
                                     <div>
                                         <label class="radio">Tipo de Documento</label>
-                                        <div>
-                                            <input type="radio" name="doc_type" id="doc_type" value="dni" />
-                                            <label for="doc-type-dni">DNI</label>
-
-                                            <input type="radio" name="doc_type" id="doc_type" value="ci" />
-                                            <label for="doc-type-ci">CI</label>
-
-                                            <input type="radio" name="doc_type" id="doc_type" value="pass" />
-                                            <label for="doc-type-pass">Pasaporte</label>
+                                        <div class="registro-radio">
+                                            <div>
+                                                <input type="radio" name="doc_type" id="doc_type" value="dni" />
+                                                <label for="doc-type-dni">DNI</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="doc_type" id="doc_type" value="ci" />
+                                                <label for="doc-type-ci">CI</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="doc_type" id="doc_type" value="pass" />
+                                                <label for="doc-type-pass">Pasaporte</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div >
                                         <label for="nroDocumento">Documento</label>
                                         <input id="doc" name="nroDocumento" type="text" placeholder="Número Documento" />
                                     </div>
@@ -43,15 +47,19 @@
                                     </div>
                                     <div>
                                         <label>Género</label>
-                                        <div>
-                                            <input type="radio" name="gender" id="gender-fem" value="fem" />
-                                            <label for="gender-fem">Femenino</label>
-
-                                            <input type="radio" name="gender" id="gender-masc" value="masc" />
-                                            <label for="gender-masc">Masculino</label>
-
-                                            <input type="radio" name="gender" id="gender-nb" value="nonbi" />
-                                            <label for="gender-nb">No binario</label>
+                                        <div class="registro-radio">
+                                            <div>
+                                                <input type="radio" name="gender" id="gender-fem" value="fem" />
+                                                <label for="gender-fem">Femenino</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="gender" id="gender-masc" value="masc" />
+                                                <label for="gender-masc">Masculino</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="gender" id="gender-nb" value="nonbi" />
+                                                <label for="gender-nb">No binario</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
@@ -60,7 +68,7 @@
                                     <label for="imagenPerfil">Imagen de Perfil</label>
                                      <input type="file" name="imagenPerfil" id="imagenPerfil">
                                     </div>
-                                    <section class="flex">
+                                    <section class="registro-flex">
                                         <div>
                                             <label for="email">Correo</label>
                                             <input id="email" name="email" type="email" placeholder="jprezez@gmail.com" />
@@ -81,9 +89,9 @@
                                         <div class="font-sm">
                                             <p>La contraseña debe tener al menos 8 caracteres, una letra y un número</p>
                                         </div>
-                                        <div>
+                                        <div id="term-cond">
                                             <input type="checkbox" name="term" id="term" value="term" />
-                                            <label for="term" class="font-sm">He leído y aceptado los términos y condiciones del servicio</label>
+                                            <label for="term" class="font-sm"><a href="https://www.rosario.gob.ar/web/aplicaciones/terminos-y-condiciones-formularios" target="_blank">He leído y aceptado los términos y condiciones del servicio</a></label>
                                         </div>
                                     </section>
                                     <section>
