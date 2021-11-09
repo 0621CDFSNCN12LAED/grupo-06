@@ -8,17 +8,17 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
         },
         titulo: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING(150),
             allowNull: false,
 
         },
         descripcion: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.TEXT,
             allowNull: false,
 
         },
         antes: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.VARCHAR(255),
             allowNull: false,
 
         },
@@ -27,19 +27,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         precio: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.FLOAT,
             allowNull: false,
         },
         img: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
+            type: dataTypes.VARCHAR(255),
+            allowNull: true,
         },
         fecha_creacion: {
-            type: dataTypes.Date,
+            type: dataTypes.DATE,
             allowNull: false,
         },
         fecha_modificacion: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DATE,
             allowNull: false,
 
         },
