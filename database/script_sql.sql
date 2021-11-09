@@ -38,7 +38,6 @@ CREATE TABLE Estudios(
 	fecha_modificacion DATE NOT NULL,
 	estado TINYINT NOT NULL,
 	PRIMARY KEY(id)
-	/*FOREIGN KEY (estudio_ubicacion_id) REFERENCES Estudio_Ubicacion(id)*/
 );
 
 CREATE TABLE Estudio_Ubicacion(
@@ -47,7 +46,6 @@ CREATE TABLE Estudio_Ubicacion(
 	id_ubicacion INT NOT NULL,
 	estado TINYINT NOT NULL,
     PRIMARY KEY(id),
-    --FOREIGN KEY (id_ubicacion) REFERENCES Ubicaciones(id),
     FOREIGN KEY (id_estudio) REFERENCES Estudios(id)
 );
 
