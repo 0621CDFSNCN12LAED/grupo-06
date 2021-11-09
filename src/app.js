@@ -7,7 +7,7 @@ const expressSession = require("express-session");
 
 //Se levanta webserver
 app.listen(3030, () => {
-    console.log("Se prendió!");
+    console.log("Se prendió! port: 3030");
 });
 
 //Va a servir los archivos publicos desde /img (esta es su raíz)
