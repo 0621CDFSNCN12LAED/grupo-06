@@ -11,6 +11,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false,
         },
+        apellido: {
+            type: dataTypes.STRING(100),
+            allowNull: false,
+        },
         tipo_documento: {
             type: dataTypes.STRING(10),
             allowNull: false,
