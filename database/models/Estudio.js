@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
 
         },
         antes: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING(255),
             allowNull: false,
 
         },
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         img: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING(255),
             allowNull: true,
         },
         fecha_creacion: {

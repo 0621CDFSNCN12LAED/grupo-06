@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const pacienteService = require("../services/paciente-service");
-//const pacienteService = require("../services/paciente-service");
+
 
 //Importo el JSON de usuarios
 const pacientesFilePath = path.join(
@@ -51,7 +51,13 @@ const controller = {
         res.render("./users/registro");
     },
 
-    crearUsuario: (req, res) => {
+    crearPaciente: (req, res) => {
+        pacienteService.crearPaciente(req.body);
+        res.redirect("/");
+    },
+
+    //Este crear usuario quedò con la forma vieja de insertarlo en un archivo JSON, ya se implementó la DB
+    /*crearUsuario: (req, res) => {
         const paciente = {
             id: pacienteMaximoId + 1,
             nombre: req.body.firstname,
@@ -76,6 +82,7 @@ const controller = {
 
         res.redirect("/");
     },
+    */
     perfilUsuario: (req, res) => {
         res.render(".");
     },

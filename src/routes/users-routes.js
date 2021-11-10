@@ -27,7 +27,7 @@ router.post("/login", usersController.login);
 router.get("/registro", usersController.registro);
 router.post("/registro",
     upload.single("imagenPerfil"),
-    usersController.crearUsuario);
+    usersController.crearPaciente);
 
 
 //Exportamos módulo.
