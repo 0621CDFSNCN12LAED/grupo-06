@@ -1,75 +1,3 @@
-/*** INICIO SCRIPT CREACIÓN ESTRUCTURA DE LA DB **/
-DROP DATABASE tpo_integrador_digitallab;
-CREATE DATABASE tpo_integrador_digitallab;
-
-USE tpo_integrador_digitallab;
-
-CREATE TABLE Pacientes(
-	id INT NOT NULL AUTO_INCREMENT,
-	nombre VARCHAR(100) NOT NULL,
-    tipo_documento VARCHAR(10) NOT NULL,
-    nro_documento INT NOT NULL,
-    fecha_nacimiento DATE NOT NULL,
-    genero VARCHAR(1) NOT NULL,
-    img_perfil VARCHAR(150) NULL,
-    email VARCHAR(100) NOT NULL,
-	contrasenia VARCHAR(100) NOT NULL,
-	terminos TINYINT NOT NULL,
-	PRIMARY KEY(id)
-);
-
-CREATE TABLE Ubicaciones(
-	id INT NOT NULL AUTO_INCREMENT,
-	descripcion VARCHAR(100) NOT NULL,
-	estado TINYINT NOT NULL,
-    PRIMARY KEY(id)
-);
-
-
-CREATE TABLE Estudios(
-	id INT NOT NULL AUTO_INCREMENT,
-	titulo VARCHAR(150) NOT NULL,
-	descripcion TEXT NOT NULL,
-	antes VARCHAR(255) NOT NULL,
-	/* estudio_ubicacion_id INT NOT NULL, */
-	precio FLOAT NOT NULL,
-	img VARCHAR(255) NULL,
-	fecha_creacion DATE NOT NULL,
-	fecha_modificacion DATE NOT NULL,
-	estado TINYINT NOT NULL,
-	PRIMARY KEY(id)
-);
-
-CREATE TABLE Estudio_Ubicacion(
-	id INT NOT NULL AUTO_INCREMENT,
-	id_estudio INT NOT NULL,
-	id_ubicacion INT NOT NULL,
-	estado TINYINT NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY (id_estudio) REFERENCES Estudios(id)
-);
-
-CREATE TABLE Paciente_Estudio(
-	id INT NOT NULL AUTO_INCREMENT,
-	id_estudio INT NOT NULL,
-	id_paciente INT NOT NULL,    
-    importe FLOAT NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY (id_estudio) REFERENCES Estudios(id),
-    FOREIGN KEY (id_paciente) REFERENCES Pacientes(id)
-);
-
-ALTER TABLE Estudios
-ADD CONSTRAINT FK_estudio_ubicacion
-    FOREIGN KEY (estudio_ubicacion_id) REFERENCES Estudio_Ubicacion(id);
-
-ALTER TABLE Estudio_Ubicacion
-ADD CONSTRAINT FK_ubicacion
-    FOREIGN KEY (id_ubicacion) REFERENCES Ubicaciones(id);
-
-
-/*** FIN SCRIPT CREACIÓN ESTRUCTURA DE LA DB **/
-
 /*** INICIO SCRIPT CARGA DE DATOS ***/
 /*** UBICACIONES ***/
 INSERT INTO Ubicaciones (descripcion, estado) VALUES ('Extracción en domicilio', 1);
@@ -99,6 +27,19 @@ INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (3, 3, tr
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (4, 3, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (5, 4, true);
 
+/*** PACIENTES ***/
+INSERT INTO Pacientes(nombre, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos)
+    VALUES ('Tull Tams', 'DNI', 31303030, SYSDATE(), 'M', null, 'tulltams@gmail.com', '$2a$12$MKrjfwTszjhI4C2AToX1putDW8GTRzceueX/6XE0.Ch.WwP5ehEMa', true);
+INSERT INTO Pacientes(nombre, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos)
+    VALUES ('Pedro Williams', 'DNI', 20859432, SYSDATE(), 'M', null, 'pedrito@gmail.com', '$2a$12$AHV8cTbIk2TULrzBmnBAuu/lnruM9BMlRQvJhcdfAt.IxizZzdw0G', true);
+INSERT INTO Pacientes(nombre, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos)
+    VALUES ('Maria Lour', 'DNI', 40988543, SYSDATE(), 'F', null, 'mariamaria.@gmail.com', '$2a$12$0XNGmJsRlJDjTJCNHkouzuNvMhYTyflDJ6w3DLUfv/sKQPljaV9NG', true);
 
-
+/*** PACIENTE_ESTUDIO ***/
+INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (1,1,8000);    
+INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (1,3,1500); 
+INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (2,4,2600);
+INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (3,2,5500);    
+INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (1,5,4000);    
 /*** FIN SCRIPT CARGA DE DATOS ***/
+
