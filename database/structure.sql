@@ -7,6 +7,7 @@ USE tpo_integrador_digitallab;
 CREATE TABLE Pacientes(
 	id INT NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(100) NOT NULL,
+	apellido VARCHAR(100) NOT NULL,
     tipo_documento VARCHAR(10) NOT NULL,
     nro_documento INT NOT NULL,
     fecha_nacimiento DATE NOT NULL,
@@ -58,10 +59,6 @@ CREATE TABLE Paciente_Estudio(
     FOREIGN KEY (id_estudio) REFERENCES Estudios(id),
     FOREIGN KEY (id_paciente) REFERENCES Pacientes(id)
 );
-
-ALTER TABLE Estudios
-ADD CONSTRAINT FK_estudio_ubicacion
-    FOREIGN KEY (estudio_ubicacion_id) REFERENCES Estudio_Ubicacion(id);
 
 ALTER TABLE Estudio_Ubicacion
 ADD CONSTRAINT FK_ubicacion
