@@ -22,10 +22,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
 
         },
-        estudio_ubicacion_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
         precio: {
             type: dataTypes.FLOAT,
             allowNull: false,
