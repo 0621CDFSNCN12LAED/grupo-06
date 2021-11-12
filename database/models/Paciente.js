@@ -47,6 +47,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
+        estado: {
+            type: dataTypes.BOOLEAN,
+            allowNull: false,
+        },
     };
 
     let config = {

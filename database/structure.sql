@@ -16,6 +16,7 @@ CREATE TABLE Pacientes(
     email VARCHAR(100) NOT NULL,
 	contrasenia VARCHAR(100) NOT NULL,
 	terminos TINYINT NOT NULL,
+	estado TINYINT NOT NULL,
 	PRIMARY KEY(id)
 );
 

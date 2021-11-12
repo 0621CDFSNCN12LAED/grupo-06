@@ -33,7 +33,7 @@ module.exports = {
             email: payload.email,
             contrasenia: bcrypt.hashSync(payload.password, 12),
             terminos: payload.term ? true : false,
-
+            estado: true,
         });
     },
 
@@ -41,11 +41,18 @@ module.exports = {
         db.Pacientes.update({
             email: payload.email,
             contrasenia: bcrypt.hashSync(payload.password, 12),
+        }, {
+            where: { id: payload.id }
         });
     },
 
     eliminarPaciente(id) {
-
+        db.Pacientes.update({
+            email: payload.email,
+            contrasenia: bcrypt.hashSync(payload.password, 12),
+        }, {
+            where: { id: payload.id }
+        });
     },
 
 };
