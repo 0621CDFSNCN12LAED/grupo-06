@@ -126,39 +126,60 @@ const controller = {
 
         //res.render("./products/listadoEstudios", { estudios: estudios });
     },
-    delete: (req, res) => {
-        let estudioEliminar = estudios.find((estu) => {
-            if (estu.id == req.params.id) {
-                return estu;
-            }
-        });
-        console.log(estudioEliminar);
+    delete: async(req, res) => {
 
-        //cambio el estado del estudio a inactivo
-        estudioEliminar.active = false;
-
-        console.log(estudioEliminar);
-
-        estudios = estudios.filter(function(elemento) {
-            return elemento.id != req.params.id;
-        });
-
-        console.log("estudios filtrados");
-        console.log(estudios);
-
-        //Agrego el nuevo estudio al array en memoria de estudios
-        estudios.push(estudioEliminar);
-
-        //Transformo el array de estudios a JSON
-        estudiosJSON = JSON.stringify(estudios, null, 4);
-
-        //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
-        fs.writeFileSync(estudiosFilePath, estudiosJSON);
+        await estudioService.delete(req.body.id);
 
         //Redirecciono a listado de estudios
         res.redirect("/estudios");
+
+    },
+    search: async(palabra) => {
+        await estudioService.search(palabra);
     },
 };
 
 //Exportamos módulo.
 module.exports = controller;
+
+
+
+
+
+/* Versiones viejas de los metodos */
+
+/*
+delete: (req, res) => {  
+    
+let estudioEliminar = estudios.find((estu) => {
+    if (estu.id == req.params.id) {
+        return estu;
+    }
+});
+console.log(estudioEliminar);
+
+//cambio el estado del estudio a inactivo
+estudioEliminar.active = false;
+
+console.log(estudioEliminar);
+
+estudios = estudios.filter(function(elemento) {
+    return elemento.id != req.params.id;
+});
+
+console.log("estudios filtrados");
+console.log(estudios);
+
+//Agrego el nuevo estudio al array en memoria de estudios
+estudios.push(estudioEliminar);
+
+//Transformo el array de estudios a JSON
+estudiosJSON = JSON.stringify(estudios, null, 4);
+
+//Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
+fs.writeFileSync(estudiosFilePath, estudiosJSON);
+
+//Redirecciono a listado de estudios
+res.redirect("/estudios");
+
+*/
