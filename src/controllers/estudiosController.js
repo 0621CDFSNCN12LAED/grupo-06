@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const { send } = require("process");
+const estudioService = require("../services/estudio-service");
+
 
 //Importo el JSON de estudios
 const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
@@ -13,12 +15,14 @@ let estudios = estudios_todos.filter(function(elemento) {
 
 //Creacion del controlador
 const controller = {
-    listadoEstudios: (req, res) => {
+    listadoEstudios: async(req, res) => {
+        const estudios = await estudioService.list();
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
-    listadoUltimos4Estudios: (req, res) => {
-        const ultimos4Estudios = estudios.sort();
+    listadoUltimos4Estudios: async(req, res) => {
+        //const ultimos4Estudios = estudios.sort();
+        const estudios = await estudioService.list_ultimos_4_estudios();
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
@@ -33,15 +37,22 @@ const controller = {
         res.render("./products/crearEstudio");
     },
 
-    guardarEstudio: (req, res) => {
+    guardarEstudio: async(req, res) => {
+
+        await estudioService.create(req.body, req.file);
+        res.redirect("/estudios");
         //Obtengo el maximo id de estudios
+        /*
         let estudioMaximoId = Math.max.apply(
             Math,
             estudios.map(function(o) {
                 return o.id;
             })
         );
+        */
 
+
+        /*
         //creo el objeto estudio a agregar
         const estudio_nuevo = {
             id: estudioMaximoId + 1,
@@ -53,18 +64,18 @@ const controller = {
             img: req.file ? req.file.filename : "no-image.png",
             active: true,
         };
+        */
 
         //Agrego el nuevo estudio al array en memoria de estudios
-        estudios.push(estudio_nuevo);
+        //estudios.push(estudio_nuevo);
 
         //transformo el array de estudios a JSON
-        estudiosJSON = JSON.stringify(estudios, null, 4);
+        //estudiosJSON = JSON.stringify(estudios, null, 4);
 
         //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
-        fs.writeFileSync(estudiosFilePath, estudiosJSON);
+        //fs.writeFileSync(estudiosFilePath, estudiosJSON);
 
         //Redirecciono a listado de estudios
-        res.redirect("/estudios");
     },
 
     modificarEstudio: (req, res) => {

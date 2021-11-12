@@ -52,6 +52,8 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "Estudios",
         timestamp: true,
+        createdAt: "fecha_creacion",
+        updatedAt: "fecha_modificacion",
     };
 
     let Estudio = sequelize.define(alias, cols, config);
