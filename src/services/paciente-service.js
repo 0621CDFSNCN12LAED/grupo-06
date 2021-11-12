@@ -21,8 +21,8 @@ module.exports = {
         return paciente;
     },
 
-    crearPaciente(payload) {
-        db.Pacientes.create({
+    crearPaciente: async(payload) => {
+        await db.Pacientes.create({
             nombre: payload.firstname,
             apellido: payload.lastname,
             tipo_documento: payload.doc_type,
@@ -35,6 +35,17 @@ module.exports = {
             terminos: payload.term ? true : false,
 
         });
+    },
+
+    actualizarPaciente(payload) {
+        db.Pacientes.update({
+            email: payload.email,
+            contrasenia: bcrypt.hashSync(payload.password, 12),
+        });
+    },
+
+    eliminarPaciente(id) {
 
     },
+
 };
