@@ -56,6 +56,12 @@ const controller = {
         res.redirect("/");
     },
 
+
+    perfilUsuario: (req, res) => {
+
+        res.render(".");
+    },
+
     //Este crear usuario quedò con la forma vieja de insertarlo en un archivo JSON, ya se implementó la DB
     /*crearUsuario: (req, res) => {
         const paciente = {
@@ -83,9 +89,6 @@ const controller = {
         res.redirect("/");
     },
     */
-    perfilUsuario: (req, res) => {
-        res.render(".");
-    },
 };
 
 //Exportamos módulo.

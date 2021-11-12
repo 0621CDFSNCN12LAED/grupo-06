@@ -37,8 +37,8 @@ module.exports = {
         });
     },
 
-    actualizarPaciente(payload) {
-        db.Pacientes.update({
+    actualizarPaciente: async(payload) => {
+        await db.Pacientes.update({
             email: payload.email,
             contrasenia: bcrypt.hashSync(payload.password, 12),
         }, {
@@ -46,8 +46,8 @@ module.exports = {
         });
     },
 
-    eliminarPaciente(id) {
-        db.Pacientes.update({
+    eliminarPaciente: async(id) => {
+        await db.Pacientes.update({
             estado: false,
         }, {
             where: { id: id }
