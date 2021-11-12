@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const db = require('../../database/models');
 const { triggerAsyncId } = require("async_hooks");
+const Op = db.Sequelize.Op;
 
 module.exports = {
     create: async(payload, image) => {
@@ -82,5 +83,10 @@ module.exports = {
         });
 
         return estudiosSearch;
-    }
+    },
+
+    searchOneEstudio: async(id) => {
+        const estudio = await db.Estudios.findByPk(id);
+        return estudio;
+    },
 };

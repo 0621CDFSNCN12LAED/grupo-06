@@ -78,12 +78,15 @@ const controller = {
         //Redirecciono a listado de estudios
     },
 
-    modificarEstudio: (req, res) => {
+    modificarEstudio: async(req, res) => {
+        const estudio = await estudioService.searchOneEstudio(req.params.id);
+        /*
         const estudio = estudios.find((estu) => {
             if (estu.id == req.params.id) {
                 return estu;
             }
         });
+        */
 
         res.render("products/modificarEstudio", { estudio });
     },
