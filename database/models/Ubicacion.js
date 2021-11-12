@@ -25,6 +25,13 @@ module.exports = (sequelize, dataTypes) => {
 
     let Ubicacion = sequelize.define(alias, cols, config);
 
+    Ubicacion.associate = function(models) {
+        Ubicacion.belongsTo(models.Estudios_Ubicaciones, {
+            as: "estudios_ubicaciones",
+            foreignKey: "id_estudio"
+        });
+    };
+
     return Ubicacion;
 
 };
