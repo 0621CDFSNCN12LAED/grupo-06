@@ -48,10 +48,9 @@ module.exports = {
 
     eliminarPaciente(id) {
         db.Pacientes.update({
-            email: payload.email,
-            contrasenia: bcrypt.hashSync(payload.password, 12),
+            estado: false,
         }, {
-            where: { id: payload.id }
+            where: { id: id }
         });
     },
 
