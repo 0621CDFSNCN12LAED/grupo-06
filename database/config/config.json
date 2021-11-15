@@ -1,17 +1,19 @@
 {
     "development": {
+
+        "username": "bb0ffdfc9b3375",
+        "password": "497c4af8",
+        "database": "heroku_fb7d58372cc3760",
+        "host": "us-cdbr-east-04.cleardb.com",
+        "port": "3306",
+        "dialect": "mysql"
+    },
+    "test": {
         "username": "dh",
         "password": "dh",
         "database": "tpo_integrador_digitallab",
         "host": "127.0.0.1",
         "port": "8889",
-        "dialect": "mysql"
-    },
-    "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
