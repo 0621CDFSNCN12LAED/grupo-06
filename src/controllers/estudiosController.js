@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const { send } = require("process");
+const {validationResult} = require('express-validator');
 const estudioService = require("../services/estudio-service");
 
 
@@ -38,9 +39,16 @@ const controller = {
     },
 
     guardarEstudio: async(req, res) => {
+        let errors = validationResult(req);
 
-        await estudioService.create(req.body, req.file);
-        res.redirect("/estudios");
+        if(errors.isEmpty()){
+            await estudioService.create(req.body, req.file);
+            res.redirect("/estudios");
+        }else{
+            console.log("hay errores");
+        }
+        
+        
         //Obtengo el maximo id de estudios
         /*
         let estudioMaximoId = Math.max.apply(
