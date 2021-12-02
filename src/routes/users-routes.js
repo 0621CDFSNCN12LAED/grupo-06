@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const usersController = require("../controllers/usersController");
 const validacionesRegistroPaciente = require('../validations/paciente-registro-validations');
+const validacionesPacienteLogin = require('../validations/paciente-login-validacion');
 
 //Creacion de storage que ataja el endpoint archivos del formulario registro
 const storage = multer.diskStorage({
@@ -23,7 +24,7 @@ const upload = multer({ storage: storage });
 //Rutas de usuarios
 router.get("/perfil-usuario", usersController.perfilUsuario);
 router.get("/ingresar", usersController.showLogin);
-router.post("/login", usersController.login);
+router.post("/login", validacionesPacienteLogin,usersController.login);
 router.get("/registro", usersController.registro);
 router.post("/registro", 
     upload.single("imagenPerfil"),

@@ -5,11 +5,19 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
+                <!-- MUESTRO TODOS LOS ERRORES ARRIBA DEL FORMULARIO -->
+                <div>
+                    <% if(locals.errors){ %>
+                         <% for(let error in locals.errors ){ %>
+                             <p><%= locals.errors[error].msg %></p>
+                     <% }} %>                   
+                 </div>
+
                 <div class="login-page">
                     <div class="form">
                         <form class="login-form" action="/users/login" method="POST">
                             <div>
-                                <input id="email" name="email" type="email" placeholder="email" />
+                                <input id="email" name="email" type="email" placeholder="email" value="<%= locals.old ? old.email : null %>" />
                             </div>
                             <div>
                                 <input type="password" name="password" type="password" placeholder="contraseña" />

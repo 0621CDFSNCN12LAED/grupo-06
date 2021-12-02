@@ -25,14 +25,25 @@ const controller = {
         res.render("./users/ingresar");
     },
     login: (req, res) => {
-        const paciente = pacienteService.getByEmail(req.body.email);
-        console.log("paciente encontrado", paciente);
-        //Si el paciente no fue encontrado por email:
-        if (!paciente) {
-            //corto ejecución
-            res.redirect("back");
-            return;
+        let errors = validationResult(req);
+        console.log(errors);
+        console.log(req.body);
+
+        if(errors.isEmpty()){
+            const paciente = pacienteService.getByEmail(req.body.email);
+            console.log("paciente encontrado", paciente);
+            //Si el paciente no fue encontrado por email:
+            if (!paciente) {
+                //corto ejecución
+                res.redirect("back");
+                return;
+            }
+        }else{
+            console.log("hay errores en el login del paciente");
+            return res.render('./users/ingresar', {errors: errors.mapped(), old: req.body});
         }
+        
+        
 
         //Si encontré el paciente por email, debo verificar la contraseña ingresada:
         if (!bcrypt.compareSync(req.body.password, paciente.password)) {
