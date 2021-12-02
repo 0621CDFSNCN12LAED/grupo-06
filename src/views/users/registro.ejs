@@ -98,7 +98,7 @@
                                             <p>La contraseña debe tener al menos 8 caracteres, una letra y un número</p>
                                         </div>
                                         <div id="term-cond">
-                                            <input type="checkbox" name="term" id="term" value="<%= locals.old ? old.term : null %>" />
+                                            <input type="checkbox" name="term" id="term" <%= locals.old && old.term ? 'checked' : null %> />
                                             <label for="term" class="font-sm"><a href="https://www.rosario.gob.ar/web/aplicaciones/terminos-y-condiciones-formularios" target="_blank">He leído y aceptado los términos y condiciones del servicio</a></label>
                                         </div>
                                     </section>
