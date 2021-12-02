@@ -46,6 +46,8 @@ const controller = {
             res.redirect("/estudios");
         }else{
             console.log("hay errores");
+            console.log(errors);
+            res.render('./products/crearEstudio', {errors: errors.mapped(), old: req.body});
         }
         
         

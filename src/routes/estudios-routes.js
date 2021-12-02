@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 });
 
 //Validaciones de la creación de estudios
-const validacionesEstudio = [
+let validacionesEstudio = [
     check('title')
         .notEmpty().withMessage('Se debe ingresar el nombre del estudio'),
     check('desc')
