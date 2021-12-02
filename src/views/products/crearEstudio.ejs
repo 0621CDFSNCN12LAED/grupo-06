@@ -27,30 +27,28 @@
 
                             <label for="desc">Descripción</label>
                             <% if(locals.errors && errors.desc) {%>
-                                <%= errors.desc.msg %>
+                                <div class="error"><%= errors.desc.msg %></div>
                             <% } %>
-                            <textarea name="desc" id="desc">
-                                <%= locals.old ? old.desc : null %>
-                            </textarea>
+                            <textarea name="desc" id="desc"><%= locals.old ? old.desc.trim() : null %></textarea>
                             </br>
 
                             <label for="antes">Antes</label>
                             <% if(locals.errors && errors.antes) {%>
-                                <%= errors.antes.msg %>
+                                <div class="error"><%= errors.antes.msg %></div>
                             <% } %>
-                            <textarea name="antes" id="antes"> <%= locals.old ? old.antes : null %>  </textarea>
+                            <textarea name="antes" id="antes"><%= locals.old ? old.antes.trim() : null %></textarea>
                             </br>
 
                             <label for="option">Opción</label>
                             <% if(locals.errors && errors.option) {%>
-                                <%= errors.option.msg %>
+                                <div class="error"><%= errors.option.msg %></div>
                             <% } %>
                             <input type="text" name="option" id="option">
                             </br>
 
                             <label for="price">Precio</label>
                             <% if(locals.errors && errors.price) {%>
-                                <%= errors.price.msg %>
+                                <div class="error"><%= errors.price.msg %></div>
                             <% } %>
                             <input type="number" name="price" id="price" value="<%= locals.old ? old.price : null %>">
                             </br>

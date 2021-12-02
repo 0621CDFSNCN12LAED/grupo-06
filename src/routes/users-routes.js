@@ -46,8 +46,6 @@ const validacionesRegistro = [
     check('term')
         .notEmpty().withMessage('Se deben aceptar los términos y condiciones'),
 ];
-console.log("validaciones recibo esto: ");
-console.log(validacionesRegistro);
 
 //Ejecución de Multer
 const upload = multer({ storage: storage });
@@ -58,8 +56,8 @@ router.get("/ingresar", usersController.showLogin);
 router.post("/login", usersController.login);
 router.get("/registro", usersController.registro);
 router.post("/registro", 
-    /*validacionesRegistro, //Validaciones en los campos de registro de Usuario
-    */upload.single("imagenPerfil"),
+    upload.single("imagenPerfil"),
+    validacionesRegistro, //Validaciones en los campos de registro de Usuario
     usersController.crearPaciente);
 
 
