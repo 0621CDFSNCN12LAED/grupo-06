@@ -40,8 +40,8 @@ const controller = {
 
     guardarEstudio: async(req, res) => {
         let errors = validationResult(req);
-        console.log(errors);
-        console.log(req.body);
+        //console.log(errors);
+        //console.log(req.body);
 
         if(errors.isEmpty()){
             await estudioService.create(req.body, req.file);

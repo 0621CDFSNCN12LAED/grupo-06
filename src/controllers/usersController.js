@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const pacienteService = require("../services/paciente-service");
-
+const {validationResult} = require('express-validator');
 
 //Importo el JSON de usuarios
 const pacientesFilePath = path.join(
@@ -52,8 +52,18 @@ const controller = {
     },
 
     crearPaciente: (req, res) => {
-        pacienteService.crearPaciente(req.body);
-        res.redirect("/");
+        let errors = validationResult(req);
+        console.log(errors);
+        console.log(req.body);
+
+        if(errors.isEmpty()){
+            //pacienteService.crearPaciente(req.body);
+            //res.redirect("/");
+            return res.render('./users/registro', {errors: errors.mapped(), old: req.body});
+        }else{
+            console.log("hay errores en la creacion del paciente");
+            return res.render('./users/registro', {errors: errors.mapped(), old: req.body});
+        }       
     },
 
 

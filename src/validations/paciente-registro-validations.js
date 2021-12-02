@@ -5,15 +5,15 @@ const {check} = require('express-validator');
 const validacionesRegistroPaciente = [
     check('firstname')
         .notEmpty().withMessage('Se debe completar el Nombre').bail()
-        .isAlpha().withMessage('Se deben ingresar caracteres alfabéticos'),
-    /*check('lastname')
+        .isAlpha().withMessage('Se deben ingresar caracteres alfabéticos en el nombre'),
+    check('lastname')
         .notEmpty().withMessage('Se debe completar el Apellido').bail()
-        .isAlpha().withMessage('Se deben ingresar caracteres alfabéticos'),
+        .isAlpha().withMessage('Se deben ingresar caracteres alfabéticos en el apellido'),
     check('doc_type')
         .notEmpty().withMessage('Se debe completar el Tipo de Documento'),
     check('nroDocumento')
         .notEmpty().withMessage('Se debe completar el Número de Documento').bail()
-        .isInt().withMessage('Se deben ingresar caracteres numéricos'),
+        .isInt().withMessage('Se deben ingresar caracteres numéricos en el número DNI'),
     check('birth_date')
         .notEmpty().withMessage('Se debe completar la fecha de cumpleaños').bail()
         .isDate().withMessage('Debe ser una fecha válida'),
@@ -29,7 +29,7 @@ const validacionesRegistroPaciente = [
         .notEmpty().withMessage('Se debe ingresar una password').bail()
         .isLength({min:8}).withMessage('La contraseña debe ser mínimo de 8 caracteres'),
     check('term')
-        .notEmpty().withMessage('Se deben aceptar los términos y condiciones'),*/
+        .notEmpty().withMessage('Se deben aceptar los términos y condiciones'),
 ];
 
 
