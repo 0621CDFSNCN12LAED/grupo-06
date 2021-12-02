@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const estudiosController = require("../controllers/estudiosController");
-const {check} = require('express-validator');
+const {body} = require('express-validator');
 
 //Creacion de storage que ataja el endpoint archivos del formulario creacion estudio
 const storage = multer.diskStorage({
@@ -18,17 +18,18 @@ const storage = multer.diskStorage({
 });
 
 //Validaciones de la creación de estudios
-let validacionesEstudio = [
-    check('title')
+const validacionesEstudio = [
+    body("title")
         .notEmpty().withMessage('Se debe ingresar el nombre del estudio'),
-    check('desc')
+    body('desc')
         .notEmpty().withMessage('Se debe ingresar descripción del estudio'),
-    check('antes')
+    body('antes')
         .notEmpty().withMessage('Se debe ingresar los pre requisitos del estudio'),
-    check('option')
+    body('option')
         .notEmpty().withMessage('Se debe ingresar las opciones posibles para realizar del estudio'),
-    check('price')
-        .notEmpty().withMessage('Se debe ingresar el precio del estudio'),     
+    body('price')
+        .notEmpty().withMessage('Se debe ingresar el precio del estudio').bail()
+        .isNumeric().withMessage('Se debe ingresar un valor numérico'),   
 ];
 
 //Ejecución de Multer
@@ -42,8 +43,8 @@ router.get("/estudio-detalle/:id", estudiosController.estudioDetalle);
 router.get("/crear-estudio", estudiosController.crearEstudio);
 router.post(
     "/crear-estudio",
-    validacionesEstudio,
     upload.single("imagenEstudio"),
+    validacionesEstudio,
     estudiosController.guardarEstudio
 );
 

@@ -6,12 +6,14 @@
         <%- include("../partials/header.ejs") %>
 
             <main>
+                <!-- MUESTRO TODOS LOS ERRORES ARRIBA DEL FORMULARIO
                 <div>
-                    <% if(locals.errors){ %>
-                        <% for(let i=0; i<locals.errors.length; i++ ){ %>
-                            <%= locals.errors[i].msg %>
-                    <% }} %>
+                   <% if(locals.errors){ %>
+                        <% for(let error in locals.errors ){ %>
+                            <p><%= locals.errors[error].msg %></p>
+                    <% }} %>                   
                 </div>
+                 -->
                 <div class="crear-estudio">
                     <div class="form">
                         <form method="POST" action="/estudios/crear-estudio" enctype="multipart/form-data">
@@ -20,21 +22,23 @@
                             <% if(locals.errors && errors.title) {%>
                                 <div class="error"><%= errors.title.msg %></div>
                             <% } %>  
-                            <input type="text" name="title" id="title" value="<%= locals.old ? old.title : null %>">
+                            <input type="text" name='title' id="title" value="<%= locals.old ? old.title : null %>">
                             </br>
 
                             <label for="desc">Descripción</label>
                             <% if(locals.errors && errors.desc) {%>
                                 <%= errors.desc.msg %>
                             <% } %>
-                            <textarea name="desc" id="desc"></textarea>
+                            <textarea name="desc" id="desc">
+                                <%= locals.old ? old.desc : null %>
+                            </textarea>
                             </br>
 
                             <label for="antes">Antes</label>
                             <% if(locals.errors && errors.antes) {%>
                                 <%= errors.antes.msg %>
                             <% } %>
-                            <textarea name="antes" id="antes"></textarea>
+                            <textarea name="antes" id="antes"> <%= locals.old ? old.antes : null %>  </textarea>
                             </br>
 
                             <label for="option">Opción</label>
@@ -52,7 +56,7 @@
                             </br>
 
                             <label for="imagenEstudio">Imagen del Producto</label>
-                            <input type="file" name="imagenEstudio" id="imagenEstudio">
+                            <input type="file" name="imagenEstudio" id="imagenEstudio" value="<%= locals.old ? old.imagenEstudio : null %>">
                             </br>
                             <button type="submit">Crear Estudio</button>
                         </form>
