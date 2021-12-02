@@ -55,10 +55,10 @@ module.exports = {
             ],
             limit: 4,
         });
-
+ 
         return estudios_ultimos_4;
     },
-
+ 
     delete: async(id_estudio) => {
         const estudio = await db.Estudios.findByPk(id_estudio);
         estudio.update({

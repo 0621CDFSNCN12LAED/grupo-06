@@ -17,12 +17,11 @@ const storage = multer.diskStorage({
     },
 });
 
-//Ejecución de Multer
+//Ejecución de Multer–
 const upload = multer({ storage: storage });
 
 //Rutas de estudios
 router.get("/", estudiosController.listadoEstudios);
-router.get("/listado-estudios", estudiosController.listadoEstudios); //Este link se accede desde '/', ver si dejamos solo /estudios o tambien /estudios/listado-estudios
 router.get("/estudio-detalle/:id", estudiosController.estudioDetalle);
 
 router.get("/crear-estudio", estudiosController.crearEstudio);
@@ -37,7 +36,7 @@ router.post(
 router.get("/modificar/:id", estudiosController.modificarEstudio);
 router.put(
     "/actualizar/:id",
-    validacionesEstudioCreacion, //Se validan todos los campos obligatorios y su formato en la modificación del estudio
+    //validacionesEstudioCreacion, //Se validan todos los campos obligatorios y su formato en la modificación del estudio
     upload.single("imagenEstudio"),
     estudiosController.actualizarEstudio
 );

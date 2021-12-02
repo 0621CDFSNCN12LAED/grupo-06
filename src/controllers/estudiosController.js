@@ -18,13 +18,14 @@ let estudios = estudios_todos.filter(function(elemento) {
 const controller = {
     listadoEstudios: async(req, res) => {
         const estudios = await estudioService.list();
+        //res.send(estudios);
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
     listadoUltimos4Estudios: async(req, res) => {
-        //const ultimos4Estudios = estudios.sort();
         const estudios = await estudioService.list_ultimos_4_estudios();
-        res.render("./products/listadoEstudios", { estudios: estudios });
+        
+        return estudios;
     },
 
     estudioDetalle: (req, res) => {
