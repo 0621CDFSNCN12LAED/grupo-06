@@ -91,14 +91,6 @@ const controller = {
 
     modificarEstudio: async(req, res) => {
         const estudio = await estudioService.searchOneEstudio(req.params.id);
-        /*
-        const estudio = estudios.find((estu) => {
-            if (estu.id == req.params.id) {
-                return estu;
-            }
-        });
-        */
-
         res.render("products/modificarEstudio", { estudio });
     },
 
@@ -141,8 +133,7 @@ const controller = {
         //res.render("./products/listadoEstudios", { estudios: estudios });
     },
     delete: async(req, res) => {
-
-        await estudioService.delete(req.body.id);
+        await estudioService.delete(req.params.id);
 
         //Redirecciono a listado de estudios
         res.redirect("/estudios");

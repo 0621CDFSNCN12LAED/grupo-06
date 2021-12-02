@@ -66,6 +66,7 @@ module.exports = {
         }, {
             where: { id: id_estudio }
         });
+        
     },
 
     search: async(palabra) => {

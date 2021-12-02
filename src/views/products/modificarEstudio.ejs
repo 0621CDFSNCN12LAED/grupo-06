@@ -6,6 +6,14 @@
         <%- include("../partials/header.ejs") %>
 
             <main>
+                <!-- MUESTRO TODOS LOS ERRORES ARRIBA DEL FORMULARIO -->
+                <div>
+                   <% if(locals.errors){ %>
+                        <% for(let error in locals.errors ){ %>
+                            <p><%= locals.errors[error].msg %></p>
+                    <% }} %>                   
+                </div>                 
+
                 <div class="crear-estudio">
                     <div class="form">
                         <form action="/estudios/actualizar/<%= estudio.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
