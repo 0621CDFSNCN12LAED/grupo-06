@@ -1,8 +1,7 @@
-Comenzar a hacer: Cargar las tareas de los sprints en cuanto se recibe la consigna. Tener una charla entre todos para ver donde estamos parados con el curso. 
+Estando en la última parte del proyecto
 
-Hacer más: Reunirnos los jueves además de los domingos. Estar al día con la teoría para las reuniones. Tener más comunicación día a día entre los compañeros.
+Hacer más: Juntarnos a avanzar el proyecto en grupo. Revisar que todas las vistas del proyectosigan funcionando después de los últimos cambios agregados.
 
-Continuar haciendo: Hacer reuniones semanales todos los domingos.
+Continuar haciendo: Reuniones para chequear como avanza el proyecto. Revisar todos los puntos sueltos que nos hayan quedado de los sprints anteriores para corregirlos.
 
-Hacer menos: Priorizar los trabajos personales, debemos darle también importancia al trabajo integrador grupal.
-
+Hacer menos:  Dejar todo para último momento
