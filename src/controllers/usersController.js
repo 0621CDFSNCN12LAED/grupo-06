@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const pacienteService = require("../services/paciente-service");
 const {validationResult} = require('express-validator');
 
+/*
 //Importo el JSON de usuarios
 const pacientesFilePath = path.join(
     __dirname,
@@ -18,8 +19,8 @@ const pacienteMaximoId = Math.max.apply(
         return o.id;
     })
 );
+*/
 
-//filtro el array de personas para quedarme solo con usuarios
 const controller = {
     showLogin: (req, res) => {
         res.render("./users/ingresar");

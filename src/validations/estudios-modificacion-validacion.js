@@ -1,8 +1,8 @@
 const {body} = require('express-validator');
 
 const validacionesEstudioModificacion = [
-    body("title")
-        .notEmpty().withMessage('Se debe ingresar el nombre del estudio'),
+    body("titulo")
+        .notEmpty().withMessage('Se debe ingresar el titulo del estudio'),
     body('desc')
         .notEmpty().withMessage('Se debe ingresar descripción del estudio'),
     body('antes')

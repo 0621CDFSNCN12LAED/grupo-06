@@ -4,7 +4,7 @@ const { send } = require("process");
 const {validationResult} = require('express-validator');
 const estudioService = require("../services/estudio-service");
 
-
+/*
 //Importo el JSON de estudios
 const estudiosFilePath = path.join(__dirname, "../data/estudiosDataBase.json");
 const estudios_todos = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
@@ -13,7 +13,7 @@ const estudios_todos = JSON.parse(fs.readFileSync(estudiosFilePath, "utf-8"));
 let estudios = estudios_todos.filter(function(elemento) {
     return elemento.active == true;
 });
-
+*/
 //Creacion del controlador
 const controller = {
     listadoEstudios: async(req, res) => {
