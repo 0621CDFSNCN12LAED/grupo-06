@@ -52,7 +52,7 @@ function formIsInvalid() {
     validateInput(last_name, isEmpty, "Se debe completar el Apellido")
   );
   errors.push(
-    validateInput(doc, isEmpty, Se debe completar el Número de Documento")
+    validateInput(doc, isEmpty, "Se debe completar el Número de Documento")
   );
   errors.push(
     validateInput(birth_date, isEmpty, "Se debe completar la fecha de cumpleaños")
