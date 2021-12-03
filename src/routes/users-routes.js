@@ -24,8 +24,12 @@ const upload = multer({ storage: storage });
 //Rutas de usuarios
 router.get("/perfil-usuario", usersController.perfilUsuario);
 router.get("/ingresar", usersController.showLogin);
-router.post("/login", validacionesPacienteLogin,usersController.login);
+router.post("/login", 
+    //validacionesPacienteLogin,
+    usersController.login);
+
 router.get("/registro", usersController.registro);
+
 router.post("/registro", 
     upload.single("imagenPerfil"),
     validacionesRegistroPaciente, //Validaciones en los campos de registro de Usuario
