@@ -35,14 +35,13 @@ const controller = {
         });
         res.render("./products/estudioDetalle", { detEst: detEst });
     },
+    
     crearEstudio: (req, res) => {
         res.render("./products/crearEstudio");
     },
 
     guardarEstudio: async(req, res) => {
         let errors = validationResult(req);
-        //console.log(errors);
-        //console.log(req.body);
 
         if(errors.isEmpty()){
             await estudioService.create(req.body, req.file);
@@ -51,44 +50,7 @@ const controller = {
             console.log("hay errores");
             return res.render('./products/crearEstudio', {errors: errors.mapped(), old: req.body});
         }
-        
-        
-        //Obtengo el maximo id de estudios
-        /*
-        let estudioMaximoId = Math.max.apply(
-            Math,
-            estudios.map(function(o) {
-                return o.id;
-            })
-        );
-        */
-
-
-        /*
-        //creo el objeto estudio a agregar
-        const estudio_nuevo = {
-            id: estudioMaximoId + 1,
-            title: req.body.title,
-            desc: req.body.desc,
-            antes: req.body.antes,
-            option: req.body.option,
-            price: req.body.price,
-            img: req.file ? req.file.filename : "no-image.png",
-            active: true,
-        };
-        */
-
-        //Agrego el nuevo estudio al array en memoria de estudios
-        //estudios.push(estudio_nuevo);
-
-        //transformo el array de estudios a JSON
-        //estudiosJSON = JSON.stringify(estudios, null, 4);
-
-        //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
-        //fs.writeFileSync(estudiosFilePath, estudiosJSON);
-
-        //Redirecciono a listado de estudios
-    },
+    },        
 
     modificarEstudio: async(req, res) => {
         const estudio = await estudioService.searchOneEstudio(req.params.id);
@@ -150,42 +112,3 @@ module.exports = controller;
 
 
 
-
-
-/* Versiones viejas de los metodos */
-
-/*
-delete: (req, res) => {  
-    
-let estudioEliminar = estudios.find((estu) => {
-    if (estu.id == req.params.id) {
-        return estu;
-    }
-});
-console.log(estudioEliminar);
-
-//cambio el estado del estudio a inactivo
-estudioEliminar.active = false;
-
-console.log(estudioEliminar);
-
-estudios = estudios.filter(function(elemento) {
-    return elemento.id != req.params.id;
-});
-
-console.log("estudios filtrados");
-console.log(estudios);
-
-//Agrego el nuevo estudio al array en memoria de estudios
-estudios.push(estudioEliminar);
-
-//Transformo el array de estudios a JSON
-estudiosJSON = JSON.stringify(estudios, null, 4);
-
-//Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
-fs.writeFileSync(estudiosFilePath, estudiosJSON);
-
-//Redirecciono a listado de estudios
-res.redirect("/estudios");
-
-*/
