@@ -14,9 +14,9 @@
                     <% }} %>                   
                 </div>
 
-                <div class="login-page">
+                <div class="login-page" id= "formul">
                     <div class="form">
-                        <form class="login-form" method="POST" action="/users/registro" id= "formulario">
+                        <form class="login-form" method="POST" action="/users/registro">
                             <h3>Datos Personales</h2>
                                 <section class="registro-flex">
                                     <div>
@@ -46,7 +46,7 @@
                                     </div>
                                     <div>
                                         <label for="nroDocumento">Documento</label>
-                                        <input id="doc" name="nroDocumento" type="text" placeholder="Número Documento" value="<%= locals.old ? old.nroDocumento : null %>"/>
+                                        <input id="doc" name="nroDocumento" type="text" placeholder="Número Documento" value="<%= locals.old ? old.nroDocumento : null %>" />
                                     </div>
 
                                     <div>

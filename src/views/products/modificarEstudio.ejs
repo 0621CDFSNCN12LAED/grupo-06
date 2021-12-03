@@ -24,10 +24,10 @@
                             <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" width="50%" />
                             </br>
                             <label for="title">Título de Estudio</label>
-                            <input type="text" name="title" id="title" value="<%=estudio.title%>">
+                            <input type="text" name="title" id="title" value="<%=estudio.titulo.trim()%>">
                             </br>
                             <label for="desc">Descripción</label>
-                            <textarea name="desc" id="desc"><%=estudio.desc%></textarea>
+                            <textarea name="desc" id="desc"><%=estudio.descripcion.trim()%></textarea>
                             </br>
                             <label for="antes">Antes</label>
                             <textarea name="antes" id="antes"><%=estudio.antes%></textarea>
@@ -36,7 +36,7 @@
                             <input type="text" name="option" id="option" value="<%=estudio.option%>">
                             </br>
                             <label for="price">Precio</label>
-                            <input type="text" name="price" id="price" value="<%=estudio.price%>">
+                            <input type="text" name="price" id="price" value="<%=estudio.precio%>">
                             </br>
                             <label for="imagenEstudio">Imagen del Producto</label>
                             <input type="file" name="imagenEstudio" id="imagenEstudio">

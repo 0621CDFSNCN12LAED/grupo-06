@@ -2,7 +2,7 @@
 //Como en la invocacion del script uso DEFER, estoy seguro que el script ya se cargó    
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
-const formulario = document.querySelector("form");
+const formulario = document.querySelector("#formulario form");
 
 //Dejo el cursor posicionado en el primer campo a cargar
 emailInput.focus();

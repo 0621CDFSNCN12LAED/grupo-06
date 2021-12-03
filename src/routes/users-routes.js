@@ -32,7 +32,7 @@ router.get("/registro", usersController.registro);
 
 router.post("/registro", 
     upload.single("imagenPerfil"),
-    validacionesRegistroPaciente, //Validaciones en los campos de registro de Usuario
+    //validacionesRegistroPaciente, //Validaciones en los campos de registro de Usuario
     usersController.crearPaciente);
 
 
