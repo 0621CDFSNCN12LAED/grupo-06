@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
     create: async(payload, image) => {
-        console.log(payload);
+
         await db.Estudios.create({
             titulo: payload.title,
             descripcion: payload.desc,
@@ -17,18 +17,25 @@ module.exports = {
         });
     },
 
-    edit: async(payload, image) => {
-        const estudio = await db.Estudios.findByPk(id_estudio);
-        estudio.update({
-            titulo: payload.title,
-            descripcion: payload.desc,
+    edit: async(id_estudio, payload, image) => {
+        //Busco el estudio a modificar
+/*
+        const estudio = await db.Estudios.findByPk(payload.id);
+        console.log("ESTUDIO");
+        console.log(estudio.id);        
+*/
+        
+        await db.Estudios.update({
+            titulo: payload.titulo,
+            descripcion: payload.descripcion,
             antes: payload.antes,
-            precio: payload.price,
-            img: image ? image.filename : "no-image.png",
-            estado: true,
+            precio: payload.precio,
+            img: image ? image.filename : "no-image.png",     
+            estado: true
         }, {
-            where: { id: payload.id }
+            where: { id: id_estudio}
         });
+        
     },
 
     list: async() => {
@@ -90,4 +97,5 @@ module.exports = {
         const estudio = await db.Estudios.findByPk(id);
         return estudio;
     },
+
 };

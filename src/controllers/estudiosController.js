@@ -53,48 +53,18 @@ const controller = {
 
     modificarEstudio: async(req, res) => {
         const estudio = await estudioService.searchOneEstudio(req.params.id);
-        console.log(estudio);
+
         res.render("products/modificarEstudio", { estudio });
     },
 
-    actualizarEstudio: (req, res) => {
-        //busco el estudio para obtener su nombre de imagen guardada
-        const estudioImagen = estudios.find((estu) => {
-            if (estu.id == req.params.id) {
-                return estu.img;
-            }
-            return null;
-        });
+    actualizarEstudio: async(req, res) => {
+        const estudio  = await estudioService.searchOneEstudio(req.params.id);
+        await estudioService.edit(estudio.id, estudio, req.file);
+        const estudios = await estudioService.list();
 
-        const estudio_actualizado = {
-            id: req.params.id,
-            title: req.body.title,
-            desc: req.body.desc,
-            antes: req.body.antes,
-            option: req.body.option,
-            price: req.body.price,
-            img: req.file ? req.file.filename : estudioImagen.img,
-        };
-
-        //Quito el objeto del array para luego insertarlo modificado
-        estudios = estudios.filter(function(elemento) {
-            return elemento.id != req.params.id;
-        });
-
-        //Agrego el nuevo estudio al array en memoria de estudios
-        estudios.push(estudio_actualizado);
-
-        //Transformo el array de estudios a JSON
-        estudiosJSON = JSON.stringify(estudios, null, 4);
-
-        //Storeo en estudiosDataBaseJson el array de estudios en String con formato JSON
-        fs.writeFileSync(estudiosFilePath, estudiosJSON);
-
-        //Redirecciono a listado de estudios
-        res.redirect("/estudios/estudio-detalle/" + req.params.id);
-
-        //res.render("./products/listadoEstudios", { estudios: estudios });
+        res.render("./products/listadoEstudios", { estudios: estudios });                
     },
+    
     delete: async(req, res) => {
         await estudioService.delete(req.params.id);
 
