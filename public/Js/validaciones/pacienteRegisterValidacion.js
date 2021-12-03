@@ -2,7 +2,6 @@ const first_name = document.querySelector("#firstname");
 const last_name = document.querySelector("#lastname");
 const doc = document.querySelector("#doc");
 const birth_date = document.querySelector("#birth_date");
-const profile_img = document.querySelector ("imagenPerfil");
 const email = document.querySelector("#email");
 const re_email = document.querySelector("#reEmail");
 const password = document.querySelector("#password");
@@ -16,7 +15,6 @@ const requiredInputs = [
   last_name,
   doc,
   birth_date,
-  profile_img,
   email,
   re_email,
   password,
@@ -49,33 +47,30 @@ form.addEventListener("submit", (event) => {
 function formIsInvalid() {
   let errors = [];
 
-  errors.push(validateInput(first_name, isEmpty, "El titulo no puede estar vacio"));
+  errors.push(validateInput(first_name, isEmpty, "Se debe completar el Nombre"));
   errors.push(
-    validateInput(last_name, isEmpty, "La calificacion no puede estar vacia")
+    validateInput(last_name, isEmpty, "Se debe completar el Apellido")
   );
   errors.push(
-    validateInput(doc, isEmpty, "Los awards no puede estar vacio")
+    validateInput(doc, isEmpty, Se debe completar el Número de Documento")
   );
   errors.push(
-    validateInput(birth_date, isEmpty, "El release_date no puede estar vacio")
+    validateInput(birth_date, isEmpty, "Se debe completar la fecha de cumpleaños")
   );
   errors.push(
-    validateInput(profile_img, isEmpty, "El movieLength no puede estar vacio")
-  );
-  errors.push(
-    validateInput(email, isEmpty, "El genre_id no puede estar vacio")
+    validateInput(email, isEmpty, "Se debe ingresar el mail de contacto")
   );
 
   errors.push(
-    validateInput(re_email, isEmpty, "El genre_id no puede estar vacio")
+    validateInput(re_email, isEmpty, "Se debe corroborar el mail de contacto")
   );
 
   errors.push(
-    validateInput(password, isEmpty, "El genre_id no puede estar vacio")
+    validateInput(password, isEmpty, "Se debe ingresar una password")
   );
 
   errors.push(
-    validateInput(re_password, isEmpty, "El genre_id no puede estar vacio")
+    validateInput(re_password, isEmpty, "Se debe corroborar una password")
   );
 
   console.log(errors);
