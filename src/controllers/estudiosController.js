@@ -58,13 +58,20 @@ const controller = {
     },
 
     actualizarEstudio: async(req, res) => {
+        let errors = validationResult(req);
         const estudio  = await estudioService.searchOneEstudio(req.params.id);
-        await estudioService.edit(estudio.id, estudio, req.file);
-        const estudios = await estudioService.list();
+        if(errors.isEmpty())
+        {
+            
+            await estudioService.edit(estudio.id, estudio, req.file);
+            const estudios = await estudioService.list();
 
-        res.render("./products/listadoEstudios", { estudios: estudios });                
+            res.render("./products/listadoEstudios", { estudios: estudios });
+        }else{
+            return res.render("./products/modificarEstudio", { estudio: estudio,  errors: errors.mapped(), old: req.body});
+        }
+
     },
-    
     delete: async(req, res) => {
         await estudioService.delete(req.params.id);
 

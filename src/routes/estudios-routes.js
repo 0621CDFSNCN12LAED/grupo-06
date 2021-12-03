@@ -4,6 +4,7 @@ const multer = require("multer");
 const path = require("path");
 const estudiosController = require("../controllers/estudiosController");
 const validacionesEstudioCreacion = require('../validations/estudios-creacion-validacion');
+const validacionesEstudioModificacion = require('../validations/estudios-modificacion-validacion');
 
 //Creacion de storage que ataja el endpoint archivos del formulario creacion estudio
 const storage = multer.diskStorage({
@@ -36,8 +37,8 @@ router.post(
 router.get("/modificar/:id", estudiosController.modificarEstudio);
 router.put(
     "/actualizar/:id",
-    //validacionesEstudioCreacion, //Se validan todos los campos obligatorios y su formato en la modificación del estudio
     upload.single("imagenEstudio"),
+    validacionesEstudioModificacion, //Se validan todos los campos obligatorios y su formato en la modificación del estudio
     estudiosController.actualizarEstudio
 );
 
