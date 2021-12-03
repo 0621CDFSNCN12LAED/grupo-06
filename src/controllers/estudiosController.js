@@ -35,7 +35,7 @@ const controller = {
         });
         res.render("./products/estudioDetalle", { detEst: detEst });
     },
-    
+
     crearEstudio: (req, res) => {
         res.render("./products/crearEstudio");
     },
@@ -47,13 +47,13 @@ const controller = {
             await estudioService.create(req.body, req.file);
             res.redirect("/estudios");
         }else{
-            console.log("hay errores");
             return res.render('./products/crearEstudio', {errors: errors.mapped(), old: req.body});
         }
     },        
 
     modificarEstudio: async(req, res) => {
         const estudio = await estudioService.searchOneEstudio(req.params.id);
+        console.log(estudio);
         res.render("products/modificarEstudio", { estudio });
     },
 
