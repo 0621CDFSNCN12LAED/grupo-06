@@ -55,5 +55,13 @@ module.exports = (sequelize, dataTypes) => {
 
     let Estudio = sequelize.define(alias, cols, config);
 
+    //Establezo relación con Categoría: un Estudio tiene una Categoría asignada
+    Estudio.associate = function(models){
+        Estudio.belongsTo(models.Categorias, {
+            as: "categoria",
+            foreign_key: "id"
+        });
+    };
+
     return Estudio;
 };

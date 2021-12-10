@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Categoria";
+    let alias = "Categorias";
 
     let cols = {
         id: {
@@ -40,8 +40,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_categoria"
         });
     };
-    /**/
-    /**/
 
     return Categoria;
 
