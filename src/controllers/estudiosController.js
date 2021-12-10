@@ -14,6 +14,7 @@ let estudios = estudios_todos.filter(function(elemento) {
     return elemento.active == true;
 });
 */
+
 //Creacion del controlador
 const controller = {
     listadoEstudios: async(req, res) => {

@@ -43,8 +43,7 @@ const controller = {
             console.log("hay errores en el login del paciente");
             return res.render('./users/ingresar', {errors: errors.mapped(), old: req.body});
         }
-        
-        
+                
 
         //Si encontré el paciente por email, debo verificar la contraseña ingresada:
         if (!bcrypt.compareSync(req.body.password, paciente.password)) {

@@ -27,19 +27,29 @@ CREATE TABLE Ubicaciones(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE Categorias(
+	id INT NOT NULL AUTO_INCREMENT,
+    categoria_nombre VARCHAR(100) NOT NULL,
+    estado TINYINT NOT NULL,  
+    fecha_creacion DATE NOT NULL,
+	fecha_modificacion DATE NOT NULL,
+    PRIMARY KEY(id)
+);
 
 CREATE TABLE Estudios(
 	id INT NOT NULL AUTO_INCREMENT,
 	titulo VARCHAR(150) NOT NULL,
 	descripcion TEXT NOT NULL,
 	antes VARCHAR(255) NOT NULL,
+	id_categoria INT NOT NULL;
 	/* estudio_ubicacion_id INT NOT NULL, */
 	precio FLOAT NOT NULL,
 	img VARCHAR(255) NULL,
 	fecha_creacion DATE NOT NULL,
 	fecha_modificacion DATE NOT NULL,
 	estado TINYINT NOT NULL,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY (id_categoria) REFERENCES Categorias(id),
 );
 
 CREATE TABLE Estudio_Ubicacion(
