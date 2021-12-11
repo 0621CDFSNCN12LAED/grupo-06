@@ -7,6 +7,7 @@ const controller = {
     listadoEstudios: async(req, res) => {
         const estudios = await estudioService.list();
         const categorias = await categoriaService.list();
+        let total_estudios = 0;
 
         //Creo el array útil de contador de estudios por categoría
         const countByCategory = [];
@@ -14,18 +15,20 @@ const controller = {
         //Recorro las categorías
         categorias.map((categoria, i) => {
             let contador = 0;
+            
             for(const estudio of estudios){
+                
                 if(categoria.id == estudio.id_categoria ){
                     contador += 1;
                 }
-
             }
+
             countByCategory[i] = {categoria: categoria.categoria_nombre, total: contador};
         });
 
-        //Creo el array de objetos de estudios agregandole la url de detalle 
-        
-       estudios.map((estudio) => {
+        //Creo el array de objetos de estudios agregandole la url de detalle         
+        estudios.map((estudio) => {
+            total_estudios += 1;
             estudio.dataValues.url = 'api/estudio/' + estudio.id;
             estudio.dataValues.categoria = estudio.categoria.categoria_nombre;
         });
@@ -40,7 +43,7 @@ const controller = {
                 },
                 data: {
                     estudios: estudios,
-                    count: estudios.length,
+                    count: total_estudios,
                     countByCategory: countByCategory,
                 },
             });
@@ -63,7 +66,7 @@ const controller = {
         if(detEst){
             detEst.dataValues.url = 'api/estudio/' + req.params.id;
             detEst.dataValues.categoria = detEst.categoria.categoria_nombre;
-            //detEst.dataValues.ubicaciones = detEst.ubicaciones;
+            detEst.dataValues.ubicaciones = detEst.ubicaciones;
             res.json(detEst);
         }
 

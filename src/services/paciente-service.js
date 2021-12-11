@@ -12,6 +12,32 @@ const pacientesFilePath = path.join(
 const pacientes = JSON.parse(fs.readFileSync(pacientesFilePath, "utf-8"));
 
 module.exports = {
+
+    list: async() => {
+        
+        const pacientesAll = await db.Pacientes.findAll({
+            /*
+            include: [
+                {association: "categoria"},
+                //{association: "ubicaciones"}
+            ],
+            */
+            where: {
+                estado: 1,
+            },
+            order: [
+                ['id', 'DESC']
+            ],
+        });
+
+        return pacientesAll;
+    },
+
+    searchOnePaciente: async(id) =>{
+        const paciente = await db.Pacientes.findByPk(id);        
+        return paciente;
+    },
+
     getByEmail: (email) => {
         const paciente = pacientes.find((paciente) => {
             if (paciente.email == email) {
