@@ -24,12 +24,11 @@ const controller = {
         });
 
         //Creo el array de objetos de estudios agregandole la url de detalle 
-        let estudios_con_url = estudios.map(estudio => ({
-            estudio, 
-            url: 'api/estudio/:' + estudio.id
-        }));
-
-
+        
+       estudios.map((estudio) => {
+            estudio.dataValues.url = 'api/estudio/:' + estudio.id;
+        });
+ 
         if(estudios){
             
             res.json({
@@ -39,7 +38,7 @@ const controller = {
                     descripcion: 'listado de todos los estudios disponibles y activos'
                 },
                 data: {
-                    estudios: estudios_con_url,
+                    estudios: estudios,
                     count: estudios.length,
                     countByCategory: countByCategory,
                 },
