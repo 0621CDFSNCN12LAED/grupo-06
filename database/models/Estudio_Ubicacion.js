@@ -29,12 +29,12 @@ module.exports = (sequelize, dataTypes) => {
 
     let Estudio_Ubicacion = sequelize.define(alias, cols, config);
 
-    Estudio_Ubicacion.associate = function(models) {
+    /*Estudio_Ubicacion.associate = function(models) {
         Estudio_Ubicacion.hasMany(models.Ubicacion, {
             as: "ubicaciones",
-            foreignKey: "id"
+            foreignKey: "id_ubicacion"
         });
-    };
+    };*/
 
     return Estudio_Ubicacion;
 

@@ -39,13 +39,16 @@ module.exports = {
 
     list: async() => {
         const estudiosAll = await db.Estudios.findAll({
+            include: [
+                {association: "categoria"}
+            ],
             where: {
                 estado: true,
             },
             order: [
                 ['id', 'DESC']
             ],
-            limit: 10,
+            limit: 10,            
         });
 
         return estudiosAll;

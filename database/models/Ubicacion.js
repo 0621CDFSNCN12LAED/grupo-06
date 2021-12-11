@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Ubicacion";
+    let alias = "Ubicaciones";
 
     let cols = {
         id: {

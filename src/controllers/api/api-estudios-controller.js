@@ -26,7 +26,8 @@ const controller = {
         //Creo el array de objetos de estudios agregandole la url de detalle 
         
        estudios.map((estudio) => {
-            estudio.dataValues.url = 'api/estudio/:' + estudio.id;
+            estudio.dataValues.url = 'api/estudio/' + estudio.id;
+            estudio.dataValues.categoria = estudio.categoria.categoria_nombre;
         });
  
         if(estudios){
@@ -55,6 +56,17 @@ const controller = {
             });
     }},
 
+    estudioDetalle: async(req, res) => {
+
+        const detEst = await estudioService.searchOneEstudio(req.params.id);
+        
+        if(detEst){
+            detEst.dataValues.url = 'api/estudio/' + req.params.id;
+            res.json(detEst);
+        }
+
+        
+    },
     
     /*
     listadoUltimos4Estudios: async(req, res) => {
@@ -63,13 +75,7 @@ const controller = {
         return estudios;
     },
 
-    estudioDetalle: (req, res) => {
-        //res.render("./products/productoDetalle");
-        const detEst = estudios.find((detEst) => {
-            return detEst.id == req.params.id;
-        });
-        res.render("./products/estudioDetalle", { detEst: detEst });
-    },
+   
 
     crearEstudio: (req, res) => {
         res.render("./products/crearEstudio");

@@ -27,12 +27,12 @@ INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, f
     VALUES ('Test Rapido Anticuerpos SarsCovid', 'Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.', '', 4000, '1631297563041_estudio.jpg', SYSDATE(), SYSDATE(), true, 5);
 
 /*** ESTUDIO_UBICACION ***/
-INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (1,1,true);
-INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (2, 2, true);
-INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (3, 3, true);
-INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (4, 3, true);
-INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (5, 4, true);
-
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35,5,true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 25, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (5, 5, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 5, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 15, true);
 /*** PACIENTES ***/
 INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
     VALUES ('Tull', 'Tams', 'DNI', 31303030, SYSDATE(), 'M', null, 'tulltams@gmail.com', '$2a$12$MKrjfwTszjhI4C2AToX1putDW8GTRzceueX/6XE0.Ch.WwP5ehEMa', true, true);
