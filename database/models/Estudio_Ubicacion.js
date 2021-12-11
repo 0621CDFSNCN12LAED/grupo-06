@@ -15,10 +15,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
-        importe: {
-            type: dataTypes.FLOAT,
+        estado: {
+            type: dataTypes.BOOLEAN,
             allowNull: false,
         },
+        /*importe: {
+            type: dataTypes.FLOAT,
+            allowNull: false,
+        },*/
     };
 
     let config = {
@@ -28,13 +32,6 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let Estudio_Ubicacion = sequelize.define(alias, cols, config);
-
-    /*Estudio_Ubicacion.associate = function(models) {
-        Estudio_Ubicacion.hasMany(models.Ubicacion, {
-            as: "ubicaciones",
-            foreignKey: "id_ubicacion"
-        });
-    };*/
 
     return Estudio_Ubicacion;
 

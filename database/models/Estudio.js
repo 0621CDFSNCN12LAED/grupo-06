@@ -66,11 +66,7 @@ module.exports = (sequelize, dataTypes) => {
         Estudio.belongsTo(models.Categorias, {
             as: "categoria",
             foreignKey: "id_categoria"
-        });
-    };
-/*
-    //Establezco la relación con Ubicaciones donde se permite realizar el estudio
-    Estudio.associate = function(models){
+        })
         Estudio.belongsToMany(models.Ubicaciones, {
             as: "ubicaciones",
             through: "estudio_ubicacion",
@@ -78,7 +74,8 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "id_ubicacion",
             timestamp: false,
         });
+
     };
-*/
+
     return Estudio;
 };

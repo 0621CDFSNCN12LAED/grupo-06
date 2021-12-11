@@ -40,7 +40,8 @@ module.exports = {
     list: async() => {
         const estudiosAll = await db.Estudios.findAll({
             include: [
-                {association: "categoria"}
+                {association: "categoria"},
+                //{association: "ubicaciones"}
             ],
             where: {
                 estado: true,
@@ -98,7 +99,14 @@ module.exports = {
     },
 
     searchOneEstudio: async(id) => {
-        const estudio = await db.Estudios.findByPk(id);
+        const estudio = await db.Estudios.findByPk(id,
+            {
+                include: [
+                    {association: "categoria"},
+                    //{association: "ubicaciones"}
+                ],
+            });
+        
         return estudio;
     },
 

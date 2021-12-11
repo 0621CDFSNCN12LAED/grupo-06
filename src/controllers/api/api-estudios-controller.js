@@ -62,6 +62,8 @@ const controller = {
         
         if(detEst){
             detEst.dataValues.url = 'api/estudio/' + req.params.id;
+            detEst.dataValues.categoria = detEst.categoria.categoria_nombre;
+            //detEst.dataValues.ubicaciones = detEst.ubicaciones;
             res.json(detEst);
         }
 

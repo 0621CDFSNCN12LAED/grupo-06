@@ -20,15 +20,17 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "Ubicaciones",
         timestamps: false,
-
     };
 
     let Ubicacion = sequelize.define(alias, cols, config);
 
     Ubicacion.associate = function(models) {
-        Ubicacion.belongsTo(models.Estudios_Ubicaciones, {
-            as: "estudios_ubicaciones",
-            foreignKey: "id_estudio"
+        Ubicacion.belongsToMany(models.Ubicaciones, {
+            as: "estudios",
+            through: "estudio_ubicacion",
+            foreignKey: "id_ubicacion",
+            otherKey: "id_estudio",
+            timestamps: false,
         });
     };
 
