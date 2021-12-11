@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const db = require('../../database/models');
-const { triggerAsyncId } = require("async_hooks");
 const Op = db.Sequelize.Op;
 
 module.exports = {
@@ -51,6 +50,8 @@ module.exports = {
 
         return estudiosAll;
     },
+
+
 
     list_ultimos_4_estudios: async() => {
         const estudios_ultimos_4 = await db.Estudios.findAll({

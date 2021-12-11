@@ -6,6 +6,7 @@ const mainController = require("../controllers/mainController");
 const estudiosRoutes = require('./estudios-routes');
 const usersRoutes = require('./users-routes');
 const carritoRoutes = require('./carrito-routes');
+const apiRouter = require("../controllers/api/mainController");
 
 //Ruteador para main
 router.get("/", mainController.home);
@@ -21,5 +22,8 @@ router.use('/users', usersRoutes);
 
 //Ruteador para carrito
 router.use('/carrito', carritoRoutes);
+
+//Ruteador de API
+router.use('/api', apiRouter);
 
 module.exports = router;

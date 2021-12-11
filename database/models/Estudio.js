@@ -44,6 +44,12 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
 
         },
+        id_categoria: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true,
+        }
+
     };
 
     let config = {
@@ -59,7 +65,7 @@ module.exports = (sequelize, dataTypes) => {
     Estudio.associate = function(models){
         Estudio.belongsTo(models.Categorias, {
             as: "categoria",
-            foreign_key: "id"
+            foreignKey: "id_categoria"
         });
     };
 
