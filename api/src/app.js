@@ -9,6 +9,7 @@ const expressSession = require("express-session");
 //Uso CORS para evitar problemas de acceso desde REACT
 app.use(
     cors({
+        //Le agrego el servidor de React que es desde donde acepto pedidos, de ningun otro lado salvo react.
         origin: "http://localhost:3000",
     })
 );
