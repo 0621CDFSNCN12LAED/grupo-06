@@ -11,7 +11,11 @@ INSERT INTO Categorias (categoria_nombre, estado, fecha_creacion, fecha_modifica
 
 INSERT INTO Categorias (categoria_nombre, estado, fecha_creacion, fecha_modificacion)
 	VALUES ('Tests', 1, SYSDATE(), SYSDATE());
-
+INSERT INTO Categorias (categoria_nombre, estado, fecha_creacion, fecha_modificacion)
+	VALUES ('Domicilio', 1, SYSDATE(), SYSDATE());
+INSERT INTO Categorias (categoria_nombre, estado, fecha_creacion, fecha_modificacion)
+	VALUES ('Test Rápido', 1, SYSDATE(), SYSDATE());
+    
 /*** ESTUDIOS ***/
 INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
     VALUES ('Perfil lipídico', 'El perfil lipídico mide la concentración de algunas de estas sustancias en la sangre para establecer el riesgo de desarrollar una enfermedad cardiovascular, para el seguimiento del tratamiento de las concentraciones inadecuadas de lípidos.','Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua', 8000, '1631156310151_estudio.jpg', SYSDATE(), SYSDATE(), true, 5);
