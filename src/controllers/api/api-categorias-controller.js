@@ -12,7 +12,7 @@ const controller = {
             delete categoria.dataValues.id;
             delete categoria.dataValues.estado;
             delete categoria.dataValues.fecha_creacion;
-            delete categoria.dataValues.fecha_modificacion;
+            delete categoria.dataValues.fecha_modificacion;            
         });
  
         if(categorias){

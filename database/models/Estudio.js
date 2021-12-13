@@ -54,9 +54,11 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "Estudios",
-        timestamp: true,
+        timestamps: true,
         createdAt: "fecha_creacion",
         updatedAt: "fecha_modificacion",
+        //Para que interprete el guión bajo.
+        underscored: true, 
     };
 
     let Estudio = sequelize.define(alias, cols, config);
@@ -66,13 +68,13 @@ module.exports = (sequelize, dataTypes) => {
         Estudio.belongsTo(models.Categorias, {
             as: "categoria",
             foreignKey: "id_categoria"
-        })
+        });
         Estudio.belongsToMany(models.Ubicaciones, {
             as: "ubicaciones",
             through: "estudio_ubicacion",
             foreignKey: "id_estudio",
             otherKey: "id_ubicacion",
-            timestamp: false,
+            timestamps: false,
         });
 
     };

@@ -20,6 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "Ubicaciones",
         timestamps: false,
+        underscored: true,
     };
 
     let Ubicacion = sequelize.define(alias, cols, config);
@@ -30,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "estudio_ubicacion",
             foreignKey: "id_ubicacion",
             otherKey: "id_estudio",
-            timestamps: false,
+            timestamps: false,            
         });
     };
 

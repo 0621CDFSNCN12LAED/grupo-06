@@ -1,9 +1,17 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const path = require("path");
 //Configuración para métodos override HTTP de PUT y DELETE
 const methodOverride = require("method-override");
 const expressSession = require("express-session");
+
+//Uso CORS para evitar problemas de acceso desde REACT
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+    })
+);
 
 //Se levanta webserver
 app.listen(3030, () => {

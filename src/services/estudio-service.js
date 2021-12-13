@@ -41,7 +41,7 @@ module.exports = {
         const estudiosAll = await db.Estudios.findAll({
             include: [
                 {association: "categoria"},
-                //{association: "ubicaciones"}
+                {association: "ubicaciones"}
             ],
             where: {
                 estado: true,
@@ -103,7 +103,7 @@ module.exports = {
             {
                 include: [
                     {association: "categoria"},
-                    //{association: "ubicaciones"}
+                    {association: "ubicaciones"}
                 ],
             });
         
