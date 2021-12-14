@@ -17,7 +17,7 @@ let tableRowsData = [
         Awards: 3
     },
     
-]
+];
 
 
 function Chart (){

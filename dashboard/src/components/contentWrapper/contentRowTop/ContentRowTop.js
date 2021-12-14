@@ -1,7 +1,8 @@
 import React from 'react';
-import ContentRowCenter from './ContentRowCenter';
-import ContentRowMovies from './ContentRowMovies';
-import Chart from './Chart';
+import ContentRowCenter from '../../ContentRowCenter';
+import ContentRowMovies from '../../ContentRowMovies';
+import TableEstudios from '../../tables/tableEstudios/TableEstudios';
+import TablePacientes from '../../tables/tablePacientes/TablePacientes';
 
 function ContentRowTop(){
     return(
@@ -15,7 +16,8 @@ function ContentRowTop(){
 					{/*<!-- Content Row Movies-->*/}
 					<ContentRowMovies />
 					<ContentRowCenter />
-					<Chart />
+					<TableEstudios />
+					<TablePacientes />
 	
 				</div>
 				{/*<!--End Content Row Top-->*/}

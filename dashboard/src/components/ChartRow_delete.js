@@ -17,8 +17,6 @@ function ChartRow(props){
                     <td>{props.Awards}</td>
                 </tr>
             )
-    }
+    }    
     
-        
-
-export default ChartRow;
+export default ChartRow; 
