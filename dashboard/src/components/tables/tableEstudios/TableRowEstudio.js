@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function ChartRowEstudio(props){
-    console.log("estas son las props" + props);
+    
     return ( 
                 <tr>
                     <td>{props.id}</td>

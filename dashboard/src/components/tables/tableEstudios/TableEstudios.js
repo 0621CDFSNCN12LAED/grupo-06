@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TableRowEstudio from './TableRowEstudio';
 
-//URL para listado de Categorías
+//URL para listado de Estudios
 const ESTUDIOS_API = '/api/estudios';
 
 export default class TableEstudios extends Component{
@@ -67,21 +67,21 @@ export default class TableEstudios extends Component{
 
     componentDidMount(){
         //console.log("Evento: Montando componente");
-        //Fetch de las categorías
+        //Fetch de los estudios
         this.fetchEstudios();        
     }
 
     async fetchEstudios(){
-        //Fetch de las categorias
+        //Fetch de las estudios
         const result = await fetch(ESTUDIOS_API);
         
 
         //Al resultado lo paso a JSON
         const response = await result.json();
-        //Obtengo un array de categorias
+        //Obtengo un array de los estudios
         const estudios = response.data.estudios;   
 
-        //Seteo las categorías como un estado
+        //Seteo los estudios como un estado
         this.setState({estudios: estudios});
     }
 }

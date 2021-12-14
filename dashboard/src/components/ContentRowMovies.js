@@ -6,36 +6,8 @@ const CATEGORIAS_API = '/api/categorias';
 const ESTUDIOS_API = '/api/estudios';
 const PACIENTES_API = '/api/pacientes';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Movies in DB --> */
-
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 99,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+//Tarjetas de totales
+let totales_tarjetas = [];
 
 export default class ContentRowMovies extends Component{
     constructor(props){
@@ -50,19 +22,16 @@ export default class ContentRowMovies extends Component{
 
     render()
     {
-        console.log("Evento: Render");
-    
-
-    return (
-    
+        console.log("Evento: Render");    
+    return (    
         <div className="row">
             
-            {cartProps.map( (movie, i) => {
+            {totales_tarjetas.map( (tarjeta, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                return <SmallCard {...tarjeta} key={i}/>
             
             })}
-
+            
         </div>
     )
     }
@@ -72,40 +41,82 @@ export default class ContentRowMovies extends Component{
         //Fetch de las categorías
         this.fetchCategorias();   
         this.fetchEstudios();
-        console.log(this.state);     
+        this.fetchPacientes();
+        
     }
 
     async fetchCategorias(){
+        //Creo objeto de Categorias
+        let objetoCategorias = {
+            title: 'Total Categorías',
+            color: 'primary',
+            quantity: 0,
+            icon: 'fa-award'
+        }
+
         //Fetch de las categorias
         const resultado = await fetch(CATEGORIAS_API);
 
         //Aplico Formato JSON
         const response = await resultado.json();
 
-        //Obtengo total de categorias
+        //Obtengo y guardo eñ total de categorias en su objeto
         const categorias_total = response.data.count;        
 
-        console.log("TOTAL DE CATEGORIAS: ");
-        console.log(categorias_total);
+        objetoCategorias.quantity = categorias_total;
+        totales_tarjetas.push(objetoCategorias);
 
         //Seteo total Estudios como un estado
-        this.setState({categorias_total: categorias_total});
+        this.setState({objetoCategorias: objetoCategorias});
     };
 
+    
     async fetchEstudios(){
+        //Creo objeto de Estudios
+        let objetoEstudios = {
+            title: 'Total Estudios',
+            color: 'success',
+            quantity: 0,
+            icon: 'fa-clipboard-list'
+        }
         //Fetch de los estudios
         const resultado = await fetch(ESTUDIOS_API);
 
         //Aplico Formato JSON
         const response = await resultado.json();
 
-        //Obtengo total de estudios
-        const estudios_total = response.data.count;        
+        //Obtengo y guardo total de estudios en su objeto
+        const estudios_total = response.data.count;
+        objetoEstudios.quantity = estudios_total;
+        totales_tarjetas.push(objetoEstudios);
 
-        console.log("TOTAL DE ESTUDIOS: ");
-        console.log(estudios_total);
         //Seteo total Estudios como un estado
-        this.setState({estudios_total: estudios_total});
+        this.setState({objetoEstudios: objetoEstudios});
     }
+
+    async fetchPacientes(){
+        //Creo objeto de Pacientes
+        let objetoPacientes = {
+            title: 'Total Pacientes',
+            color: 'warning',
+            quantity: 0,
+            icon: 'fa-user-check'
+        }
+        //Fetch de los estudios
+        const resultado = await fetch(PACIENTES_API);
+
+        //Aplico Formato JSON
+        const response = await resultado.json();
+
+        //Obtengo y guardo total de estudios en su objeto
+        const pacientes_total = response.count;
+
+        objetoPacientes.quantity = pacientes_total;
+        totales_tarjetas.push(objetoPacientes);
+
+        //Seteo total Estudios como un estado
+        this.setState({objetoPacientes: objetoPacientes});
+    }
+    
 }
 
