@@ -73,15 +73,19 @@ const controller = {
         
     },
     
-    /*
+    
     listadoUltimos4Estudios: async(req, res) => {
         const estudios = await estudioService.list_ultimos_4_estudios();
         
         return estudios;
     },
 
+    ultimoEstudioCreado: async(req, res) =>{
+        const estudio = await estudioService.ultimo_estudio();
+        res.json(estudio);
+    },
    
-
+/*
     crearEstudio: (req, res) => {
         res.render("./products/crearEstudio");
     },

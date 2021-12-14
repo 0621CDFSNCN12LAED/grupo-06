@@ -30,6 +30,9 @@ INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, f
 INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
     VALUES ('Test Rapido Anticuerpos SarsCovid', 'Son pruebas rápidas inmunocromatográfica para la detección cualitativa de anticuerpos IgG/IgM anti SARS-COV-2 (COVid-19) que se utilizan con el objetivo de vigilancia de la enfermedad (investigación epidemiológica) y no de diagnóstico.', '', 4000, '1631297563041_estudio.jpg', SYSDATE(), SYSDATE(), true, 5);
 
+INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
+    VALUES ('Curva de glucosa', 'La Curva de glucosa o (Prueba de sobrecarga Oral de Glucosa). Es un diagnóstico que mide la capacidad de nuestro organismo para la metabolización de la glucosa que es nuestra principal fuente de energía.','Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua', 12500, '1631156310151_estudio.jpg', SYSDATE(), SYSDATE(), true, 5);
+
 /*** ESTUDIO_UBICACION ***/
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35,5,true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 15, true);

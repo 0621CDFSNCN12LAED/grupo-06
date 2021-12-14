@@ -18,12 +18,7 @@ module.exports = {
 
     edit: async(id_estudio, payload, image) => {
         //Busco el estudio a modificar
-/*
-        const estudio = await db.Estudios.findByPk(payload.id);
-        console.log("ESTUDIO");
-        console.log(estudio.id);        
-*/
-        
+       
         await db.Estudios.update({
             titulo: payload.titulo,
             descripcion: payload.descripcion,
@@ -69,6 +64,17 @@ module.exports = {
         });
  
         return estudios_ultimos_4;
+    },
+
+    ultimo_estudio: async() => {
+        const ultimo_estudio_creado = await db.Estudios.findAll({
+            where: {estado: true},
+            order: [
+                ['fecha_creacion', 'DESC']
+            ],
+            limit: 1,
+        });
+        return ultimo_estudio_creado;
     },
  
     delete: async(id_estudio) => {

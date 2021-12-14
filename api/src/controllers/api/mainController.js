@@ -7,6 +7,7 @@ const categoriasController = require("./api-categorias-controller");
 
 
 //Rutas correspondientes a Estudios
+router.use("/estudios/ultimo_estudio_creado", estudiosController.ultimoEstudioCreado);
 router.use("/estudios", estudiosController.listadoEstudios);
 router.use("/estudio/:id", estudiosController.estudioDetalle);
 
