@@ -13,9 +13,7 @@ export default class ContentRowMovies extends Component{
     constructor(props){
         super(props);
         this.state = {
-            categorias_total: 0,
-            pacientes_total: 0,
-            estudios_total: 0,
+            totales_tarjetas: ''
         };
         console.log("Evento: Constructor");     
     }
@@ -38,6 +36,7 @@ export default class ContentRowMovies extends Component{
 
     componentDidMount(){
         console.log("Evento: Montando componente");
+
         //Fetch de las categorías
         this.fetchCategorias();   
         this.fetchEstudios();
