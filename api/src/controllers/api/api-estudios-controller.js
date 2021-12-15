@@ -82,7 +82,31 @@ const controller = {
 
     ultimoEstudioCreado: async(req, res) =>{
         const estudio = await estudioService.ultimo_estudio();
-        res.json(estudio);
+        
+        if(estudio){
+            
+            res.json({
+                meta: {
+                    status: 200,
+                    url: 'api/estudios/ultimo_estudio_creado',
+                    descripcion: 'Despliega el último estudio creado y activo'
+                },
+                data: {
+                    estudio: estudio,
+                    count: 1,
+                },
+            });
+
+        } else {
+            res.json({
+                meta: {
+                    status: 503,                    
+                    url: 'api/estudios/ultimo_estudio_creado',
+                    descripcion: 'error'
+                },
+                data: 'no data'
+            });
+        }
     },
    
 /*

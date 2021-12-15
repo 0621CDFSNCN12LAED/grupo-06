@@ -7,7 +7,7 @@ export default class LastEstudioInDb extends Component{
     constructor(props){
         super(props);
         this.state = {
-            estudio: {}
+            estudio: ''
         };
         console.log("Evento: Constructor");     
     }
@@ -24,7 +24,7 @@ export default class LastEstudioInDb extends Component{
                             {/*<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>*/}
                         </div>
                         <p>{this.state.estudio.descripcion}</p>
-                        <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                        <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver más detalle</a>
                     </div>
                 </div>
             </div>
@@ -44,12 +44,16 @@ export default class LastEstudioInDb extends Component{
         const result = await fetch(ULTIMO_ESTUDIO_API);
     
         //Al resultado lo paso a JSON
-        const estudio = await result.json();
-        console.log("ULTIMO ESTUDIO");
-        console.log(estudio); 
-    
+        const response = await result.json();
+        
+        //Obtengo el objeto estudio último creado
+        const estudio = response.data.estudio;
+        
         //Seteo las categorías como un estado
-        this.setState({estudio: estudio});
+        this.setState({estudio: estudio[0]});
+
+        console.log("ULTIMO ESTUDIO");
+        console.log(this.state.estudio[0]); 
     }
 }
 
