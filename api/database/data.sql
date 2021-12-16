@@ -36,6 +36,11 @@ INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, f
 INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
     VALUES ('Curva de Insulina', 'método de laboratorio para verificar la forma en que el cuerpo moviliza el azúcar de la sangre a los tejidos como a los músculos y a la grasa. Dicha prueba se usa con frecuencia para el diagnóstico de diabetes.','Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua', 6800, '1631156310999_estudio.jpg', SYSDATE(), SYSDATE(), false, 35);
 
+INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
+    VALUES ('Test de Hidrógeno Espirado', 'El test de Hidrógeno Espirado es una prueba no invasiva que permite, a partir del aire exhalado, determinar la cantidad de hidrógeno formado por la flora intestinal habiendo ingerido previamente un tipo de azúcar.','No es necesario realizar ayuno y solamente se puede beber agua', 12490, '1631156310998_estudio.jpg', SYSDATE(), SYSDATE(), true, 25);
+INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
+    VALUES ('Perfil Hormonal', 'Examen de laboratorio para conocer la actividad de los ovarios y muestra la cantidad de estradiol, hormona folículo estimulante y hormona luteinizante, cantidad de prolactina, progesterona y testosterona en sangre.','No es necesario realizar ayuno y solamente se puede beber agua', 9440, '1631156310997_estudio.jpg', SYSDATE(), SYSDATE(), true, 25);
+        
 /*** ESTUDIO_UBICACION ***/
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35,5,true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 15, true);
@@ -46,6 +51,13 @@ INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 15, 
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 15, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 5, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 25, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (155, 5, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (155, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (155, 35, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (145, 35, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (25, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (15, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (15, 25, true);
 
 /*** PACIENTES ***/
 INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
