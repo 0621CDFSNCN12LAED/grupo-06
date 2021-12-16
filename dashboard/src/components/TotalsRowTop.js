@@ -47,7 +47,7 @@ export default class ContentRowMovies extends Component{
     async fetchCategorias(){
         //Creo objeto de Categorias
         let objetoCategorias = {
-            title: 'Total Categorías',
+            title: 'Categorías',
             color: 'primary',
             quantity: 0,
             icon: 'fa-award'
@@ -73,7 +73,7 @@ export default class ContentRowMovies extends Component{
     async fetchEstudios(){
         //Creo objeto de Estudios
         let objetoEstudios = {
-            title: 'Total Estudios',
+            title: 'Estudios',
             color: 'success',
             quantity: 0,
             icon: 'fa-clipboard-list',
@@ -101,7 +101,7 @@ export default class ContentRowMovies extends Component{
     async fetchPacientes(){
         //Creo objeto de Pacientes
         let objetoPacientes = {
-            title: 'Total Pacientes',
+            title: 'Pacientes',
             color: 'warning',
             quantity: 0,
             icon: 'fa-user-check',
