@@ -1,5 +1,3 @@
-const path = require("path");
-const fs = require("fs");
 const { send } = require("process");
 const {validationResult} = require('express-validator');
 const estudioService = require("../services/estudio-service");
@@ -46,13 +44,16 @@ const controller = {
         res.render("./products/crearEstudio");
     },
 
-    guardarEstudio: async(req, res) => {
+    guardarEstudio: (req, res) => {
+        console.log(req.body);
         let errors = validationResult(req);
-
+        console.log('ERRORES');
+        console.log(errors);
         if(errors.isEmpty()){
-            await estudioService.create(req.body, req.file);
+            estudioService.create(req.body, req.file);
             res.redirect("/estudios");
-        }else{
+        }
+        else{
             return res.render('./products/crearEstudio', {errors: errors.mapped(), old: req.body});
         }
     },        

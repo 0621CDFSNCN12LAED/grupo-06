@@ -12,6 +12,7 @@ module.exports = {
             antes: payload.antes,
             precio: payload.price,
             img: image ? image.filename : "no-image.png",
+            id_categoria: 5,
             estado: true,
         });
     },
@@ -24,6 +25,7 @@ module.exports = {
             descripcion: payload.descripcion,
             antes: payload.antes,
             precio: payload.precio,
+            id_categoria: 5,
             img: image ? image.filename : "no-image.png",     
             estado: true
         }, {

@@ -58,6 +58,7 @@ INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (145, 35,
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (25, 15, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (15, 15, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (15, 25, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (165, 25, true);
 
 /*** PACIENTES ***/
 INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
