@@ -77,7 +77,30 @@ const controller = {
     listadoUltimos4Estudios: async(req, res) => {
         const estudios = await estudioService.list_ultimos_4_estudios();
         
-        return estudios;
+        if(estudios){
+            
+            res.json({
+                meta: {
+                    status: 200,
+                    url: 'api/estudios/ultimos_cuatro_estudios',
+                    descripcion: 'Despliega los últimos 4 estudios creados y activos'
+                },
+                data: {
+                    estudios: estudios,
+                    count: estudios.lenght,
+                },
+            });
+
+        } else {
+            res.json({
+                meta: {
+                    status: 503,                    
+                    url: 'api/estudios/ultimos_cuatro_estudios',
+                    descripcion: 'error - api/estudios/ultimos_cuatro_estudios'
+                },
+                data: 'no data'
+            });
+        }
     },
 
     ultimoEstudioCreado: async(req, res) =>{

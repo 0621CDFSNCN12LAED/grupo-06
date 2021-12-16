@@ -1,4 +1,4 @@
-import defaultProfilePic from "../../../assets/images/jordan-walke.png";
+import defaultProfilePic from "../../assets/images/jordan-walke.png";
 
 export default function TopNavBar(props) {
   return (

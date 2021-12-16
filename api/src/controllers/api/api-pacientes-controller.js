@@ -12,7 +12,7 @@ const controller = {
             total_pacientes += 1;
             delete paciente.dataValues.contrasenia;
             delete paciente.dataValues.terminos;
-            delete paciente.dataValues.estado;
+            delete paciente.dataValues.estado;            
             paciente.dataValues.url = 'api/users/' + paciente.id;
         });
         

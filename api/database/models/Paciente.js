@@ -23,6 +23,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
+        telefono: {
+            type: dataTypes.STRING(100),
+            allowNull: true,
+        },
+
         fecha_nacimiento: {
             type: dataTypes.DATE,
             allowNull: false,
