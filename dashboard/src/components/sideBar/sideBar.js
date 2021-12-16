@@ -51,9 +51,23 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/tables">
+                    <Link className="nav-link" to="/tabla-estudios">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span>
+                        <span>Tabla - Estudios</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="/tabla-pacientes">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Tabla - Pacientes</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="/tabla-categorias">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Tabla - Categorías</span>
                     </Link>
                 </li>
 

@@ -5,9 +5,11 @@ import ContentWrapper from './contentWrapper/ContentWrapper';
 import ContentRowTop from './contentWrapper/contentRowTop/ContentRowTop';
 import Error404 from './errors/error404';
 import TopNavBar from './topNavBar/TopNavBar';
-import ContentTables from './contentWrapper/contentTables/ContentTables';
 import Footer from './Footer';
 import ContentRowCenter from './ContentRowCenter';
+import TablePacientes from './tables/tablePacientes/TablePacientes';
+import TableEstudios from './tables/tableEstudios/TableEstudios';
+import TableCategorias from './tables/tableCategorias/TableCategorias';
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
                 <Route path="/dashboard" exact={true} component={ContentWrapper} />
                 <Route path="/totales" exact={true} component={ContentRowTop} />
                 <Route path="/charts" exact={true} component={ContentRowCenter} />
-                <Route path="/tables" exact={true} component={ContentTables} />
+                <Route path="/tabla-pacientes" exact={true} component={TablePacientes} />
+                <Route path="/tabla-estudios" exact={true} component={TableEstudios} />
+                <Route path="/tabla-categorias" exact={true} component={TableCategorias} />
                 <Redirect from="/" exact={true} to="/dashboard" />
                 <Route component={Error404} /> 
               </Switch>

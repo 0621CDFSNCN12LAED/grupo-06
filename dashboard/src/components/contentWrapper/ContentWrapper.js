@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentRowCenter from '../ContentRowCenter';
-import TopBar from '../TopBar';
 import ContentRowTop from './contentRowTop/ContentRowTop';
+
 function ContentWrapper(){
     return (
         <React.Fragment>

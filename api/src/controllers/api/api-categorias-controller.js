@@ -9,10 +9,15 @@ const controller = {
         //Creo el array de objetos de estudios agregandole la url de detalle         
         categorias.map((categoria) => {
             total_categorias += 1;
-            delete categoria.dataValues.id;
-            delete categoria.dataValues.estado;
-            delete categoria.dataValues.fecha_creacion;
-            delete categoria.dataValues.fecha_modificacion;            
+            if(categoria.estado == true){
+                categoria.estado = 'Activa';
+            }else{
+                categoria.estado = 'Inactiva';
+            }
+            //delete categoria.dataValues.id;
+            //delete categoria.dataValues.estado;
+            //delete categoria.dataValues.fecha_creacion;
+            //delete categoria.dataValues.fecha_modificacion;            
         });
  
         if(categorias){

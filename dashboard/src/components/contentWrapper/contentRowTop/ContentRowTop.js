@@ -1,8 +1,5 @@
 import React from 'react';
-import ContentRowCenter from '../../ContentRowCenter';
 import TotalsRowTop from '../../TotalsRowTop';
-import TableEstudios from '../../tables/tableEstudios/TableEstudios';
-import TablePacientes from '../../tables/tablePacientes/TablePacientes';
 
 function ContentRowTop(){
     return(
