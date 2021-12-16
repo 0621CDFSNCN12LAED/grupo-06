@@ -41,12 +41,12 @@ INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (5, 5, tr
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 5, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 15, true);
 /*** PACIENTES ***/
-INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
-    VALUES ('Tull', 'Tams', 'DNI', 31303030, SYSDATE(), 'M', null, 'tulltams@gmail.com', '$2a$12$MKrjfwTszjhI4C2AToX1putDW8GTRzceueX/6XE0.Ch.WwP5ehEMa', true, true);
-INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
-    VALUES ('Pedro',  'Williams', 'DNI', 20859432, SYSDATE(), 'M', null, 'pedrito@gmail.com', '$2a$12$AHV8cTbIk2TULrzBmnBAuu/lnruM9BMlRQvJhcdfAt.IxizZzdw0G', true, true);
-INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
-    VALUES ('Maria', 'Lour', 'DNI', 40988543, SYSDATE(), 'F', null, 'mariamaria.@gmail.com', '$2a$12$0XNGmJsRlJDjTJCNHkouzuNvMhYTyflDJ6w3DLUfv/sKQPljaV9NG', true, true);
+INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
+    VALUES ('Tull', 'Tams', 'DNI', 31303030, '4545-5264', SYSDATE(), 'M', null, 'tulltams@gmail.com', '$2a$12$MKrjfwTszjhI4C2AToX1putDW8GTRzceueX/6XE0.Ch.WwP5ehEMa', true, true);
+INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
+    VALUES ('Pedro',  'Williams', 'DNI', 20859432, '1554546265', SYSDATE(), 'M', null, 'pedrito@gmail.com', '$2a$12$AHV8cTbIk2TULrzBmnBAuu/lnruM9BMlRQvJhcdfAt.IxizZzdw0G', true, true);
+INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
+    VALUES ('Maria', 'Lour', 'DNI', 40988543, '0223 45129880', SYSDATE(), 'F', null, 'mariamaria.@gmail.com', '$2a$12$0XNGmJsRlJDjTJCNHkouzuNvMhYTyflDJ6w3DLUfv/sKQPljaV9NG', true, true);
 
 /*** PACIENTE_ESTUDIO ***/
 INSERT INTO Paciente_Estudio(id_estudio, id_paciente, importe) VALUES (1,1,8000);    

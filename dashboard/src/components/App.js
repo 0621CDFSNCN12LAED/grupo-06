@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import ContentWrapper from './contentWrapper/ContentWrapper';
 import ContentRowTop from './contentWrapper/contentRowTop/ContentRowTop';
 import Error404 from './errors/error404';
-import TopNavBar from './contentWrapper/topNavBar/TopNavBar';
+import TopNavBar from './topNavBar/TopNavBar';
 import ContentTables from './contentWrapper/contentTables/ContentTables';
 import Footer from './Footer';
 import ContentRowCenter from './ContentRowCenter';
