@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, {Link} from 'react';
 
 function ChartRowEstudio(props){
     
@@ -18,7 +17,13 @@ function ChartRowEstudio(props){
                             )}
                        </ul>}
                     </td>
-                    <td>{props.url}</td>
+                    <td>
+                        {props.estado == 'Inactivo' && <div className="btn btn-danger">{props.estado}</div>}
+                        {props.estado == 'Activo' && <div className="btn btn-enabled">{props.estado}</div>}
+                    </td>
+                    <td>
+                        <a className="btn btn-danger" target="_blank" rel="nofollow" href={'http://localhost:3030/estudios/estudio-detalle/' + props.id}>Ver Estudio</a>
+                    </td>
                 </tr>
             )
     }      

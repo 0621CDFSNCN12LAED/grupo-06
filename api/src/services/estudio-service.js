@@ -50,7 +50,20 @@ module.exports = {
         return estudiosAll;
     },
 
+    list_todos: async() => {
+        //Incluye estudios inactivos
+        const estudiosAll = await db.Estudios.findAll({
+            include: [
+                {association: "categoria"},
+                {association: "ubicaciones"}
+            ],            
+            order: [
+                ['id', 'DESC']
+            ],
+        });
 
+        return estudiosAll;
+    },
 
     list_ultimos_4_estudios: async() => {
         const estudios_ultimos_4 = await db.Estudios.findAll({

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TableRowEstudio from './TableRowEstudio';
 
 //URL para listado de Estudios
-const ESTUDIOS_API = '/api/estudios';
+const ESTUDIOS_API = '/api/estudios_todos';
 
 export default class TableEstudios extends Component{
     constructor(props){
@@ -35,6 +35,7 @@ export default class TableEstudios extends Component{
                                         <th>Antes</th>
                                         <th>Categoría</th>
                                         <th>Ubicaciones (opciones)</th>
+                                        <th>Estado</th>
                                         <th>URL</th>
                                     </tr>
                                 </thead>
@@ -47,6 +48,7 @@ export default class TableEstudios extends Component{
                                         <th>Antes</th>
                                         <th>Categoría</th>
                                         <th>Ubicaciones (opciones)</th>
+                                        <th>Estado</th>
                                         <th>URL</th>
                                     </tr>
                                 </tfoot>

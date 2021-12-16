@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TableRowPacientes(props){
+export default function TableRowPacientes(props){
     console.log("estas son las props" + props);
     return ( 
                 <tr>
@@ -13,12 +13,14 @@ function TableRowPacientes(props){
                     <td>{props.genero}</td>
                     <td>{props.img_perfil}</td>
                     <td>{props.email}</td>
-                    <td>Teléfono</td>
+                    <td>
+                        {props.telefono}
+                    </td>
+                    <td>
+                        {props.estado == 'Inactivo' && <div className="btn btn-danger">{props.estado}</div>}
+                        {props.estado == 'Activo' && <div className="btn btn-enabled">{props.estado}</div>}
+                    </td>
                     <td>{props.url}</td>
                 </tr>
             )
-    }
-    
-        
-
-export default TableRowPacientes;
+    }           

@@ -39,6 +39,7 @@ export default class TablePacientes extends Component{
                                         <th>Imagen</th>
                                         <th>Email</th>
                                         <th>Teléfono</th>
+                                        <th>Estado</th>
                                         <th>URL</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,7 @@ export default class TablePacientes extends Component{
                                         <th>Imagen</th>
                                         <th>Email</th>
                                         <th>Teléfono</th>
+                                        <th>Estado</th>
                                         <th>URL</th>
                                     </tr>
                                 </tfoot>

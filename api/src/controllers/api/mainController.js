@@ -9,6 +9,7 @@ const categoriasController = require("./api-categorias-controller");
 //Rutas correspondientes a Estudios
 router.use("/estudios/ultimo_estudio_creado", estudiosController.ultimoEstudioCreado);
 router.use("/estudios", estudiosController.listadoEstudios);
+router.use("/estudios_todos", estudiosController.listadoEstudiosTodos);
 router.use("/estudio/:id", estudiosController.estudioDetalle);
 
 //Rutas correspondientes a Pacientes

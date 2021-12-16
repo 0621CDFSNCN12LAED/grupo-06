@@ -4,6 +4,8 @@ const categoriaService = require("../../services/categoria-service");
 
 //Creacion del controlador
 const controller = {
+    
+    //Trae solo los estudios activos
     listadoEstudios: async(req, res) => {
         const estudios = await estudioService.list();
         const categorias = await categoriaService.list();
@@ -30,6 +32,11 @@ const controller = {
         //Creo el array de objetos de estudios agregandole la url de detalle         
         estudios.map((estudio) => {
             total_estudios += 1;
+            if(estudio.estado == true){
+                estudio.estado = 'Activo';
+            }else{
+                estudio.estado = 'Inactivo';
+            }
             acumulador_precios_estudios += estudio.precio;
             estudio.dataValues.url = 'api/estudio/' + estudio.id;
             estudio.dataValues.categoria = estudio.categoria.categoria_nombre;
@@ -56,6 +63,70 @@ const controller = {
                 meta: {
                     status: 503,                    
                     url: 'api/estudios',
+                    descripcion: 'error'
+                },
+                data: 'no data'
+            });
+    }},
+
+    //Trae solo los estudios activos
+    listadoEstudiosTodos: async(req, res) => {
+        const estudios = await estudioService.list_todos();
+        const categorias = await categoriaService.list();
+        let total_estudios = 0;
+        let acumulador_precios_estudios = 0.0;
+
+        //Creo el array útil de contador de estudios por categoría
+        const countByCategory = [];
+
+        //Recorro las categorías
+        categorias.map((categoria, i) => {
+            let contador = 0;
+            
+            for(const estudio of estudios){
+                
+                if(categoria.id == estudio.id_categoria ){
+                    contador += 1;
+                }
+            }
+
+            countByCategory[i] = {categoria: categoria.categoria_nombre, total: contador};
+        });
+
+        //Creo el array de objetos de estudios agregandole la url de detalle         
+        estudios.map((estudio) => {
+            total_estudios += 1;
+            if(estudio.estado == true){
+                estudio.estado = 'Activo';
+            }else{
+                estudio.estado = 'Inactivo';
+            }
+            acumulador_precios_estudios += estudio.precio;
+            estudio.dataValues.url = 'api/estudio/' + estudio.id;
+            estudio.dataValues.categoria = estudio.categoria.categoria_nombre;
+        });
+ 
+        if(estudios){
+            
+            res.json({
+                meta: {
+                    status: 200,
+                    url: 'api/estudios_todos',
+                    descripcion: 'listado de todos los estudios disponibles y activos'
+                },
+                data: {
+                    estudios: estudios,
+                    count: total_estudios,
+                    countByCategory: countByCategory,
+                    precioPromedio: Math.round(((acumulador_precios_estudios / total_estudios)*100)) / 100
+                },
+            });
+
+        } else {
+            res.json({
+                meta: {
+                    status: 503,                    
+                    url: 'api/estudios_todos',
                     descripcion: 'error'
                 },
                 data: 'no data'

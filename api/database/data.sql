@@ -33,6 +33,9 @@ INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, f
 INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
     VALUES ('Curva de glucosa', 'La Curva de glucosa o (Prueba de sobrecarga Oral de Glucosa). Es un diagnóstico que mide la capacidad de nuestro organismo para la metabolización de la glucosa que es nuestra principal fuente de energía.','Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua', 12500, '1631156310151_estudio.jpg', SYSDATE(), SYSDATE(), true, 5);
 
+INSERT INTO Estudios (titulo, descripcion, antes, precio, img, fecha_creacion, fecha_modificacion, estado, id_categoria) 
+    VALUES ('Curva de Insulina', 'método de laboratorio para verificar la forma en que el cuerpo moviliza el azúcar de la sangre a los tejidos como a los músculos y a la grasa. Dicha prueba se usa con frecuencia para el diagnóstico de diabetes.','Debe hacer ayuno de 9-12 horas antes de la obtención de la muestra y solamente se puede beber agua', 6800, '1631156310999_estudio.jpg', SYSDATE(), SYSDATE(), false, 35);
+
 /*** ESTUDIO_UBICACION ***/
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35,5,true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 15, true);

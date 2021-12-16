@@ -22,12 +22,19 @@ const controller = {
             if (m < 0 || (m === 0 && today.getDate() < fechaCumpleaños.getDate())) {
                 edad--;
             }
-            edad_promedio += edad;
+            edad_promedio += edad;            
+            
+            if(paciente.estado == true){
+                paciente.estado = 'Activo';
+            }else{
+                paciente.estado = 'Inactivo';
+            }
 
+            paciente.dataValues.url = 'api/users/' + paciente.id;
+            
+            //Elimino atributos
             delete paciente.dataValues.contrasenia;
             delete paciente.dataValues.terminos;
-            delete paciente.dataValues.estado;            
-            paciente.dataValues.url = 'api/users/' + paciente.id;
         });
         
         if(pacientes){
