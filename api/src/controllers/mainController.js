@@ -1,8 +1,11 @@
 const path = require("path");
+const estudioService = require("../services/estudio-service");
 
 const controller = {
-    home: (req, res) => {
-        res.render("index");
+    home: async(req, res) => {
+        const estudios = await estudioService.list_ultimos_4_estudios();
+        console.log(estudios);
+        res.render("index",  { estudios: estudios });
     },
     contacto: (req, res) => {
         res.render("contacto");

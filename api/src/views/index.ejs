@@ -27,46 +27,21 @@
        </ul>
      </section>
       <section class="productos">
-        <article class="producto">
-          <a href=""><img src="img/test-imagen.jpeg" width="100%" /></a>
-          <h3>Titulo Producto 1</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </article>
-        <article class="producto">
-          <a href=""><img src="img/test-imagen.jpeg" width="100%" /></a>
-          <h3>Titulo Producto 2</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </article>
-        <article class="producto">
-          <a href=""><img src="img/test-imagen.jpeg" width="100%" /></a>
-          <h3>Titulo Producto 3</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </article>
-        <article class="producto">
-          <a href=""><img src="img/test-imagen.jpeg" width="100%" /></a>
-          <h3>Titulo Producto 4</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </article>
+        <% for (const estudio of estudios) { %>
+        
+            <article class="producto">
+              <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
+                <img src="/img/estudios_imagenes/<%=estudio.img%>" width="100%" />
+                <h3><%= estudio.titulo %></h3>
+              
+              <!--Descripcion-->
+                <p>
+                  <%= estudio.descripcion %>
+                </p>
+            </a>
+            </article>
+        <%}%>
+
       </section>
 
       <!--Seccion Sedes-->
