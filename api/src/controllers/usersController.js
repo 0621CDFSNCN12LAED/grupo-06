@@ -79,8 +79,11 @@ const controller = {
 
 
     perfilUsuario: (req, res) => {
-
-        res.render(".");
+        
+        const detEst = estudios.find((detUser) => {
+            return detUser.id == req.params.id;
+        });
+        res.render("./users/perfil", { detUser: detUser });
     },
 
     //Este crear usuario quedò con la forma vieja de insertarlo en un archivo JSON, ya se implementó la DB

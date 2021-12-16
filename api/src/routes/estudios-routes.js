@@ -23,6 +23,7 @@ const upload = multer({ storage: storage });
 
 //Rutas de estudios
 router.get("/", estudiosController.listadoEstudios);
+/* router.get("/", estudiosController.listadoEstudiosFooter); */
 router.get("/estudio-detalle/:id", estudiosController.estudioDetalle);
 
 router.get("/crear-estudio", estudiosController.crearEstudio);
