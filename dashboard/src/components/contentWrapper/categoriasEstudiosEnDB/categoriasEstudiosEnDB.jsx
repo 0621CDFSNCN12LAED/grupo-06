@@ -20,19 +20,20 @@ export default class CategoriasLista extends Component{
             return('cargando...');
         } else{
         return(
-           
-          <div class="row">
-                {this.state.countByCategory.map((categoria) =>{
-                    return ( 
-                        <div class="col-lg-6 mb-4">
-                          <div class="card bg-dark text-white shadow">
-                            <div class="card-body">{categoria.categoria} ({categoria.total}) </div>
-                          </div>
-                        </div>
-                      );
-                    
-                })}
-            </div>            
+        <div className="card-body">   
+            <div class="row">
+                    {this.state.countByCategory.map((categoria) =>{
+                        return ( 
+                            <div class="col-lg-6 mb-4">
+                            <div class="card bg-dark text-white shadow">
+                                <div class="card-body">{categoria.categoria} ({categoria.total}) </div>
+                            </div>
+                            </div>
+                        );
+                        
+                    })}
+                </div>            
+        </div>
         );
         }
     }
