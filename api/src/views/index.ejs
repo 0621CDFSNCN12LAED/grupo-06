@@ -26,23 +26,24 @@
           </li>
        </ul>
      </section>
-      <section class="productos">
-        <% for (const estudio of estudios) { %>
-        
-            <article class="producto">
-              <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
-                <img src="/img/estudios_imagenes/<%=estudio.img%>" width="100%" />
-                <h3><%= estudio.titulo %></h3>
-              
-              <!--Descripcion-->
-                <p>
-                  <%= estudio.descripcion %>
-                </p>
-            </a>
-            </article>
-        <%}%>
+     <section class="productos">
+      <% for (const estudio of estudios) { %>
+      
+          <article class="producto">
+            <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
+              <img src="/img/estudios_imagenes/<%=estudio.img%>" width="100%" />
+              <h3><%= estudio.titulo %></h3>
+            
+            <!--Descripcion-->
+              <p>
+                <%= estudio.descripcion %>
+              </p>
+          </a>
+          </article>
+          
+      <%}%>
 
-      </section>
+    </section>
 
       <!--Seccion Sedes-->
       <section class="sedes">
