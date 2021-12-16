@@ -23,12 +23,12 @@ const controller = {
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
-    /* listadoEstudiosFooter: async(req, res) => {
+   /*  listadoEstudiosFooter: async(req, res) => {
         const estudios = await estudioService.list();
         //res.send(estudios);
         res.render("./partials/footer", { estudios: estudios });
-    }, */
-
+    },
+ */
     listadoUltimos4Estudios: async(req, res) => {
         const estudios = await estudioService.list_ultimos_4_estudios();
         
