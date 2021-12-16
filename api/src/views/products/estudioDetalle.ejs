@@ -18,7 +18,7 @@
                         <!--Segundo Cuadrante-->
                         <h3>Detalle del Test</h3>
                         <p>
-                            <%= detEst.desc%>
+                            <%= detEst.descripcion%>
                         </p>
                     </div>
                 </section>
@@ -43,9 +43,7 @@
                                 <label for="<% detEst.option %>"><%= detEst.option %></label>
                             </div>
                             <div class="precio-boton">
-                                <h3 class="precio-test">Precio:
-                                    <%= detEst.price %>
-                                </h3>
+                                <h3 class="precio-test">Precio: $<%= detEst.precio %>.-</h3>
                                 <form action="" method="#">
                                     <button class="boton-orden-test" type="submit">
                   Agregar al Carrito

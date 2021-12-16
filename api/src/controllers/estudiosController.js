@@ -35,11 +35,8 @@ const controller = {
         return estudios;
     },
 
-    estudioDetalle: (req, res) => {
-        //res.render("./products/productoDetalle");
-        const detEst = estudios.find((detEst) => {
-            return detEst.id == req.params.id;
-        });
+    estudioDetalle: async(req, res) => {        
+        const detEst = await estudioService.searchOneEstudio(req.params.id);
         res.render("./products/estudioDetalle", { detEst: detEst });
     },
 
