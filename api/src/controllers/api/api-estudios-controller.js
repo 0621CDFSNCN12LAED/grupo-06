@@ -8,6 +8,7 @@ const controller = {
         const estudios = await estudioService.list();
         const categorias = await categoriaService.list();
         let total_estudios = 0;
+        let acumulador_precios_estudios = 0.0;
 
         //Creo el array útil de contador de estudios por categoría
         const countByCategory = [];
@@ -29,6 +30,7 @@ const controller = {
         //Creo el array de objetos de estudios agregandole la url de detalle         
         estudios.map((estudio) => {
             total_estudios += 1;
+            acumulador_precios_estudios += estudio.precio;
             estudio.dataValues.url = 'api/estudio/' + estudio.id;
             estudio.dataValues.categoria = estudio.categoria.categoria_nombre;
         });
@@ -45,6 +47,7 @@ const controller = {
                     estudios: estudios,
                     count: total_estudios,
                     countByCategory: countByCategory,
+                    precioPromedio: Math.round(((acumulador_precios_estudios / total_estudios)*100)) / 100
                 },
             });
 

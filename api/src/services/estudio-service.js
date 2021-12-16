@@ -44,7 +44,7 @@ module.exports = {
             order: [
                 ['id', 'DESC']
             ],
-            limit: 10,            
+            //limit: 10,            
         });
 
         return estudiosAll;

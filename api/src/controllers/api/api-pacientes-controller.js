@@ -7,9 +7,23 @@ const controller = {
         
         const pacientes = await pacienteService.list();
         let total_pacientes = 0;
+        let edad_promedio = 0;
         
         pacientes.map((paciente) => {
             total_pacientes += 1;
+            
+            //Calculo de edad:
+            let today = new Date();
+            let fechaCumpleaños = new Date(paciente.fecha_nacimiento);
+            let edad = today.getFullYear() - fechaCumpleaños.getFullYear();
+
+            let m = today.getMonth() - fechaCumpleaños.getMonth();
+
+            if (m < 0 || (m === 0 && today.getDate() < fechaCumpleaños.getDate())) {
+                edad--;
+            }
+            edad_promedio += edad;
+
             delete paciente.dataValues.contrasenia;
             delete paciente.dataValues.terminos;
             delete paciente.dataValues.estado;            
@@ -20,6 +34,7 @@ const controller = {
             res.json({
                 count: total_pacientes,
                 pacientes: pacientes,
+                edad_promedio: Math.round((edad_promedio / total_pacientes) * 100, 1) / 100
             });
 
         } else {

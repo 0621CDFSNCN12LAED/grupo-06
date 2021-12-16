@@ -76,7 +76,10 @@ export default class ContentRowMovies extends Component{
             title: 'Total Estudios',
             color: 'success',
             quantity: 0,
-            icon: 'fa-clipboard-list'
+            icon: 'fa-clipboard-list',
+            titulo_promedio: 'Monto Prom.',
+            promedio: 0.0,
+            simbolo: '$'
         }
         //Fetch de los estudios
         const resultado = await fetch(ESTUDIOS_API);
@@ -86,7 +89,9 @@ export default class ContentRowMovies extends Component{
 
         //Obtengo y guardo total de estudios en su objeto
         const estudios_total = response.data.count;
+        
         objetoEstudios.quantity = estudios_total;
+        objetoEstudios.promedio = response.data.precioPromedio;
         totales_tarjetas.push(objetoEstudios);
 
         //Seteo total Estudios como un estado
@@ -99,7 +104,9 @@ export default class ContentRowMovies extends Component{
             title: 'Total Pacientes',
             color: 'warning',
             quantity: 0,
-            icon: 'fa-user-check'
+            icon: 'fa-user-check',
+            titulo_promedio: 'Edad Prom.',
+            promedio: 0,
         }
         //Fetch de los estudios
         const resultado = await fetch(PACIENTES_API);
@@ -111,6 +118,7 @@ export default class ContentRowMovies extends Component{
         const pacientes_total = response.count;
 
         objetoPacientes.quantity = pacientes_total;
+        objetoPacientes.promedio = response.edad_promedio;
         totales_tarjetas.push(objetoPacientes);
 
         //Seteo total Estudios como un estado
