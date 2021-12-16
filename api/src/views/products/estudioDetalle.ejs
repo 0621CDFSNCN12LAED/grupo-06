@@ -36,18 +36,26 @@
                         <!--Cuarto Cuadrante-->
                         <div class="cuarto-cuadrante-parte-superior">
                             <div>
-                                <h3>Opciones del Test</h3>
-                                <label for="opciones-del-test">Opciones del Test</label>
+                                <!--<h3>Opciones del Test</h3>-->
+                                
+                                <% if(detEst.ubicaciones) {%>
+                                    <label for="opciones-del-test">Opciones de Test</label>
 
-                                <input type="radio" name="opciones-del-test" id="<% detEst.option %>" value="<% detEst.option %>" />
-                                <label for="<% detEst.option %>"><%= detEst.option %></label>
+                                    <!--Recorro todas las ubicaciones disponibles del test para imprimir el radio button-->
+                                    <% for(const ubicacion of detEst.ubicaciones) {%>
+                                        <input type="button" name="opciones-del-test" id="<%ubicacion.descripcion%>" value="<%= ubicacion.descripcion%>" />
+                                        <!--<li><%= ubicacion.descripcion%></li>-->
+                                    <%}%>
+                                    </label>
+                                <%}%>   
+                                    
                             </div>
                             <div class="precio-boton">
                                 <h3 class="precio-test">Precio: $<%= detEst.precio %>.-</h3>
                                 <form action="" method="#">
                                     <button class="boton-orden-test" type="submit">
-                  Agregar al Carrito
-                </button>
+                                        Agregar al Carrito
+                                    </button>
 
                             </div>
                         </div>

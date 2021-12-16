@@ -40,6 +40,10 @@ INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (35, 25, 
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (5, 5, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 5, true);
 INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (45, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 15, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 5, true);
+INSERT INTO Estudio_Ubicacion(id_estudio, id_ubicacion, estado) VALUES (125, 25, true);
+
 /*** PACIENTES ***/
 INSERT INTO Pacientes(nombre, apellido, tipo_documento, nro_documento, telefono, fecha_nacimiento, genero, img_perfil, email, contrasenia, terminos, estado)
     VALUES ('Tull', 'Tams', 'DNI', 31303030, '4545-5264', SYSDATE(), 'M', null, 'tulltams@gmail.com', '$2a$12$MKrjfwTszjhI4C2AToX1putDW8GTRzceueX/6XE0.Ch.WwP5ehEMa', true, true);

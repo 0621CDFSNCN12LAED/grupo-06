@@ -37,6 +37,8 @@ const controller = {
 
     estudioDetalle: async(req, res) => {        
         const detEst = await estudioService.searchOneEstudio(req.params.id);
+        console.log(detEst);
+        //res.send(detEst);
         res.render("./products/estudioDetalle", { detEst: detEst });
     },
 
