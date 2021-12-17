@@ -123,32 +123,56 @@ iframe{
 
 /*CSS Correspondiente a Detalle de Productos*/
 
-.producto-detalle-parte-superior,
-.producto-detalle-parte-inferior {
+#detalle-producto {
+  background: #ffffff;
+  border-color: red;
+  margin: 1rem ;
+  padding: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
   display: flex;
-  margin: 1%;
-  width: 100%;
+
 }
+
+
 
 .cuarto-cuadrante-parte-inferior {
   display: flex;
   margin: 10%;
 }
 
-.test-detalle-primer-cuadrante,
+.test-detalle-primera-mitad,
+.test-detalle-segunda-mitad {
+  text-align: center;
+}
+
+.test-detalle-primera-mitad {
+
+  width: 35%;
+}
+
+.test-detalle-primera-mitad img {
+  box-shadow: 0 0 20px 0 rgba(0, 56, 129, 0.3), 0 5px 5px 0 rgba(0, 56, 129, 0.34);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.test-detalle-segunda-mitad {
+
+  width: 65%;
+}
+
 .test-detalle-segund-cuadrante,
 .test-detalle-tercer-cuadrante,
 .test-detalle-cuarto-cuadrante {
-  width: 50%;
-  margin: 2%;
+  padding-bottom: 10px;
 }
 
 .precio-boton {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   
-
 }
 
 .precio-test {

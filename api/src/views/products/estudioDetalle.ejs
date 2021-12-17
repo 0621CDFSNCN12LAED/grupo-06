@@ -5,62 +5,61 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <section class="producto-detalle-parte-superior">
-                    <!--Primer Cuadrante-->
-                    <div class="test-detalle-primer-cuadrante">
-                        <h3>
-                            <%= detEst.titulo %>
-                        </h3>
-                        <img src="/img/estudios_imagenes/<%=detEst.img%>" alt="<%= detEst.title %>" id="producto-detalle" width="75%" />
+                <section id= "detalle-producto" >
+                    <div class="test-detalle-primera-mitad">
+                        <!--Izquierda-->
+                            <h3>
+                                <%= detEst.titulo %>
+                            </h3>
+                            <img src="/img/estudios_imagenes/<%=detEst.img%>" alt="<%= detEst.title %>" id="producto-detalle" width="400px" />
                     </div>
-
-                    <div class="test-detalle-segund-cuadrante">
-                        <!--Segundo Cuadrante-->
-                        <h3>Detalle del Test: <%= detEst.titulo %></h3>
-                        <p>
-                            <%= detEst.descripcion%>
-                        </p>
-                    </div>
-                </section>
-                <section class="producto-detalle-parte-inferior">
-                    <div class="test-detalle-tercer-cuadrante">
-                        <!--Tercer Cuadrante-->
-                        <h3>Antes del Test</h3>
-                        <ul>
-                            <li>
-                                <%= detEst.antes %>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="test-detalle-cuarto-cuadrante">
-                        <!--Cuarto Cuadrante-->
-                        <div class="cuarto-cuadrante-parte-superior">
-                            <div>
-                                <!--<h3>Opciones del Test</h3>-->
-                                
-                                <% if(detEst.ubicaciones) {%>
-                                    <label for="opciones-del-test">Opciones de Test</label>
-
-                                    <!--Recorro todas las ubicaciones disponibles del test para imprimir el radio button-->
-                                    <% for(const ubicacion of detEst.ubicaciones) {%>
-                                        <input type="button" name="opciones-del-test" id="<%ubicacion.descripcion%>" value="<%= ubicacion.descripcion%>" />
-                                        <!--<li><%= ubicacion.descripcion%></li>-->
-                                    <%}%>
-                                    </label>
-                                <%}%>   
+                    <div class = "test-detalle-segunda-mitad">
+                        <div class="test-detalle-segund-cuadrante">
+                            <!--1er derecha-->
+                            <h3>Detalle del Test: <%= detEst.titulo %></h3>
+                            <p>
+                                <%= detEst.descripcion%>
+                            </p>
+                        </div>
+                        <div class="test-detalle-tercer-cuadrante">
+                            <!--2do derecha-->
+                            <h3>Antes del Test</h3>
+                            <ul>
+                                <li>
+                                    <%= detEst.antes %>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="test-detalle-cuarto-cuadrante">
+                            <!--3er derecha-->
+                            <div class="cuarto-cuadrante-parte-superior">
+                                <div>
+                                    <!--<h3>Opciones del Test</h3>-->
                                     
-                            </div>
-                            <div class="precio-boton">
-                                <h3 class="precio-test">Precio: $<%= detEst.precio %>.-</h3>
-                                <form action="" method="#">
-                                    <button class="boton-orden-test" type="submit">
-                                        Agregar al Carrito
-                                    </button>
+                                    <% if(detEst.ubicaciones) {%>
+                                        <label for="opciones-del-test">Opciones de Test</label>
 
+                                        <!--Recorro todas las ubicaciones disponibles del test para imprimir el radio button-->
+                                        <% for(const ubicacion of detEst.ubicaciones) {%>
+                                            <input type="button" name="opciones-del-test" id="<%ubicacion.descripcion%>" value="<%= ubicacion.descripcion%>" />
+                                            <!--<li><%= ubicacion.descripcion%></li>-->
+                                        <%}%>
+                                        </label>
+                                    <%}%>   
+                                        
+                                </div>
+                                <div class="precio-boton">
+                                    <h3 class="precio-test">Precio: $<%= detEst.precio %>.-</h3>
+                                    <form action="" method="#">
+                                        <button class="boton-orden-test" type="submit">
+                                            Agregar al Carrito
+                                        </button>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                 </section>
             </main>
             <%- include("../partials/footer.ejs") %>
     </body>
