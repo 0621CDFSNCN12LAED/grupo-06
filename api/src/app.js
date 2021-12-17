@@ -5,6 +5,7 @@ const path = require("path");
 //Configuración para métodos override HTTP de PUT y DELETE
 const methodOverride = require("method-override");
 const expressSession = require("express-session");
+/* const loggedUser = require("./middleware/autorLoggedUser"); */
 
 //Uso CORS para evitar problemas de acceso desde REACT
 app.use(
@@ -49,6 +50,11 @@ const mainRouter = require("./routes/main-routes");
 
 //Seteos de endpoints
 app.use("/", mainRouter);
+
+// logueo
+
+/* app.use (loggedUser); */
+
 
 //Configuración captura error 404
 app.use((req, res, next) => {

@@ -43,6 +43,8 @@ router.put(
     estudiosController.actualizarEstudio
 );
 
+router.get ("/buscar-estudio", estudiosController.search);
+
 module.exports = router;
 
 //eliminar un estudio

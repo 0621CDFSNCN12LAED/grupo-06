@@ -1,5 +1,5 @@
 
-//Como en la invocacion del script uso DEFER, estoy seguro que el script ya se cargó    
+/* //Como en la invocacion del script uso DEFER, estoy seguro que el script ya se cargó    
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const formulario = document.querySelector("#formulario form");
@@ -44,3 +44,4 @@ function formEsInvalido(){
 function estaVacio(field){
     return field.value.trim() == "";
 }
+ */

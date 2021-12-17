@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <main>
+                <h2 class="lista-prod">Listado de Estudios</h2>
+
+                <% for (const estudio of estudios) { %>
+                    <section class="estudio-comp">
+                        <a href="/estudios/estudio-detalle/<%=estudio.id%> ">
+                            <img src="/img/estudios_imagenes/<%=estudio.img%>" alt="<%= estudio.title %>" id="producto-detalle" class="img-prod" />
+                            <div class="titulo-descr">
+                                
+                                <h3><%= estudio.titulo %></h3>
+
+                                <h4><%= estudio.descripcion %></h4>
+
+                                <h3>Precio $<%= estudio.precio %></h3>
+
+                                <h3>Pre Requisitos: <%= estudio.antes %></h3>
+                            </div>
+                    </a>
+                        <p><a href="/estudios/modificar/<%= estudio.id %>">Editar Estudio  -  </a></p>
+                        <a href="/estudios/eliminar/<%= estudio.id %>"><p>Eliminar Estudio</p></div>
+                        </form>
+                        <!--<form action="/estudios/eliminar/<%= estudio.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar Estudio</button>
+                        </form>-->
+                    </section>
+                    <%}%>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
+</html>

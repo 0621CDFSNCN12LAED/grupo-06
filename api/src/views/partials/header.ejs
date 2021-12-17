@@ -7,8 +7,10 @@
             <a href=https://www.linkedin.com/feed/ target="_blank"> <i class="fab fa-linkedin-in hIcon"></i> </a>
         </div>
 
-        <input class="search" type="text" placeholder="Buscar Estudios" />
-
+        <form action="/estudios/buscar-estudio" method="get" class="search">
+            <input  type="text" placeholder="Buscar Estudios" />
+            <input type="submit" value="search"/>
+        </form>
         <div class="header3">
             <h5><a href="tel:+541145879652">4587-9652</a></h5>
             <a href="/users/ingresar"><i class="fas fa-user-circle hIcon"></i></a>
@@ -25,6 +27,7 @@
             <li><a href="/estudios">Estudios</a></li>
             <!--Ver donde lo agregamos a crear-estudio-->
             <li><a href="/estudios/crear-estudio">Crear Estudio</a></li>
+            <li><a href="/users/perfil">Mi Perfil</a></li>
             <li><a href="/nosotros">Nosotros</a></li>
             <li><a href="/sedes">Sedes</a></li>
             <li><a href="/contacto">Contacto</a></li>

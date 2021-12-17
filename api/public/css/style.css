@@ -165,6 +165,8 @@ iframe{
 .test-detalle-segund-cuadrante,
 .test-detalle-tercer-cuadrante,
 .test-detalle-cuarto-cuadrante {
+  display: flex;
+  justify-content: space-around;
   padding-bottom: 10px;
 }
 

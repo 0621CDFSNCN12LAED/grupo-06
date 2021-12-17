@@ -19,6 +19,7 @@
 
 .search {
   display: none;
+  border-radius: 15px;
 }
 
 .header3 {

@@ -1,4 +1,4 @@
-const first_name = document.querySelector("#firstname");
+/* const first_name = document.querySelector("#firstname");
 const last_name = document.querySelector("#lastname");
 const doc = document.querySelector("#doc");
 const birth_date = document.querySelector("#birth_date");
@@ -91,4 +91,4 @@ function validateInput(input, validationFunction, message) {
     input.classList.add("campo-valido");
     return null;
   }
-}
+} */

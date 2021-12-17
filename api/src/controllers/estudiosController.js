@@ -1,6 +1,7 @@
 const { send } = require("process");
 const {validationResult} = require('express-validator');
 const estudioService = require("../services/estudio-service");
+const res = require("express/lib/response");
 
 /*
 //Importo el JSON de estudios
@@ -21,12 +22,7 @@ const controller = {
         res.render("./products/listadoEstudios", { estudios: estudios });
     },
 
-   /*  listadoEstudiosFooter: async(req, res) => {
-        const estudios = await estudioService.list();
-        //res.send(estudios);
-        res.render("./partials/footer", { estudios: estudios });
-    },
- */
+   
     listadoUltimos4Estudios: async(req, res) => {
         const estudios = await estudioService.list_ultimos_4_estudios();
         
@@ -88,8 +84,10 @@ const controller = {
     },
     search: async(palabra) => {
         await estudioService.search(palabra);
+
     },
-};
+
+}
 
 //Exportamos módulo.
 module.exports = controller;
