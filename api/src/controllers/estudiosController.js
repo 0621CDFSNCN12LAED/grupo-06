@@ -87,6 +87,11 @@ const controller = {
 
     },
 
+    comprar: async (req, res) => {
+        res.render("./products/carrito");
+
+    }
+
 }
 
 //Exportamos módulo.

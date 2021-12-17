@@ -4,7 +4,9 @@ const multer = require("multer");
 const usersController = require("../controllers/usersController");
 const validacionesRegistroPaciente = require('../validations/paciente-registro-validacion');
 const validacionesPacienteLogin = require('../validations/paciente-login-validacion');
-/* const loggedUserMibbleware = require ('../middlewares/autorGuestMiddleware'); */
+const GuestMiddleware = require("../middlewares/autorGuestMiddleware");
+const LoggedMiddleware = require("../middlewares/autorLoggedMiddleware");
+
 
 //Creacion de storage que ataja el endpoint archivos del formulario registro
 const storage = multer.diskStorage({
@@ -23,10 +25,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //Rutas de usuarios
-router.get("/perfil", usersController.perfilUsuario);
-router.get("/ingresar", usersController.showLogin);
-router.post("/login", 
-    validacionesPacienteLogin,
+router.get("/perfil", LoggedMiddleware,  usersController.perfilUsuario);
+router.get("/ingresar", GuestMiddleware, usersController.showLogin);
+router.post("/login", GuestMiddleware, validacionesPacienteLogin,
     usersController.login);
 
 router.get("/registro", usersController.registro);
@@ -39,9 +40,7 @@ router.post("/registro",
 
 //Middlewares
 
-/* const validationsErrorsMiddleware = require("../middlewares/validations-errors-middleware"); */
-/* const autorGuestMiddleware = require("../middlewares/autorGuestMiddleware");
-const autorLoggedMiddleware = require("../middlewares/autorLoggedMiddleware"); */
+
 
 //Exportamos módulo.
 module.exports = router;

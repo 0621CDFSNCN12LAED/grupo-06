@@ -6,7 +6,7 @@ const autorAdminMiddleware = (req,res, next) => {
  
     }
     
-    if (req.user.userCategoryId == 2){
+    if (req.user.userCategoryId == 1){
  
        next();
  

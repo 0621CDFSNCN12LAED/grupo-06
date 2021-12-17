@@ -5,6 +5,7 @@ const path = require("path");
 const estudiosController = require("../controllers/estudiosController");
 const validacionesEstudioCreacion = require('../validations/estudios-creacion-validacion');
 const validacionesEstudioModificacion = require('../validations/estudios-modificacion-validacion');
+const LoggedMiddleware = require("../middlewares/autorLoggedMiddleware");
 
 //Creacion de storage que ataja el endpoint archivos del formulario creacion estudio
 const storage = multer.diskStorage({
@@ -49,3 +50,7 @@ module.exports = router;
 
 //eliminar un estudio
 router.get("/eliminar/:id", estudiosController.delete);
+
+//boton comprar
+
+router.get ("/carrito", LoggedMiddleware, estudiosController.comprar);
