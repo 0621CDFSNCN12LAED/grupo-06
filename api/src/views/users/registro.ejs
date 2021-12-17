@@ -7,12 +7,12 @@
 
             <main>
                 <!-- MUESTRO TODOS LOS ERRORES ARRIBA DEL FORMULARIO -->
-                <div>
+               <!--  <div>
                    <% if(locals.errors){ %>
                         <% for(let error in locals.errors ){ %>
                             <p><%= locals.errors[error].msg %></p>
                     <% }} %>                   
-                </div>
+                </div> -->
 
                 <div class="login-page" id= "formul">
                     <div class="form">
@@ -21,14 +21,25 @@
                                 <section class="registro-flex">
                                     <div>
                                         <label for="firstname">Nombre</label>
+
+                            <% if(locals.errors && errors.firstname) {%>
+                                <div class="error"><%= errors.firstname.msg %></div>
+                            <% } %>  
                                         <input type="text" id="firstname" name="firstname" placeholder="Juan" value="<%= locals.old ? old.firstname : null %>"/>
                                     </div>
                                     <div>
-                                        <label for="lastname">Apellido</label>
+                                        <label for="lastname">Apellido</label>                                        
+                            <% if(locals.errors && errors.lastname) {%>
+                                <div class="error"><%= errors.lastname.msg %></div>
+                            <% } %>  
                                         <input id="lastname" name="lastname" type="text" placeholder="Perez" value="<%= locals.old ? old.lastname : null %>"/>
                                     </div>
                                     <div>
                                         <label class="radio">Tipo de Documento</label>
+                                        
+                            <% if(locals.errors && errors.nroDocumento) {%>
+                                <div class="error"><%= errors.nroDocumento.msg %></div>
+                            <% } %>  
                                         <div class="registro-radio">
                                             <div>
                                                 <input type="radio" name="doc_type" id="doc_type" value="dni" />

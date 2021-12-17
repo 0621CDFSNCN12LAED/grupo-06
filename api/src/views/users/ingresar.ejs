@@ -6,20 +6,28 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <!-- MUESTRO TODOS LOS ERRORES ARRIBA DEL FORMULARIO -->
-                <div>
+                <!-- <div>
                     <% if(locals.errors){ %>
                          <% for(let error in locals.errors ){ %>
                              <p><%= locals.errors[error].msg %></p>
                      <% }} %>                   
-                 </div>
+                 </div> -->
 
                 <section class="login-page" id= "formulario">
                     <div class="form">
                         <form class="login-form" action="/users/login" method="POST" class="login">
                             <div>
+                                
+                            <% if(locals.errors && errors.email) {%>
+                                <div class="error"><%= errors.email.msg %></div>
+                            <% } %>  
                                 <input id="email" name="email" type="email" placeholder="email" value="<%= locals.old ? old.email : null %>" />
                             </div>
                             <div>
+                                
+                            <% if(locals.errors && errors.password) {%>
+                                <div class="error"><%= errors.password.msg %></div>
+                            <% } %>  
                                 <input type="password" name="password" type="password" placeholder="contraseña" />
                             </div>
                             <button type="submit">Ingresar</button>
