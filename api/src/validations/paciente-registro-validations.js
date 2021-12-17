@@ -27,7 +27,8 @@ const validacionesRegistroPaciente = [
         .isEmail().withMessage('El mail debe tener un formato válido'),
     check('password')
         .notEmpty().withMessage('Se debe ingresar una password').bail()
-        .isLength({min:8}).withMessage('La contraseña debe ser mínimo de 8 caracteres'),
+        .isLength({min:8}).withMessage('La contraseña debe ser mínimo de 8 caracteres')
+        .isAlphanumeric().withMessage('La contraseña debe tener al menos una letra y uhn número'),
     check('term')
         .notEmpty().withMessage('Se deben aceptar los términos y condiciones'),
 ];
