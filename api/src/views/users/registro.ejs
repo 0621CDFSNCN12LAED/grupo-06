@@ -37,9 +37,7 @@
                                     <div>
                                         <label class="radio">Tipo de Documento</label>
                                         
-                            <% if(locals.errors && errors.nroDocumento) {%>
-                                <div class="error"><%= errors.nroDocumento.msg %></div>
-                            <% } %>  
+ 
                                         <div class="registro-radio">
                                             <div>
                                                 <input type="radio" name="doc_type" id="doc_type" value="dni" />
@@ -57,15 +55,24 @@
                                     </div>
                                     <div>
                                         <label for="nroDocumento">Documento</label>
+                                        <% if(locals.errors && errors.nroDocumento) {%>
+                                            <div class="error"><%= errors.nroDocumento.msg %></div>
+                                        <% } %> 
                                         <input id="doc" name="nroDocumento" type="text" placeholder="Número Documento" value="<%= locals.old ? old.nroDocumento : null %>" />
                                     </div>
 
                                     <div>
                                         <label for="birth_date">Fecha de Nacimiento</label>
+                                        <% if(locals.errors && errors.birth_date) {%>
+                                            <div class="error"><%= errors.birth_date.msg %></div>
+                                        <% } %> 
                                         <input id="birth_date" name="birth_date" type="date" placeholder="birth-date" value="<%= locals.old ? old.birth_date : null %>"/>
                                     </div>
                                     <div>
                                         <label>Género</label>
+                                        <% if(locals.errors && errors.gender) {%>
+                                            <div class="error"><%= errors.gender.msg %></div>
+                                        <% } %> 
                                         <div class="registro-radio">
                                             <div>
                                                 <input type="radio" name="gender" id="gender-fem" value="F" />
@@ -90,18 +97,30 @@
                                     <section class="registro-flex">
                                         <div>
                                             <label for="email">Correo</label>
+                                            <% if(locals.errors && errors.email) {%>
+                                                <div class="error"><%= errors.email.msg %></div>
+                                            <% } %> 
                                             <input id="email" name="email" type="email" placeholder="jprezez@gmail.com" value="<%= locals.old ? old.email : null %>" />
                                         </div>
                                         <div>
                                             <label for="reEmail">Confirmar correo</label>
+                                            <% if(locals.errors && errors.reEmail) {%>
+                                                <div class="error"><%= errors.reEmail.msg %></div>
+                                            <% } %> 
                                             <input id="reEmail" name="reEmail" type="email" placeholder="jprezez@gmail.com" value="<%= locals.old ? old.reEmail : null %>"/>
                                         </div>
                                         <div>
                                             <label for="password">Contraseña</label>
+                                            <% if(locals.errors && errors.password) {%>
+                                                <div class="error"><%= errors.password.msg %></div>
+                                            <% } %> 
                                             <input id="password" name="password" type="password" placeholder="contraseña" />
                                         </div>
                                         <div>
                                             <label for="rePassword">Repetir contraseña</label>
+                                            <% if(locals.errors && errors.rePassword) {%>
+                                                <div class="error"><%= errors.rePassword.msg %></div>
+                                            <% } %> 
                                             <input id="rePassword" name="rePassword" type="password" placeholder="contraseña" />
                                         </div>
 
@@ -111,6 +130,9 @@
                                         <div id="term-cond">
                                             <input type="checkbox" name="term" id="term" <%= locals.old && old.term ? 'checked' : null %> />
                                             <label for="term" class="font-sm"><a href="https://www.rosario.gob.ar/web/aplicaciones/terminos-y-condiciones-formularios" target="_blank">He leído y aceptado los términos y condiciones del servicio</a></label>
+                                            <% if(locals.errors && errors.term) {%>
+                                                <div class="error"><%= errors.term.msg %></div>
+                                            <% } %> 
                                         </div>
                                     </section>
                                     <section>
