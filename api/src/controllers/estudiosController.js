@@ -31,8 +31,6 @@ const controller = {
 
     estudioDetalle: async(req, res) => {        
         const detEst = await estudioService.searchOneEstudio(req.params.id);
-        console.log(detEst);
-        //res.send(detEst);
         res.render("./products/estudioDetalle", { detEst: detEst });
     },
 
@@ -41,10 +39,8 @@ const controller = {
     },
 
     guardarEstudio: (req, res) => {
-        console.log(req.body);
         let errors = validationResult(req);
-        console.log('ERRORES');
-        console.log(errors);
+
         if(errors.isEmpty()){
             estudioService.create(req.body, req.file);
             res.redirect("/estudios");
@@ -82,8 +78,12 @@ const controller = {
         res.redirect("/estudios");
 
     },
-    search: async(palabra) => {
-        await estudioService.search(palabra);
+    search: async(req, res) => {
+        //res.send(req.body);
+        if(req.body.search){
+            const resultadoBusqueda = await estudioService.search(req.body.search);
+            res.render("./products/listadoEstudios", { estudios: resultadoBusqueda });            
+        }
 
     },
 
@@ -92,7 +92,7 @@ const controller = {
 
     }
 
-}
+};
 
 //Exportamos módulo.
 module.exports = controller;

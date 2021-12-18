@@ -44,13 +44,13 @@ router.put(
     estudiosController.actualizarEstudio
 );
 
-router.get ("/buscar-estudio", estudiosController.search);
-
-module.exports = router;
+//Buscador de Estudios
+router.post ("/buscar-estudio", estudiosController.search);
 
 //eliminar un estudio
 router.get("/eliminar/:id", estudiosController.delete);
 
 //boton comprar
-
 router.get ("/carrito", LoggedMiddleware, estudiosController.comprar);
+
+module.exports = router;

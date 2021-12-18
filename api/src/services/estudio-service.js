@@ -106,7 +106,7 @@ module.exports = {
         const estudiosSearch = await db.Estudios.findAll({
             where: {
                 titulo: {
-                    [Op.like]: '%${palabra}%'
+                    [Op.like]: '%'+ palabra.toLowerCase() +'%'
                 },
             },
             estado: true,
